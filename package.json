@@ -1,0 +1,14 @@
+{
+  "name": "tool-hai",
+  "version": "1.0.0",
+  "description": "日常工作便利工具库",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "li-hai-utils": "^1.0.3"
+  }
+}
