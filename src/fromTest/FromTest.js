@@ -19,7 +19,6 @@ class FromTest {
      * @returns Boolean
      * 
      */
-    
     isValueNoEmpty(dataSource) {
         let types = ['string', 'number'],
             type = typeof dataSource;
@@ -32,10 +31,20 @@ class FromTest {
 
     /**
      * 电话号码是否符合正确的格式
-     * @param {*} dataSource 
+     * @param {*} dataSource 电话号码 
      */
     isQualifiedTel(dataSource) {
         return /^1[3568][\d]{9}$/.test(dataSource);
+    }
+
+    /**
+     * 值是否相同
+     * @param {*} dataSource 实际值
+     * @param {*} value 目标值 
+     * @returns Boolean
+     */
+    isEqualsValue(dataSource, value) {
+        return dataSource === value ? true : false;
     }
 }
 
