@@ -1,14 +1,14 @@
 {
   "name": "tool-hai",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "日常工作便利工具库",
   "main": "main.js",
   "scripts": {
-    "start": "node main.js"
+    "start": "node main.js",
+    "publish": "npm publish"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "hai",
+  "license": "MIT",
   "dependencies": {
-    "li-hai-utils": "^1.0.3"
   }
 }
