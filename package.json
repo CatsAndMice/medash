@@ -10,5 +10,8 @@
   "author": "hai",
   "license": "MIT",
   "dependencies": {
+  },
+  "publishConfig": {
+    "registry":"https://www.npmjs.com/package/tool-hai"
   }
 }
