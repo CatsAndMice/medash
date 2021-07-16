@@ -9,18 +9,18 @@ const testFn = Symbol('触发提示私有方法'),
 class Strategy {
     FromTest = FromTest;
     cacheTest = [];
-    [testFn](fn) {
+    _triggerErrorFn(fn) {
         fn();
         return false;
     }
 
-    [moreConfig](dataSource, config) {
+    _moreConfig(dataSource, config) {
         for (const conf of config) {
             this[oneConfig](dataSource, conf);
         }
     }
 
-    [oneConfig](dataSource, config) {
+    _oneConfig(dataSource, config) {
         let { description, errorFn } = config,
             [methodName, value] = description.split(":");
         this.cacheTest.push({ dataSource, methodName, value, errorFn });
@@ -38,7 +38,7 @@ class Strategy {
                 isHaveMehtod = methodName in this.FromTest;
             if (isHaveMehtod) {
                 if (!this.FromTest[methodName](dataSource, value)) {
-                    return this[testFn](errorFn);
+                    return this._triggerErrorFn(errorFn);
                 }
             } else {
                 console.warn(`${methodName}访方法不存在`);
@@ -55,7 +55,7 @@ class Strategy {
      */
     addCacheTest(dataSource, config) {
         let isArr = Array.isArray(config);
-        isArr ? this[moreConfig](dataSource, config) : this[oneConfig](dataSource, config);
+        isArr ? this._moreConfig(dataSource, config) : this._oneConfig(dataSource, config);
     }
 
 }

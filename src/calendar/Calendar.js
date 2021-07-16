@@ -1,44 +1,64 @@
 const MathTool = require('../mathTool/MathTool');
 class Calendar {
-    getCurDate() {
+    _getCurDate() {
         return new Date();
     }
 
-    getMonth(date) {
-        return date.getMonth() + 1;
+    getMonth() {
+        const month = this.CurDate ? this.CurDate.getMonth() : this._getCurDate().getMonth();
+        return month + 1;
     }
 
-    _createArray(CurDate, arr) {
-        const date = [
-            CurDate.getFullYear(),
-            this.getMonth(CurDate),
-            CurDate.getDate(),
-            CurDate.getHours(),
-            CurDate.getMinutes(),
-            CurDate.getSeconds()
-        ]
-        return arr.map((val, index) => {
-            console.log(val);
+    _createYMDArray() {
+        return [this.CurDate.getFullYear(), this.getMonth(), this.CurDate.getDate()];
+    }
+    _createHMSArray() {
+        return [this.CurDate.getHours(), this.CurDate.getMinutes(), this.CurDate.getSeconds()];
+    }
+
+    _createArray(format, captures) {
+        let date = null;
+        if (captures.length === 6) {
+            date = [].concat(this._createYMDArray(), this._createHMSArray());
+        } else {
+            date = this.ymdReg.test(format) ? this._createYMDArray() : this._createHMSArray();
+        }
+        return captures.map((val, index) => {
             return { key: val, value: MathTool.getUseTwoNumberToString(date[index]) };
         })
     }
 
     /**
-     * 
-     * @param {*} dateTime 时间
-     * @param {*} format 时间格式  默认时间格式YY.MM.DD hh:mm:ss
+     * 获取返回时间格式对应的时间字符串
+     * @param {*} format 时间格式
+     * @param {*} reg 正则
      * @returns String
      */
-    getStringCalender(dateTime, format = 'YY.MM.DD hh:mm:ss') {
-        const CurDate = dateTime ? new Date(dateTime) : this.getCurDate();
-        return format.replace(/^(YY).(MM).(DD)\s(hh).(mm).(ss)$/g, (match, p1, p2, p3, p4, p5, p6) => {
-            const strs = this._createArray(CurDate, [p1, p2, p3, p4, p5, p6]);
+    _getReplaceFormat(format, reg) {
+        return format.replace(reg, (match, ...captures) => {
+            captures.splice(-2);
+            const strs = this._createArray(format, captures);
             return strs.map((str) => {
                 const { key, value } = str;
                 match = match.replace(key, value);
                 return match;
             }).pop();
         })
+    }
+
+    /**
+     * 
+     * @param {*} dateTime 时间
+     * @param {*} format 时间格式  默认时间格式YY.MM.DD hh:mm:ss 可选YY.MM.DD或hh:mm:ss
+     * @returns String
+     */
+    getStringCalender(dateTime, format = 'YY.MM.DD hh:mm:ss') {
+        this.ymdReg = /^(YY).(MM).(DD).?$/g;
+        this.hmsReg = /^(hh).(mm).(ss).?$/g;
+        this.dateReg = /^(YY).(MM).(DD).?\s(hh).(mm).(ss).?$/g;
+        this.CurDate = dateTime ? new Date(dateTime) : this._getCurDate();
+        const regs = [this.ymdReg, this.hmsReg, this.dateReg];
+        return this._getReplaceFormat(format, regs.find(reg => reg.test(format)));
     }
 }
 module.exports = new Calendar();
