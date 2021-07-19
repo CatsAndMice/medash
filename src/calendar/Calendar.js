@@ -1,5 +1,8 @@
 const MathTool = require('../mathTool/MathTool');
 class Calendar {
+    ymdReg = /^(YY).(MM).(DD).?$/g;
+    hmsReg = /^(hh).(mm).(ss).?$/g;
+    dateReg = /^(YY).(MM).(DD).?\s(hh).(mm).(ss).?$/g;
     _getCurDate() {
         return new Date();
     }
@@ -12,6 +15,7 @@ class Calendar {
     _createYMDArray() {
         return [this.CurDate.getFullYear(), this.getMonth(), this.CurDate.getDate()];
     }
+
     _createHMSArray() {
         return [this.CurDate.getHours(), this.CurDate.getMinutes(), this.CurDate.getSeconds()];
     }
@@ -53,12 +57,9 @@ class Calendar {
      * @returns String
      */
     getStringCalender(dateTime, format = 'YY.MM.DD hh:mm:ss') {
-        this.ymdReg = /^(YY).(MM).(DD).?$/g;
-        this.hmsReg = /^(hh).(mm).(ss).?$/g;
-        this.dateReg = /^(YY).(MM).(DD).?\s(hh).(mm).(ss).?$/g;
         this.CurDate = dateTime ? new Date(dateTime) : this._getCurDate();
         const regs = [this.ymdReg, this.hmsReg, this.dateReg];
         return this._getReplaceFormat(format, regs.find(reg => reg.test(format)));
     }
 }
-module.exports = new Calendar();
+module.exports =  new Calendar();

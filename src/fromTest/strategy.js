@@ -1,7 +1,4 @@
 const FromTest = require('./FromTest');
-const testFn = Symbol('触发提示私有方法'),
-    moreConfig = Symbol('多个校验条件'),
-    oneConfig = Symbol('单个校验条件');
 
 /**
  * 策略模式实现表单校验
@@ -60,4 +57,4 @@ class Strategy {
 
 }
 
-module.exports = new Strategy();
+module.exports = new FromTest();
