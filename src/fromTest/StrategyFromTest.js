@@ -3,7 +3,7 @@ const FromTest = require('./FromTest');
 /**
  * 策略模式实现表单校验
  */
-class Strategy {
+class StrategyFromTest {
     FromTest = FromTest;
     cacheTest = [];
     _triggerErrorFn(fn) {
@@ -13,7 +13,7 @@ class Strategy {
 
     _moreConfig(dataSource, config) {
         for (const conf of config) {
-            this[oneConfig](dataSource, conf);
+            this._oneConfig(dataSource, conf);
         }
     }
 
@@ -57,4 +57,4 @@ class Strategy {
 
 }
 
-module.exports = new FromTest();
+module.exports = new StrategyFromTest();
