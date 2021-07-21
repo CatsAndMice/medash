@@ -1,6 +1,8 @@
 const ModuleStorage = require('./ModuleStorage');
 class SessionStorage extends ModuleStorage {
-    Storage = window.sessionStorage;
+    constructor() {
+        this.Storage = window.sessionStorage;
+    }
     _isKey(key) {
         StrategyFromTest.addCacheTest(key, [
             Object.assign(isValueNoUndefined, { errorFn: () => console.warn('key值不能为undefined') }),

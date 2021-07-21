@@ -3,8 +3,11 @@ const ModuleStorage = require('./ModuleStorage'),
     { isValueNoUndefined, isValueNoEmpty } = require('./TestMethods');
 
 class LocalStorage extends ModuleStorage {
-    //存储类型
-    Storage = window.localStorage;
+    constructor() {
+        //存储类型
+        this.Storage = window.localStorage;
+    }
+
     _isKey(key) {
         StrategyFromTest.addCacheTest(key, [
             Object.assign(isValueNoUndefined, { errorFn: () => console.warn('key值不能为undefined') }),

@@ -3,8 +3,11 @@ import FromTest from "./FromTest";
  * 策略模式实现表单校验
  */
 class StrategyFromTest {
-    FromTest = FromTest;
-    cacheTest = [];
+
+    constructor(FromTest) {
+        this.FromTest = FromTest;
+        this.cacheTest = [];
+    }
     _triggerErrorFn(fn) {
         fn();
         return false;
@@ -56,4 +59,4 @@ class StrategyFromTest {
 
 }
 
-export default new StrategyFromTest();
+export default new StrategyFromTest(FromTest);
