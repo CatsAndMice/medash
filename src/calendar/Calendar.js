@@ -2,7 +2,7 @@ const MathTool = require('../mathTool/MathTool');
 class Calendar {
     ymdReg = /^(YY).(MM).(DD).?$/g;
     hmsReg = /^(hh).(mm).(ss).?$/g;
-    dateReg = /^(YY).(MM).(DD).?\s(hh).(mm).(ss).?$/g;
+    dateReg = /^(YY).(MM).(DD).?\s(hh).(mm).?(ss)?.?$/g;
     _getCurDate() {
         return new Date();
     }
@@ -62,4 +62,4 @@ class Calendar {
         return this._getReplaceFormat(format, regs.find(reg => reg.test(format)));
     }
 }
-module.exports =  new Calendar();
+module.exports = new Calendar();

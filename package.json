@@ -1,6 +1,6 @@
 {
   "name": "tool-hai",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "日常工作便利工具库",
   "main": "main.js",
   "scripts": {
