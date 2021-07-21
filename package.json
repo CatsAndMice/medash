@@ -16,7 +16,7 @@
   "scripts": {
     "start": "webpack .",
     "updata": "npm up src",
-    "patch": "npm version patch && &&npm publish && git tag ",
+    "patch": "npm version patch&&git tag&&npm publish ",
     "minor": "npm version minor&&npm pulish",
     "major": "npm version major&&npm pulish",
     "publish": "npm publish"
