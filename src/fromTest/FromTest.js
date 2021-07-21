@@ -52,4 +52,4 @@ class FromTest {
         return dataSource === value ? true : false;
     }
 }
-export default new FromTest();
+module.exports =  new FromTest();

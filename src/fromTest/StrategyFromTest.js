@@ -1,4 +1,4 @@
-import FromTest from "./FromTest";
+const FromTest = require('./FromTest');
 /**
  * 策略模式实现表单校验
  */
@@ -59,4 +59,4 @@ class StrategyFromTest {
 
 }
 
-export default new StrategyFromTest(FromTest);
+module.exports = new StrategyFromTest(FromTest);
