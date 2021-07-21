@@ -15,7 +15,7 @@
   "main": "main.js",
   "scripts": {
     "start": "webpack .",
-    "updata":"npm up tool-hai",
+    "updata": "npm up src",
     "patch": "npm version patch&&npm publish",
     "minor": "npm version minor&&npm pulish",
     "major": "npm version major&&npm pulish",
