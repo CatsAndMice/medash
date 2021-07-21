@@ -1,10 +1,12 @@
-const StrategyFrom = require('./src/fromTest/StrategyFromTest'),
-    MathTool = require('./src/mathTool/MathTool'),
-    Calendar = require('./src/calendar/Calendar'),
-    MyStorage = require('./src/webStorage');
-module.exports = {
+import StrategyFrom from "./src/fromTest/StrategyFromTest";
+// MathTool = require('@/src/mathTool/MathTool'),
+// Calendar = require('@/src/calendar/Calendar'),
+// MyStorage = require('@/src/webStorage');
+
+// MathTool,
+// Calendar,
+// MyStorage
+console.log(StrategyFrom);
+export {
     StrategyFrom,
-    MathTool,
-    Calendar,
-    MyStorage
 };
