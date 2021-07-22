@@ -1,14 +1,13 @@
 const FromTest = require('./FromTest');
-const testFn = Symbol('触发提示私有方法'),
-    moreConfig = Symbol('多个校验条件'),
-    oneConfig = Symbol('单个校验条件');
-
 /**
  * 策略模式实现表单校验
  */
-class Strategy {
-    FromTest = FromTest;
-    cacheTest = [];
+class StrategyFromTest {
+
+    constructor(FromTest) {
+        this.FromTest = FromTest;
+        this.cacheTest = [];
+    }
     _triggerErrorFn(fn) {
         fn();
         return false;
@@ -16,7 +15,7 @@ class Strategy {
 
     _moreConfig(dataSource, config) {
         for (const conf of config) {
-            this[oneConfig](dataSource, conf);
+            this._oneConfig(dataSource, conf);
         }
     }
 
@@ -60,4 +59,4 @@ class Strategy {
 
 }
 
-module.exports = new Strategy();
+module.exports = new StrategyFromTest(FromTest);

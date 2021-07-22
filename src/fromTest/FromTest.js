@@ -29,6 +29,11 @@ class FromTest {
         return false;
     }
 
+    isValueNoUndefined(dataSource) {
+        let type = typeof dataSource;
+        return type === "undefined" ? false : true;
+    }
+
     /**
      * 电话号码是否符合正确的格式
      * @param {*} dataSource 电话号码 
@@ -47,5 +52,4 @@ class FromTest {
         return dataSource === value ? true : false;
     }
 }
-
-module.exports = new FromTest();
+module.exports =  new FromTest();
