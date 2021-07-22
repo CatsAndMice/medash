@@ -6,7 +6,12 @@ class LocalStorage extends ModuleStorage {
     constructor() {
         super();
         //存储类型
-        this.Storage = window.localStorage;
+        try {
+            this.Storage = globalThis.localStorage;
+        } catch {
+            console.warn('出错了');
+        }
+
     }
 
     _isKey(key) {

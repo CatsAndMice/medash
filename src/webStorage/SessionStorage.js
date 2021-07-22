@@ -2,7 +2,12 @@ const ModuleStorage = require('./ModuleStorage');
 class SessionStorage extends ModuleStorage {
     constructor() {
         super();
-        this.Storage = window.sessionStorage;
+        try {
+            this.Storage = globalThis.sessionStorage;
+        } catch {
+            console.warn('不存在');
+        }
+
     }
     _isKey(key) {
         StrategyFromTest.addCacheTest(key, [

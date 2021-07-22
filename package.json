@@ -15,6 +15,7 @@
   "main": "main.js",
   "scripts": {
     "start": "webpack .",
+    "test":"jest /test/*",
     "updata": "npm up src",
     "patch": "npm version patch&&git tag&&npm publish ",
     "minor": "npm version minor&&npm pulish",
@@ -23,16 +24,16 @@
   },
   "author": "hai",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "npm": "^7.20.0",
+    "run": "^1.4.0",
+    "start": "^5.1.0"
+  },
   "devDependencies": {
     "jest": "^27.0.6",
     "@babel/core": "^7.14.8",
-    "@babel/plugin-proposal-class-properties": "^7.14.5",
-    "@babel/plugin-transform-runtime": "^7.14.5",
-    "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.14.8",
     "babel-loader": "^8.2.2",
-    "babel-plugin-transform-class-properties": "^6.24.1",
     "html-webpack-plugin": "^5.3.2",
     "webpack": "^5.45.1",
     "webpack-cli": "^4.7.2"

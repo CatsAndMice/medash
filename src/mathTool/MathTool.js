@@ -18,7 +18,8 @@ class MathTool {
      * @returns String
      */
     getUseTwoNumberToString(num) {
-        return num < 10 ? `0${num}` : String(num);
+        let absNum = Math.abs(num);
+        return absNum < 10 ? `0${absNum}` : String(absNum);
     }
 }
 
