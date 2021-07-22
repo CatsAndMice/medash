@@ -1,6 +1,7 @@
 const ModuleStorage = require('./ModuleStorage');
 class SessionStorage extends ModuleStorage {
     constructor() {
+        super();
         this.Storage = window.sessionStorage;
     }
     _isKey(key) {

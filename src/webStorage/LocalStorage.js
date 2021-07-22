@@ -4,6 +4,7 @@ const ModuleStorage = require('./ModuleStorage'),
 
 class LocalStorage extends ModuleStorage {
     constructor() {
+        super();
         //存储类型
         this.Storage = window.localStorage;
     }
