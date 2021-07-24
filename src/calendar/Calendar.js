@@ -40,6 +40,11 @@ class Calendar {
      * @returns String
      */
     _getReplaceFormat(format, reg) {
+        console.log(reg);
+        if (!reg) {
+            console.warn(`${format}格式不正确`);
+            return 
+        }
         return format.replace(reg, (match, ...captures) => {
             captures.splice(-2);
             const strs = this._createArray(format, captures);
@@ -63,4 +68,5 @@ class Calendar {
         return this._getReplaceFormat(format, regs.find(reg => reg.test(format)));
     }
 }
+
 module.exports = new Calendar();

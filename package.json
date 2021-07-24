@@ -15,7 +15,8 @@
   "main": "main.js",
   "scripts": {
     "start": "webpack .",
-    "test":"jest /test/*",
+    "test": "jest /test/calendar.test.js ",
+    "test-coverage": "jest --coverage",
     "updata": "npm up src",
     "patch": "npm version patch&&git tag&&npm publish ",
     "minor": "npm version minor&&npm pulish",
@@ -24,17 +25,14 @@
   },
   "author": "hai",
   "license": "MIT",
-  "dependencies": {
-    "npm": "^7.20.0",
-    "run": "^1.4.0",
-    "start": "^5.1.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "jest": "^27.0.6",
     "@babel/core": "^7.14.8",
     "@babel/preset-env": "^7.14.8",
+    "@types/jest": "^26.0.24",
     "babel-loader": "^8.2.2",
     "html-webpack-plugin": "^5.3.2",
+    "jest": "^27.0.6",
     "webpack": "^5.45.1",
     "webpack-cli": "^4.7.2"
   }

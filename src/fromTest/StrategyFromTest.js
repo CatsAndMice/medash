@@ -3,7 +3,6 @@ const FromTest = require('./FromTest');
  * 策略模式实现表单校验
  */
 class StrategyFromTest {
-
     constructor(FromTest) {
         this.FromTest = FromTest;
         this.cacheTest = [];
