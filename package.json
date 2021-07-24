@@ -15,7 +15,7 @@
   "main": "main.js",
   "scripts": {
     "start": "webpack .",
-    "test": "jest /test/calendar.test.js ",
+    "test": "jest /test/webStorage.test.js --watch",
     "test-coverage": "jest --coverage",
     "updata": "npm up src",
     "patch": "npm version patch&&git tag&&npm publish ",
@@ -31,9 +31,7 @@
     "@babel/preset-env": "^7.14.8",
     "@types/jest": "^26.0.24",
     "babel-loader": "^8.2.2",
-    "html-webpack-plugin": "^5.3.2",
     "jest": "^27.0.6",
-    "webpack": "^5.45.1",
-    "webpack-cli": "^4.7.2"
+    "webpack": "^5.45.1"
   }
 }

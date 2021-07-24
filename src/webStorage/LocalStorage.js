@@ -12,10 +12,9 @@ class LocalStorage extends ModuleStorage {
     }
 
     setItem(key, value) {
-        StrategyFromTest.addCacheTest(value, [
-            Object.assign(isValueNoUndefined, { errorFn: () => console.warn('value值不能为undefined') }),
-            Object.assign(isValueNoEmpty, { errorFn: () => console.warn('value值不能为空') })]);
-        this._isHaveStoargeAndKey(key) ? this.Storage.setItem(key, JSON.stringify(value)) : null;
+        if (this._isValue(value)) {
+            this._isHaveStoargeAndKey(key) ? this.Storage.setItem(key, JSON.stringify(value)) : null;
+        }
     }
 
     getItem(key) {
@@ -27,7 +26,7 @@ class LocalStorage extends ModuleStorage {
     }
 
     clear() {
-        return this._isHaveStoargeAndKey(key) ? this.Storage.clear() : null;
+        return this._isHaveStoarge() ? this.Storage.clear() : null;
     }
 }
 

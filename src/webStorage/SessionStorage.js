@@ -10,6 +10,13 @@ class SessionStorage extends ModuleStorage {
 
     }
 
+
+    setItem(key, value) {
+        if (this._isValue(value)) {
+            this._isHaveStoargeAndKey(key) ? this.Storage.setItem(key, JSON.stringify(value)) : null;
+        }
+    }
+
     getItem(key) {
         return this._isHaveStoargeAndKey(key) ? JSON.parse(this.Storage.getItem(key)) : null;
     }
@@ -19,7 +26,7 @@ class SessionStorage extends ModuleStorage {
     }
 
     clear() {
-        return this._isHaveStoargeAndKey(key) ? this.Storage.clear() : null;
+        return this._isHaveStoarge() ? this.Storage.clear() : null;
     }
 }
 
