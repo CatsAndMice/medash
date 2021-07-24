@@ -1,5 +1,4 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin"),
-    path = require('path');
+const path = require('path');
 module.exports = {
     mode: "production",
     output: {
@@ -17,12 +16,5 @@ module.exports = {
             exclude: /(node_modules|bower_components)/,
             loader: "babel-loader",
         }]
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, './index.html'),
-            inject: 'body',
-            scriptLoading: 'blocking',
-        }),
-    ]
+    }
 }

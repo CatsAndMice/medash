@@ -1,7 +1,4 @@
-const ModuleStorage = require('./ModuleStorage'),
-    StrategyFromTest = require('../fromTest/StrategyFromTest'),
-    { isValueNoUndefined, isValueNoEmpty } = require('./TestMethods');
-
+const ModuleStorage = require('./ModuleStorage');
 class LocalStorage extends ModuleStorage {
     constructor() {
         super();
@@ -9,35 +6,28 @@ class LocalStorage extends ModuleStorage {
         try {
             this.Storage = globalThis.localStorage;
         } catch {
-            console.warn('出错了');
+            console.warn('webStorge仅适用于浏览器环境');
         }
 
-    }
-
-    _isKey(key) {
-        StrategyFromTest.addCacheTest(key, [
-            Object.assign(isValueNoUndefined, { errorFn: () => console.warn('key值不能为undefined') }),
-            Object.assign(isValueNoEmpty, { errorFn: () => console.warn('key值不能为空') })]);
-        return StrategyFromTest.start();
     }
 
     setItem(key, value) {
         StrategyFromTest.addCacheTest(value, [
             Object.assign(isValueNoUndefined, { errorFn: () => console.warn('value值不能为undefined') }),
             Object.assign(isValueNoEmpty, { errorFn: () => console.warn('value值不能为空') })]);
-        _isKey(key) ? this.Storage.setItem(key, JSON.stringify(value)) : null;
+        this._isHaveStoargeAndKey(key) ? this.Storage.setItem(key, JSON.stringify(value)) : null;
     }
 
     getItem(key) {
-        return this._isKey(key) ? JSON.parse(this.Storage.getItem(key)) : null;
+        return this._isHaveStoargeAndKey(key) ? JSON.parse(this.Storage.getItem(key)) : null;
     }
 
     removeItem(key) {
-        return this._isKey(key) ? this.Storage.removeItem(key) : null;
+        return this._isHaveStoargeAndKey(key) ? this.Storage.removeItem(key) : null;
     }
 
     clear() {
-        return this.Storage.clear();
+        return this._isHaveStoargeAndKey(key) ? this.Storage.clear() : null;
     }
 }
 
