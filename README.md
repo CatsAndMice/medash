@@ -11,7 +11,7 @@ npm i tool-hai
 
 > nodeJs可以直接引用，**浏览器环境**借助`webpack`ES6module使用
 
-#### 日历类
+#### 日历模块
 
 `getStringCalender(dateTime,format)`可传入两个参数
 
@@ -29,7 +29,7 @@ Calendar.getStringCalender(Date.now(), 'YY-MM-DD hh:mm:ss');//2021-07-24 20:30:4
 Calendar.getStringCalender(Date.now(), 'hh:mm:ss');//20:43:57
 ```
 
-#### 数字类
+#### 数字模块
 
 `getRangeNumber(min,max)`随机获取一个`min`与`max`之间的一个整数
 
@@ -46,7 +46,7 @@ MathTool.getUseTwoNumberToString(-2);//'02'
 MathTool.getUseTwoNumberToString(2);//'2'
 ```
 
-#### `SessionStorage,LocalStorage`类
+#### `SessionStorage,LocalStorage`模块
 
 > 针对浏览器中`sessionStorage`，`localStorage`进行封装，所以适用于**浏览器环境**。`nodeJs`环境调用不会报错仅会输出警告方案。
 
@@ -62,4 +62,78 @@ LocalStorage.getItem('11');
 LocalStorage.removeItem('11');
 LocalStorage.clear();
 ```
+
+#### 表单校验模块
+
+`addCacheTest(dataSource,config)`将表单校验方法添加至缓存区
+
+​	`dataSource` ：表单值
+
+​	`config`:校验表单值配置，类型为`Array(数组值为对象类型)`或`Object`
+
+​	对象中**必须含有`description`和`errorFn`字段**
+
+​	`description`:调用哪个方法来校验表单值
+
+​	`description`字段可选值有：
+
+​			`isValueNoEmpty`:值不为空
+
+​			`islengthNoZero`:数组长度为零
+
+​			`isValueNoUndefined`:值不为`undefined`
+
+​		    `isQualifiedTel`:值符合电话格式  `/^1[3568][\d]{9}$/`
+
+​			`isEqualsValue`：值等于某个指定的值 
+
+​     `errorFn`:表单校验不正确执行的函数 
+
+`start()`按顺序执行添加至缓存区的表单校验方法,并且清空缓存区的数据。返回一个`Boolean`值 
+
+```js
+const { StrategyFrom } = require('tool-hai');
+let dataSource = '';
+
+//校验表单值不为空
+StrategyFrom.addCacheTest(dataSource, {description: 'isValueNoEmpty', errorFn: () => {console.log('值不能为空');}});
+console.log(StrategyFrom.start());//'值不能为空'  false
+```
+
+```js
+//校验表单值为undefined并且不能为空
+StrategyFrom.addCacheTest(undefined, [
+    {description:'isValueNoUndefined',errorFn()=>console.ware('值不能为undefined')}
+    {description: 'isValueNoEmpty', errorFn: () => {console.log('值不能为空');}},
+]);
+console.log(StrategyFrom.start());//值不能为undefined    true
+```
+
+```js
+StrategyFrom.addCacheTest('13453232335', { description: 'isQualifiedTel', errorFn: () => { console.log('请确定电话号码是否正确'); } });
+console.log(StrategyFrom.start());//true
+```
+
+```js
+//校验表单值是否等于某个指定值，指定值在description字段值后面用`:`拼接
+StrategyFrom.addCacheTest('13453232335', { description: 'isEqualsValue:23', errorFn: () => { console.log('值不相等'); } });
+console.log(StrategyFrom.start());//值不相等   false
+
+StrategyFrom.addCacheTest('23', { description: 'isEqualsValue:23', errorFn: () => { console.log('值不相等'); } });
+console.log(StrategyFrom.start());//true
+```
+
+```js
+//校验数组是否含有值
+StrategyFrom.addCacheTest([], { description: 'islengthNoZero', errorFn: () => { console.log('数组为空'); } });
+console.log(StrategyFrom.start());//数组为空   false
+
+
+StrategyFrom.addCacheTest(['我有值'], { description: 'islengthNoZero', errorFn: () => { console.log('数组为空'); } });
+console.log(StrategyFrom.start());//false
+```
+
+### 最后
+
+这就是`tool-hai`目前封装的方法，比较少。后期我会一点一点的完善新增更多常用的方法🙈，欢迎提<a href="https://github.com/lihai-boop/js-tool/issues">issues</a>,当然也欢迎大家一起完善增强`tool-hai`🥺
 
