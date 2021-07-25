@@ -15,9 +15,9 @@ npm i tool-hai
 
 `getStringCalender(dateTime,format)`可传入两个参数
 
-`dateTime`:时间
+​		`dateTime`:时间
 
-`format`:时间转化成字符串日历需要的格式，默认`'YY-MM-DD hh:mm:ss'`
+​		`format`:时间转化成字符串日历需要的格式，默认`'YY-MM-DD hh:mm:ss'`
 
 ```js
 const {Calendar} =  require('tool-hai');
@@ -33,17 +33,28 @@ Calendar.getStringCalender(Date.now(), 'hh:mm:ss');//20:43:57
 
 `getRangeNumber(min,max)`随机获取一个`min`与`max`之间的一个整数
 
-`min`:最小值 
+​		`min`:最小值 
 
-max:最大值 
+​		`max`:最大值 
 
 `getUseTwoNumberToString(num)`:`num`小`10`,返回一个字符串
+
+`getThousandsChar(num,char)`:获取`num`的千位符
+
+​		`num`:数字
+
+​		`char`:千位符拼接的符号,默认`,`
 
 ```js
 const {MathTool} =  require('tool-hai');
 MathTool.getRangeNumber(1,7);//3
 MathTool.getUseTwoNumberToString(-2);//'02'
 MathTool.getUseTwoNumberToString(2);//'2'
+```
+
+```js
+MathTool.getThousandsChar(1000.04);//1,000.04
+MathTool.getThousandsChar(1000.04,"-");//1-000.04
 ```
 
 #### `SessionStorage,LocalStorage`模块

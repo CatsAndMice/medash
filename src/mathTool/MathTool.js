@@ -21,6 +21,21 @@ class MathTool {
         let absNum = Math.abs(num);
         return absNum < 10 ? `0${absNum}` : String(absNum);
     }
+
+    getThousandsChar(num, char = ',') {
+        if (num < 1000) {
+            return String(num);
+        }
+        //Number.prototype.toLocaleString 可实现千位符
+
+        //去除小数点后面的数
+        let numStrs = String(num).split('.'),
+            thousandsChar = numStrs[0].replace(/(\d)(?=(\d{3})+$)/g, ($1) => {
+                return $1 + char;
+            })
+        console.log(numStrs[1],num);
+        return numStrs[1] ? [thousandsChar, numStrs[1]].join('.') : thousandsChar;
+    }
 }
 
 module.exports = new MathTool();

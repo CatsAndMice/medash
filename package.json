@@ -1,6 +1,6 @@
 {
   "name": "tool-hai",
-  "version": "1.0.10",
+  "version": "1.0.10-1",
   "description": "日常工作便利工具库",
   "homepage": "https://github.com/lihai-boop/js-tool",
   "repository": {
@@ -15,7 +15,7 @@
   "main": "main.js",
   "scripts": {
     "start": "webpack .",
-    "test": "jest /test/webStorage.test.js --watch",
+    "test": "jest /test/mathTool.test.js ",
     "test-coverage": "jest --coverage",
     "updata": "npm up src",
     "patch": "npm version patch&&git tag&&npm publish ",
