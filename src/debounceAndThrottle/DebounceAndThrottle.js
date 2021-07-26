@@ -36,9 +36,8 @@ class DebounceAndThrottle {
 
     /**
      * 节流
-     * @param {*} fn 
-     * @param {*} wait 
-     * @returns 
+     * @param {*} fn 回调函数 
+     * @param {*} wait 等待时间
      */
     throttle(fn, wait = 1000) {
         return function () {
