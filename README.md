@@ -147,4 +147,3 @@ console.log(StrategyFrom.start());//false
 ### 最后
 
 这就是`tool-hai`目前封装的方法，比较少。后期我会一点一点的完善新增更多常用的方法🙈，欢迎提<a href="https://github.com/lihai-boop/js-tool/issues">issues</a>,当然也欢迎大家一起完善增强`tool-hai`🥺
-

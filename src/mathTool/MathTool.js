@@ -2,6 +2,7 @@
  * 处理数字类
  */
 class MathTool {
+
     /**
      * 随机获取一个范围内的值
      * @param {*} min 最小值
@@ -33,7 +34,6 @@ class MathTool {
             thousandsChar = numStrs[0].replace(/(\d)(?=(\d{3})+$)/g, ($1) => {
                 return $1 + char;
             })
-        console.log(numStrs[1],num);
         return numStrs[1] ? [thousandsChar, numStrs[1]].join('.') : thousandsChar;
     }
 }
