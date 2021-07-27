@@ -14,11 +14,12 @@ class DebounceAndThrottle {
      * @param {*} immediate 是否立即执行
      */
     debounce(fn, wait = 1000, immediate = false) {
+        let self = this;
         //立即执行
         immediate ? fn.call(this) : null;
         return function () {
-            this.debounceTime && clearTimeout(this.debounceTime);
-            this.debounceTime = setTimeout(() => {
+            self.debounceTime && clearTimeout(self.debounceTime);
+            self.debounceTime = setTimeout(() => {
                 fn.apply(this, arguments);
             }, wait)
         }
@@ -40,10 +41,11 @@ class DebounceAndThrottle {
      * @param {*} wait 等待时间
      */
     throttle(fn, wait = 1000) {
+        let self = this;
         return function () {
-            if (this.throttleTime) return;
-            this.throttleTime = setTimeout(() => {
-                this.throttleTime = null;
+            if (self.throttleTime) return;
+            self.throttleTime = setTimeout(() => {
+                self.throttleTime = null;
                 fn.apply(this, arguments);
             }, wait)
         }
@@ -52,7 +54,7 @@ class DebounceAndThrottle {
     /**
      * 取消节流执行事件
      */
-    canCelThrottle() {
+    cancelThrottle() {
         this.throttleTime && clearTimeout(this.throttleTime);
         this.throttleTime = null;
     }
