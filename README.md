@@ -1,10 +1,10 @@
-## 🦄@hai/tool
+## 🦄@lihai-js/tool
 > 工作中总是要写重复的一些工具方法，浪费时间又没有意义。即想将常用方法函数封装成多个模块，由此`tool-hai`出现了。
 
 ### 🧙安装
 
 ```npm
-npm i @hai/tool
+npm i @lihai-js/tool
 ```
 
 ### 💪使用
