@@ -2,6 +2,9 @@
   "name": "@lihai-js/tool",
   "version": "1.1.0",
   "description": "日常工作便利工具库",
+  "bugs": {
+    "url": "https://github.com/lihai-boop/tool/issues"
+  },
   "homepage": "https://github.com/lihai-boop/tool",
   "repository": {
     "type": "git",
