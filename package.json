@@ -7,6 +7,11 @@
     "type": "git",
     "url": "https://github.com/lihai-boop/tool.git"
   },
+  "files":[
+    "src",
+    "dist/*.js",
+    "main.js"
+  ],
   "keywords": [
     "class",
     "tool",
