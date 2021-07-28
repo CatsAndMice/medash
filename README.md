@@ -1,17 +1,17 @@
-## tool-hai
+## 🦄@hai/tool
 > 工作中总是要写重复的一些工具方法，浪费时间又没有意义。即想将常用方法函数封装成多个模块，由此`tool-hai`出现了。
 
-### 安装
+### 🧙安装
 
 ```npm
-npm i tool-hai
+npm i @hai/tool
 ```
 
-### 使用
+### 💪使用
 
 > nodeJs可以直接引用，**浏览器环境**借助`webpack`ES6module使用
 
-#### 日历模块
+#### 🏹日历模块
 
 `getStringCalender(dateTime,format)`可传入两个参数
 
@@ -29,7 +29,7 @@ Calendar.getStringCalender(Date.now(), 'YY-MM-DD hh:mm:ss');//2021-07-24 20:30:4
 Calendar.getStringCalender(Date.now(), 'hh:mm:ss');//20:43:57
 ```
 
-#### 数字模块
+#### 🏹数字模块
 
 `getRangeNumber(min,max)`随机获取一个`min`与`max`之间的一个整数
 
@@ -57,7 +57,7 @@ MathTool.getThousandsChar(1000.04);//1,000.04
 MathTool.getThousandsChar(1000.04,"-");//1-000.04
 ```
 
-#### `SessionStorage,LocalStorage`模块
+#### 🏹`SessionStorage,LocalStorage`模块
 
 > 针对浏览器中`sessionStorage`，`localStorage`进行封装，所以适用于**浏览器环境**。`nodeJs`环境调用不会报错仅会输出警告方案。
 
@@ -74,7 +74,7 @@ LocalStorage.removeItem('11');
 LocalStorage.clear();
 ```
 
-#### 表单校验模块
+#### 🏹表单校验模块
 
 `addCacheTest(dataSource,config)`将表单校验方法添加至缓存区
 
@@ -144,6 +144,58 @@ StrategyFrom.addCacheTest(['我有值'], { description: 'islengthNoZero', errorF
 console.log(StrategyFrom.start());//false
 ```
 
-### 最后
+#### 🏹节流,防抖模块
+
+```js
+const {DebounceAndThrottle} = require('tool-hai');
+```
+
+##### 防抖
+
+`debounce(fn,wait,immediate)`：防抖函数，返回一个函数。n秒只执行一次，n秒内多次触发重新定时
+
+​		`fn`:回调函数
+
+​		`wait`：等待时间, 默认`1000`
+
+​		`immediate`:是否立即执行,默认为`false`
+
+`cancelDebounce()`:取消防抖即将执行的函数
+
+##### 节流
+
+`throttle(fn,wait)`:节流函数，返回一个函数 。n秒内只执行一次，n秒内多次触发无效，保证n秒只执行一次
+
+​		参数与`debounce`函数一致，但没有`immediate`
+
+`cancelThrottle()`:取消节流即将执行的函数
+
+```js
+let debounce = DebounceAndThrottle.debounce(()=>{
+    console.log(1);
+})
+debounce()//1000ms后 输出1
+
+let debounce1 = DebounceAndThrottle.debounce(()=>{
+    console.log(1);
+},2000,true);//立即执行  输出1
+
+debounce1();//2000ms后 输出1
+```
+
+```js
+let throttle = DebounceAndThrottle.throttle(()=>{
+    console.log(1);
+})
+throttle()//1000ms后 输出1
+
+let throttle1 = DebounceAndThrottle.throttle(()=>{
+    console.log(1);
+})
+throttle1();
+throttle1();//throttle1两次调用 只会执行回调函数一次  输出 1
+```
+
+### 👋最后
 
 这就是`tool-hai`目前封装的方法，比较少。后期我会一点一点的完善新增更多常用的方法🙈，欢迎提<a href="https://github.com/lihai-boop/js-tool/issues">issues</a>,当然也欢迎大家一起完善增强`tool-hai`🥺

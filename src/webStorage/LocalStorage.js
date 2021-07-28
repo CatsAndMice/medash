@@ -12,21 +12,21 @@ class LocalStorage extends ModuleStorage {
     }
 
     setItem(key, value) {
-        if (this._isValue(value)) {
-            this._isHaveStoargeAndKey(key) ? this.Storage.setItem(key, JSON.stringify(value)) : null;
+        if (super._isValue(value)) {
+            super._isHaveStoargeAndKey(key) ? this.Storage.setItem(key, JSON.stringify(value)) : null;
         }
     }
 
     getItem(key) {
-        return this._isHaveStoargeAndKey(key) ? JSON.parse(this.Storage.getItem(key)) : null;
+        return super._isHaveStoargeAndKey(key) ? JSON.parse(this.Storage.getItem(key)) : null;
     }
 
     removeItem(key) {
-        return this._isHaveStoargeAndKey(key) ? this.Storage.removeItem(key) : null;
+        return super._isHaveStoargeAndKey(key) ? this.Storage.removeItem(key) : null;
     }
 
     clear() {
-        return this._isHaveStoarge() ? this.Storage.clear() : null;
+        return super._isHaveStoarge() ? this.Storage.clear() : null;
     }
 }
 

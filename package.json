@@ -15,7 +15,7 @@
   "main": "main.js",
   "scripts": {
     "start": "webpack .",
-    "test": "jest /test/mathTool.test.js ",
+    "test": "jest /test/webStorage.test.js ",
     "test-coverage": "jest --coverage",
     "updata": "npm up src",
     "patch": "npm version patch&&git tag&&npm publish ",
