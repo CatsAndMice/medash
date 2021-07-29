@@ -13,7 +13,7 @@
     "tool",
     "nodeJs"
   ],
-  "main": "main.js",
+  "main": "dist/tool-min.js",
   "scripts": {
     "build": "webpack .",
     "test": "jest /test/webStorage.test.js ",
