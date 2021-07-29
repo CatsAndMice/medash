@@ -10,7 +10,6 @@
   },
   "files": [
     "src/*.js",
-    "dist/*.js",
     "main.js"
   ],
   "keywords": [
@@ -18,7 +17,7 @@
     "tool",
     "nodeJs"
   ],
-  "main": "dist/tool.js",
+  "main": "main.js",
   "scripts": {
     "build": "webpack .",
     "test": "jest /test/webStorage.test.js ",
