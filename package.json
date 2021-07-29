@@ -9,7 +9,7 @@
     "url": "https://github.com/lihai-boop/tool.git"
   },
   "files": [
-    "src/*.js",
+    "src",
     "main.js"
   ],
   "keywords": [
