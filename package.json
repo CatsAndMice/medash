@@ -3,6 +3,7 @@
   "version": "1.1.0",
   "description": "日常工作便利工具库",
   "homepage": "https://github.com/lihai-boop/tool",
+  "bugs": "https://github.com/lihai-boop/tool/issues",
   "repository": {
     "type": "git",
     "url": "https://github.com/lihai-boop/tool.git"
@@ -12,9 +13,9 @@
     "tool",
     "nodeJs"
   ],
-  "main": "main.js",
+  "main": "dist/main.js",
   "scripts": {
-    "start": "webpack .",
+    "build": "webpack .",
     "test": "jest /test/webStorage.test.js ",
     "test-coverage": "jest --coverage",
     "updata": "npm up src",

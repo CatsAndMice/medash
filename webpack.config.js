@@ -4,7 +4,7 @@ module.exports = {
     output: {
         library: 'tool-hai',
         libraryTarget: 'umd',
-        filename: 'tool-hai.min.js',
+        filename: 'main.js',
         libraryExport: 'default',
     },
     module: {
