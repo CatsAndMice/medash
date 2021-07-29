@@ -1,7 +1,8 @@
 const path = require('path');
+console.log(path.resolve(__dirname, 'main.js'),);
 module.exports = {
     mode: "production",
-    entry: path.resolve(__dirname, 'main.js'),
+    entry: './main.js',
     output: {
         library: '@lihai-js/tool',
         libraryTarget: 'umd',
