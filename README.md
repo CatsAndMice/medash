@@ -1,10 +1,10 @@
-## 🦄tool-hai
-> 工作中总是要写重复的一些工具方法，浪费时间又没有意义。即想将常用方法函数封装成多个模块，由此`tool-hai`出现了。
+## 🦄@lihai-js/tool
+> 工作中总是要写重复的一些工具方法，浪费时间又没有意义。即想将常用方法函数封装成多个模块，由此`@lihai-js/tool`出现了。
 
 ### 🧙安装
 
 ```npm
-npm i tool-hai
+npm i @lihai-js/tool
 ```
 
 ### 💪使用
@@ -20,7 +20,7 @@ npm i tool-hai
 ​		`format`:时间转化成字符串日历需要的格式，默认`'YY-MM-DD hh:mm:ss'`
 
 ```js
-const {Calendar} =  require('tool-hai');
+const {Calendar} =  require('@lihai-js/tool');
 Calendar.getStringCalender(Date.now());//2021.07.24 20:19:14
 Calendar.getStringCalender(Date.now(), 'YY年MM月DD日');//2021年07月24日
 Calendar.getStringCalender(Date.now(), 'YY年MM月DD日 hh:mm');//2021年07月24日 20:28
@@ -46,7 +46,7 @@ Calendar.getStringCalender(Date.now(), 'hh:mm:ss');//20:43:57
 ​		`char`:千位符拼接的符号,默认`,`
 
 ```js
-const {MathTool} =  require('tool-hai');
+const {MathTool} =  require('@lihai-js/tool');
 MathTool.getRangeNumber(1,7);//3
 MathTool.getUseTwoNumberToString(-2);//'02'
 MathTool.getUseTwoNumberToString(2);//'2'
@@ -66,7 +66,7 @@ MathTool.getThousandsChar(1000.04,"-");//1-000.04
 方法与原生`sessionStorage`,`localStorage`一致，用法也一致。但对传入的`key`,`value`进行校验，value会被`JSON.stringify`转成`JSON`格式
 
 ```js
-const {MyStorage } = require('tool-hai'),
+const {MyStorage } = require('@lihai-js/tool'),
     { LocalStorage, SessionStorage } = MyStorage;
 LocalStorage.setItem('11',{name:"LocalStorage",value:23});
 LocalStorage.getItem('11');
@@ -103,7 +103,7 @@ LocalStorage.clear();
 `start()`按顺序执行添加至缓存区的表单校验方法,并且清空缓存区的数据。返回一个`Boolean`值 
 
 ```js
-const { StrategyFrom } = require('tool-hai');
+const { StrategyFrom } = require('@lihai-js/tool');
 let dataSource = '';
 
 //校验表单值不为空
@@ -147,7 +147,7 @@ console.log(StrategyFrom.start());//false
 #### 🏹节流,防抖模块
 
 ```js
-const {DebounceAndThrottle} = require('tool-hai');
+const {DebounceAndThrottle} = require('@lihai-js/tool');
 ```
 
 ##### 防抖
@@ -198,4 +198,4 @@ throttle1();//throttle1两次调用 只会执行回调函数一次  输出 1
 
 ### 👋最后
 
-这就是`tool-hai`目前封装的方法，比较少。后期我会一点一点的完善新增更多常用的方法🙈，欢迎提<a href="https://github.com/lihai-boop/js-tool/issues">issues</a>,当然也欢迎大家一起完善增强`tool-hai`🥺
+这就是`@lihai-js/tool`目前封装的方法，比较少。后期我会一点一点的完善新增更多常用的方法🙈，欢迎提<a href="https://github.com/lihai-boop/js-tool/issues">issues</a>,当然也欢迎大家一起完善增强`@lihai-js/tool`🥺

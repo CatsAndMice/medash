@@ -1,11 +1,11 @@
 {
-  "name": "tool-hai",
-  "version": "1.1.0-1",
+  "name": "@lihai-js/tool",
+  "version": "1.1.0",
   "description": "日常工作便利工具库",
-  "homepage": "https://github.com/lihai-boop/js-tool",
+  "homepage": "https://github.com/lihai-boop/tool",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lihai-boop/js-tool.git"
+    "url": "https://github.com/lihai-boop/tool.git"
   },
   "keywords": [
     "class",
@@ -21,7 +21,7 @@
     "patch": "npm version patch&&git tag&&npm publish ",
     "minor": "npm version minor&&npm publish",
     "major": "npm version major&&npm publish",
-    "publish": "npm publish"
+    "publish": "npm publish --access=public"
   },
   "author": "hai",
   "license": "MIT",
