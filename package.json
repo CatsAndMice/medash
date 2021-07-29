@@ -22,7 +22,6 @@
     "build": "webpack .",
     "test": "jest /test/webStorage.test.js ",
     "test-coverage": "jest --coverage",
-    "updata": "npm up src",
     "patch": "npm version patch&&git tag&&npm publish ",
     "minor": "npm version minor&&npm publish",
     "major": "npm version major&&npm publish",
