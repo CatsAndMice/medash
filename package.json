@@ -1,6 +1,6 @@
 {
   "name": "@lihai-js/tool",
-  "version": "1.1.0",
+  "version": "1.1.1-2",
   "description": "日常工作便利工具库",
   "homepage": "https://github.com/lihai-boop/tool",
   "bugs": "https://github.com/lihai-boop/tool/issues",
@@ -8,6 +8,11 @@
     "type": "git",
     "url": "https://github.com/lihai-boop/tool.git"
   },
+  "files": [
+    "src/*.js",
+    "dist/*.js",
+    "main.js"
+  ],
   "keywords": [
     "class",
     "tool",
