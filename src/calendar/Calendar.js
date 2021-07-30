@@ -1,7 +1,7 @@
 const MathTool = require('../mathTool/MathTool'),
-    ymdReg = /^(YY).(MM).(DD).?$/g,
-    hmsReg = /^(hh).(mm).(ss).?$/g,
-    dateReg = /^(YY).(MM).(DD).?\s(hh).(mm).?(ss)?.?$/g;
+    ymdReg = /^(YY).(MM).(DD).?$/,
+    hmsReg = /^(hh).(mm).(ss).?$/,
+    dateReg = /^(YY).(MM).(DD).?\s(hh).(mm).?(ss)?.?$/;
 class Calendar {
 
     _getCurDate() {
@@ -40,7 +40,6 @@ class Calendar {
      * @returns String
      */
     _getReplaceFormat(format, reg) {
-        console.log(reg);
         if (!reg) {
             console.warn(`${format}格式不正确`);
             return 
