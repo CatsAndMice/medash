@@ -1,5 +1,5 @@
-const Calendar = require('../src/calendar/Calendar'),
-    MathTool = require('../src/mathTool/MathTool');
+const Calendar = require('../Calendar'),
+    MathTool = require('../../mathTool/MathTool');
 let curDate = new Date(),
     ymd = `${curDate.getFullYear()}-${MathTool.getUseTwoNumberToString(curDate.getMonth() + 1)}-${curDate.getDate()}`,
     ymdAndHm = '',

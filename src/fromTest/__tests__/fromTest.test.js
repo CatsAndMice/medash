@@ -1,4 +1,4 @@
-const StrategyFromTest = require('../src/fromTest/StrategyFromTest');
+const StrategyFromTest = require('../StrategyFromTest');
 test('校验表单', () => {
     let from = '',
         testArr = [1];

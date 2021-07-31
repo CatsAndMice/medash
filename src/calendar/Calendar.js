@@ -42,7 +42,7 @@ class Calendar {
     _getReplaceFormat(format, reg) {
         if (!reg) {
             console.warn(`${format}格式不正确`);
-            return 
+            return
         }
         return format.replace(reg, (match, ...captures) => {
             captures.splice(-2);
@@ -66,6 +66,7 @@ class Calendar {
         const regs = [ymdReg, hmsReg, dateReg];
         return this._getReplaceFormat(format, regs.find(reg => reg.test(format)));
     }
+
 }
 
 module.exports = new Calendar();
