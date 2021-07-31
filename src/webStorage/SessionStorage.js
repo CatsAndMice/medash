@@ -1,4 +1,8 @@
 const ModuleStorage = require('./ModuleStorage');
+/**
+ * 浏览器sessionStorage对象方法封装类
+ * @class
+ */
 class SessionStorage extends ModuleStorage {
     constructor() {
         super();

@@ -1,6 +1,7 @@
 const FromTest = require('./FromTest');
 /**
- * 策略模式实现表单校验
+ * 调用表单校验策略类
+ * @class
  */
 class StrategyFromTest {
     constructor(FromTest) {
@@ -48,14 +49,13 @@ class StrategyFromTest {
 
     /**
      * 表单校验添加至缓存区
-     * @param {*} dataSource 需要校验表单值
-     * @param {*} config 表单需要满足的要求
+     * @param {any} dataSource 需要校验表单值
+     * @param {Object | [Object]} config 表单需要满足的要求
      */
     addCacheTest(dataSource, config) {
         let isArr = Array.isArray(config);
         isArr ? this._moreConfig(dataSource, config) : this._oneConfig(dataSource, config);
     }
-
 }
 
 module.exports = new StrategyFromTest(FromTest);
