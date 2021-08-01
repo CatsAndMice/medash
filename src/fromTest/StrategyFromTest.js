@@ -10,6 +10,7 @@ class StrategyFromTest {
     }
     _triggerErrorFn(fn) {
         fn();
+        this.cacheTest.length = 0;
         return false;
     }
 
@@ -41,6 +42,7 @@ class StrategyFromTest {
                 }
             } else {
                 console.warn(`${methodName}访方法不存在`);
+                this.cacheTest.length = 0;
                 return false;
             }
         }
