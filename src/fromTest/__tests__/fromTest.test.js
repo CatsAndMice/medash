@@ -23,3 +23,19 @@ it('邮箱格式是否正确', () => {
     StrategyFromTest.addCacheTest('1@kk.com', { description: 'isQualifiedEmail', errorFn: () => console.log("邮箱错误!") });
     expect(StrategyFromTest.start()).toBeTruthy();
 })
+
+it("值不为空", () => {
+    StrategyFromTest.addCacheTest(undefined, { description: 'isValueNoEmpty', errorFn: () => console.log("邮箱错误!") });
+    StrategyFromTest.addCacheTest([], { description: 'isValueNoEmpty', errorFn: () => console.log("邮箱错误!") });
+    StrategyFromTest.addCacheTest({}, { description: 'isValueNoEmpty', errorFn: () => console.log("邮箱错误!") });
+    expect(StrategyFromTest.start()).toBeFalsy();
+})
+
+it('密码长度不小于6', () => {
+    StrategyFromTest.addCacheTest(123213, {
+        description: 'isPaddWordMinLen:6', errorFn: () => {
+            console.log('密码长度小于6');
+        }
+    })
+    expect(StrategyFromTest.start()).toBeTruthy();
+})

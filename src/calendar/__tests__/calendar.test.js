@@ -1,12 +1,12 @@
 const Calendar = require('../Calendar'),
     MathTool = require('../../mathTool/MathTool');
 let curDate = new Date(),
-    ymd = `${curDate.getFullYear()}-${MathTool.getUseTwoNumberToString(curDate.getMonth() + 1)}-${curDate.getDate()}`,
+    ymd = `${curDate.getFullYear()}-${MathTool.getUseTwoNumberToString(curDate.getMonth() + 1)}-${MathTool.getUseTwoNumberToString(curDate.getDate())}`,
     ymdAndHm = '',
     ymdAndHms = '';
 
 test('测试获取今天的月份', () => {
-    expect(Calendar.getMonth()).toBe(7);
+    expect(Calendar.getMonth()).toBe(8);
 })
 
 

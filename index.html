@@ -9,9 +9,15 @@
 </head>
 
 <body>
-    <script src="./dist/tool.js"></script>
+    <script src="./dist/MyTool.js"></script>
     <script>
-        console.log(window.Tool);
+        const { MyStorage } = window.MyTool,
+            { SessionStorage, LocalStorage } = MyStorage;
+        LocalStorage.setItem('key', [{ name: 'lihai', age: 20 }]);
+        SessionStorage.setItem('key', [{ name: 'lihai', age: 20 }])
+        console.log(LocalStorage.getItem('key'), SessionStorage.getItem('key'));
+        LocalStorage.clear();
+        SessionStorage.clear();
     </script>
 </body>
 

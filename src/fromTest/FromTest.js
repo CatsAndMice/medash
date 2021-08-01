@@ -26,19 +26,13 @@ class FromTest {
      * 
      */
     isValueNoEmpty(dataSource) {
-        let types = ['string', 'number'],
-            type = typeof dataSource;
-        if (types.includes(type)) {
-            return dataSource == '' ? false : true;
-        }
-        console.warn(`${dataSource}类型不是string或number`);
-        return false;
+        return dataSource === '' ? false : this.isValueNoUndefined(dataSource);
     }
 
     /**
      * 
      * @param {any} dataSource 
-     * @returns 
+     * @returns Boolean
      */
     isValueNoUndefined(dataSource) {
         let type = typeof dataSource;
@@ -71,6 +65,23 @@ class FromTest {
      */
     isEqualsValue(dataSource, value) {
         return dataSource === value ? true : false;
+    }
+
+    _alter(text) {
+        console.warn(text);
+        return false;
+    }
+
+    /**
+     * 
+     * @param {String | Number} dataSource 密码值 
+     * @param {Number} value 密码需要的最小长度
+     */
+    isPaddWordMinLen(dataSource, value) {
+        let len = Number(value),
+            isNan = Number.isNaN(len),
+            isDataSourceLessThenValue = String(dataSource).length < value;
+        return isNan ? this._alter('传入值无法转化成Number类型,请检查!') : !isDataSourceLessThenValue;
     }
 }
 module.exports = new FromTest();

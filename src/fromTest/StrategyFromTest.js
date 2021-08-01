@@ -8,9 +8,14 @@ class StrategyFromTest {
         this.FromTest = FromTest;
         this.cacheTest = [];
     }
+
+    _clearCache() {
+        this.cacheTest.length = 0;
+    }
+
     _triggerErrorFn(fn) {
         fn();
-        this.cacheTest.length = 0;
+        this._clearCache();
         return false;
     }
 
@@ -42,7 +47,7 @@ class StrategyFromTest {
                 }
             } else {
                 console.warn(`${methodName}访方法不存在`);
-                this.cacheTest.length = 0;
+                this._clearCache();
                 return false;
             }
         }
