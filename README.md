@@ -101,14 +101,15 @@ LocalStorage.clear();
 
 `description`字段可选值有：
 
-|      可选方法名      |                          描述                          |
-| :------------------: | :----------------------------------------------------: |
-|   `isValueNoEmpty`   |                   校验表单值是否为空                   |
-|   `islengthNoZero`   |               校验表单值数组长度是否为零               |
-| `isValueNoUndefined` |                表单值是否为`undefined`                 |
-|   `isQualifiedTel`   |             表单值是否符合电话号码常用格式             |
-|   `isEqualsValue`    |                表单值是否与传入的值相等                |
-|  `isQualifiedEmail`  | 表单值是否符合电子邮件格式 <small>`v1.2.3新增`</small> |
+|      可选方法名      |                             描述                             |
+| :------------------: | :----------------------------------------------------------: |
+|   `isValueNoEmpty`   |                      校验表单值是否为空                      |
+|   `islengthNoZero`   |                  校验表单值数组长度是否为零                  |
+| `isValueNoUndefined` |                   表单值是否为`undefined`                    |
+|   `isQualifiedTel`   |                表单值是否符合电话号码常用格式                |
+|   `isEqualsValue`    |                   表单值是否与传入的值相等                   |
+|  `isQualifiedEmail`  |    表单值是否符合电子邮件格式 <small>`v1.2.3新增`</small>    |
+|  `isPaddWordMinLen`  | 校验密码长度是否符合最小长度的要求<small>`v1.2.5新增`</small> |
 
 `start()`按顺序执行添加至缓存区的表单校验方法,并且清空缓存区的数据。返回一个`Boolean`值 
 
@@ -159,6 +160,14 @@ console.log(StrategyFrom.start());//false
 StrategyFrom.addCacheTest('2334', { description: 'isQualifiedEmail', errorFn: () => { console.log('邮箱格式错误!'); } });
 console.log(StrategyFrom.start());//false  输出“邮箱格式错误!”
 ```
+
+```js
+//校验密码长度
+StrategyFrom.addCacheTest(234324, { description: 'isPaddWordMinLen:6', errorFn: () => { console.log('密码长度要求最小长度为6!'); } });
+console.log(StrategyFrom.start());//true
+```
+
+
 
 #### 🏹节流,防抖模块
 

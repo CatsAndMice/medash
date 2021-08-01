@@ -15,7 +15,7 @@ class FromTest {
         if (isArr) {
             return dataSource.length === 0 ? false : true;
         }
-        console.warn(`${dataSource}不是Array类型`);
+        this._alter(`${dataSource}不是Array类型`)
         return false;
     }
 
@@ -73,7 +73,7 @@ class FromTest {
     }
 
     /**
-     * 
+     * 校验密码长度
      * @param {String | Number} dataSource 密码值 
      * @param {Number} value 密码需要的最小长度
      */
