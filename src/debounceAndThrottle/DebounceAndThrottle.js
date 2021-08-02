@@ -40,8 +40,9 @@ class DebounceAndThrottle {
      * @param {*} fn 回调函数 
      * @param {*} wait 等待时间
      */
-    throttle(fn, wait = 1000) {
+    throttle(fn, wait = 1000, immediate = false) {
         let self = this;
+        immediate ? fn() : null;
         return function () {
             if (self.throttleTime) return;
             self.throttleTime = setTimeout(() => {

@@ -1,4 +1,4 @@
-const { LocalStorage, SessionStorage } = require('../src/webStorage');
+const { LocalStorage, SessionStorage } = require('..');
 let key = 'hai',
     value = 'value';
 it('LocalStorage测试', () => {

@@ -4,10 +4,8 @@ module.exports = {
     mode: "production",
     entry: './main.js',
     output: {
-        library: '@lihai-js/tool',
-        libraryTarget: 'umd',
-        filename: 'tool.js',
-        libraryExport: 'default',
+        library: 'MyTool',
+        filename: 'MyTool.js',
         path: __dirname + '/dist'
     },
     module: {
