@@ -1,9 +1,11 @@
 {
   "name": "@lihai-js/tool",
-  "version": "1.2.5",
+  "version": "1.2.4",
   "description": "日常工作便利工具库",
+  "bugs": {
+    "url": "https://github.com/lihai-boop/tool/issues"
+  },
   "homepage": "https://github.com/lihai-boop/tool",
-  "bugs": "https://github.com/lihai-boop/tool/issues",
   "repository": {
     "type": "git",
     "url": "https://github.com/lihai-boop/tool.git"
@@ -20,7 +22,7 @@
   "main": "main.js",
   "scripts": {
     "build": "webpack .",
-    "test": "jest /src/fromTest ",
+    "test": "jest ./src/fromTest/",
     "test-coverage": "jest --coverage",
     "patch": "npm version patch&&npm publish ",
     "minor": "npm version minor&&npm publish",
@@ -36,6 +38,7 @@
     "@types/jest": "^26.0.24",
     "babel-loader": "^8.2.2",
     "jest": "^27.0.6",
-    "webpack": "^5.45.1"
+    "webpack": "^5.45.1",
+    "webpack-cli": "^4.7.2"
   }
 }
