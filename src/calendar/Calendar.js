@@ -1,7 +1,8 @@
 const MathTool = require('../mathTool/MathTool'),
     ymdReg = /^(YY).(MM).(DD).?$/,
     hmsReg = /^(hh).(mm).(ss).?$/,
-    dateReg = /^(YY).(MM).(DD).?\s(hh).(mm).?(ss)?.?$/;
+    dateReg = /^(YY).(MM).(DD).?\s(hh).(mm).?(ss)?.?$/,
+    formatTimeReg = /^(\d{4})(?:\D(\d{1,2}))?(?:\D(\d{1,2}))?(?:\s+(\d{1,2})(?:\D(\d{1,2}))?(?:\D(\d{1,2}))?\D?)?$/;
 class Calendar {
 
     _getCurDate() {
@@ -33,6 +34,10 @@ class Calendar {
         })
     }
 
+    _warn(text) {
+        console.warn(text);
+    }
+
     /**
      * 获取返回时间格式对应的时间字符串
      * @param {*} format 时间格式
@@ -41,7 +46,7 @@ class Calendar {
      */
     _getReplaceFormat(format, reg) {
         if (!reg) {
-            console.warn(`${format}格式不正确`);
+            this._warn(`${format}格式不正确`);
             return
         }
         return format.replace(reg, (match, ...captures) => {
@@ -67,6 +72,31 @@ class Calendar {
         return this._getReplaceFormat(format, regs.find(reg => reg.test(format)));
     }
 
+    _dealWith([year, months = 1, days = 1, hours = 0, minutes = 0, seconds = 0]) {
+        const curDate = this._getCurDate();
+        curDate.setFullYear(year);
+        curDate.setMonth(Number(months - 1));
+        curDate.setDate(days);
+        curDate.setHours(hours);
+        curDate.setMinutes(minutes);
+        curDate.setSeconds(seconds);
+        return curDate.getTime();
+    }
+
+    _replace(dataSource) {
+        dataSource.replace(formatTimeReg, (match, ...arg) => {
+            arg.splice(-2);
+            return this._dealWith(arg);
+        })
+    }
+    
+    _stringToTime(dataSource) {
+        return formatTimeReg.test(dataSource) ? Number(this._replace(dataSource)) : this._warn('时间格式错误!');
+    }
+
+    getTime(dataSource) {
+        return dataSource ? this._stringToTime(dataSource.trim()) : this._getCurDate().getTime();
+    }
 }
 
 module.exports = new Calendar();
