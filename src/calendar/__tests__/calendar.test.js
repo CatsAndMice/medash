@@ -22,3 +22,7 @@ test('测试不规范的格式', () => {
     expect(Calendar.getStringCalender(curDate.getTime(), 'YYYY-DD-MM hh:mm:ss')).toBeUndefined();
     expect(Calendar.getStringCalender(curDate.getTime(), 'YY-MM-DDhh:mm:')).toBeUndefined();
 })
+
+it("测试获取时间戳",()=>{
+    expect(typeof Calendar.getTime('2012,12,34')).toBe('number');
+})
