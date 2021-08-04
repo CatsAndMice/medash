@@ -4,7 +4,7 @@ const MathTool = require('../mathTool/MathTool'),
     ymdReg = /^(YY).(MM).(DD).?$/,
     hmsReg = /^(hh).(mm).(ss).?$/,
     dateReg = /^(YY).(MM).(DD).?\s(hh).(mm).?(ss)?.?$/,
-    formatTimeReg = /^(\d{4})(?:\D(\d{1,2}))?(?:\D(\d{1,2}))?(?:\s+(\d{1,2})(?:\D(\d{1,2}))?(?:\D(\d{1,2}))?\D?)?$/;
+    formatTimeReg = /^(\d{4})(?:\D(\d{1,2})\D?)?(?:\D(\d{1,2})\D?)?(?:\s+(?:(\d{1,2})\D?)(?:\D(\d{1,2})\D?)?(?:\D(\d{1,2}))?\D?)?$/;
 class Calendar {
 
     _getCurDate() {
