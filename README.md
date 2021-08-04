@@ -20,6 +20,8 @@ npm i @lihai-js/tool
 | `dateTime` | `Number` |             时间戳，传入为空则默认取当天的时间戳             |
 |  `format`  | `String` | 时间转化成字符串日历需要的格式，默认`'YY-MM-DD hh:mm:ss'`，可选值：`YY-MM-DD,hh:mm:ss,YY-MM-DD hh:mm` |
 
+举个🌰
+
 ```js
 const {Calendar} =  require('@lihai-js/tool');
 Calendar.getStringCalender(Date.now());//2021.07.24 20:19:14
@@ -30,6 +32,24 @@ Calendar.getStringCalender(Date.now(), 'YY-MM-DD hh:mm:ss');//2021-07-24 20:30:4
 Calendar.getStringCalender(Date.now(), 'hh:mm:ss');//20:43:57
 ```
 
+
+
+`getTime(dateTime):`获取当前日历的时间戳
+
+|    参数    |   类型   |   描述    |
+| :--------: | :------: | :-------: |
+| `dateTime` | `String` | 日历格式: |
+
+举个🌰
+
+```js
+const { Calendar } = require('@lihai-js/tool');
+const time = new Date(Calendar.getTime('2021-2-5 23.0.50'));//获取2021-2-5 23.0.50,然后再转化成Date对象
+console.log(time.getFullYear(), time.getMonth(), time.getDate(), time.getHours(), time.getMinutes(), time.getSeconds());//2021, 1, 5, 23, 0, 50,
+```
+
+
+
 #### 🏹数字模块
 
 `getRangeNumber(min,max)`随机获取一个`min`与`max`之间的一个整数
@@ -39,11 +59,30 @@ Calendar.getStringCalender(Date.now(), 'hh:mm:ss');//20:43:57
 | `min` | `Number` | 最小值 |
 | `max` | `Number` | 最大值 |
 
+举个🌰
+
+```js
+const {MathTool} =  require('@lihai-js/tool');
+MathTool.getRangeNumber(1,7);//3
+```
+
+
+
 `getUseTwoNumberToString(num)`:`num`小`10`,返回一个字符串
 
 | 参数  |   类型   |     描述     |
 | :---: | :------: | :----------: |
 | `num` | `Number` | 一个任意数字 |
+
+举个🌰
+
+```js
+const {MathTool} =  require('@lihai-js/tool');
+MathTool.getUseTwoNumberToString(-2);//'02'
+MathTool.getUseTwoNumberToString(2);//'2'
+```
+
+
 
 `getThousandsChar(num,char)`:获取`num`的千位符
 
@@ -52,19 +91,15 @@ Calendar.getStringCalender(Date.now(), 'hh:mm:ss');//20:43:57
 | `num`  | `Number` |    任意数字     |
 | `char` | `String` | 千位符，默认`,` |
 
-
+举个🌰
 
 ```js
 const {MathTool} =  require('@lihai-js/tool');
-MathTool.getRangeNumber(1,7);//3
-MathTool.getUseTwoNumberToString(-2);//'02'
-MathTool.getUseTwoNumberToString(2);//'2'
-```
-
-```js
 MathTool.getThousandsChar(1000.04);//1,000.04
 MathTool.getThousandsChar(1000.04,"-");//1-000.04
 ```
+
+
 
 #### 🏹`SessionStorage,LocalStorage`模块
 
@@ -74,6 +109,8 @@ MathTool.getThousandsChar(1000.04,"-");//1-000.04
 
 方法与原生`sessionStorage`,`localStorage`一致，用法也一致。但对传入的`key`,`value`进行校验，value会被`JSON.stringify`转成`JSON`格式
 
+举个🌰
+
 ```js
 const {MyStorage } = require('@lihai-js/tool'),
     { LocalStorage, SessionStorage } = MyStorage;
@@ -82,6 +119,8 @@ LocalStorage.getItem('11');
 LocalStorage.removeItem('11');
 LocalStorage.clear();
 ```
+
+
 
 #### 🏹表单校验模块
 
@@ -187,18 +226,7 @@ const {DebounceAndThrottle} = require('@lihai-js/tool');
 
 `cancelDebounce()`:取消防抖即将执行的函数
 
-##### 节流
-
-`throttle(fn,wait)`:节流函数，返回一个函数 。n秒内只执行一次，n秒内多次触发无效，保证n秒只执行一次
-
-​		参数与`debounce`函数一致，但没有`immediate`
-
-|  参数  |    类型    |         描述          |
-| :----: | :--------: | :-------------------: |
-|  `fn`  | `Function` |       回调函数        |
-| `wait` |  `Number`  | 等待时间,默认`1000ms` |
-
-`cancelThrottle()`:取消节流即将执行的函数
+举个🌰
 
 ```js
 let debounce = DebounceAndThrottle.debounce(()=>{
@@ -213,6 +241,23 @@ let debounce1 = DebounceAndThrottle.debounce(()=>{
 debounce1();//2000ms后 输出1
 ```
 
+
+
+##### 节流
+
+`throttle(fn,wait)`:节流函数，返回一个函数 。n秒内只执行一次，n秒内多次触发无效，保证n秒只执行一次
+
+​		参数与`debounce`函数一致，但没有`immediate`
+
+|  参数  |    类型    |         描述          |
+| :----: | :--------: | :-------------------: |
+|  `fn`  | `Function` |       回调函数        |
+| `wait` |  `Number`  | 等待时间,默认`1000ms` |
+
+`cancelThrottle()`:取消节流即将执行的函数
+
+举个🌰
+
 ```js
 let throttle = DebounceAndThrottle.throttle(()=>{
     console.log(1);
@@ -225,6 +270,8 @@ let throttle1 = DebounceAndThrottle.throttle(()=>{
 throttle1();
 throttle1();//throttle1两次调用 只会执行回调函数一次  输出 1
 ```
+
+
 
 ### 👋最后
 

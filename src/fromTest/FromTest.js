@@ -1,4 +1,5 @@
-const telReg = /^(0|86|17951)?(13[0-9]|15[012356789]|166|17[3678]|18[0-9]|14[57])[0-9]{8}$/,
+const MyTool = require('../tool'),
+    telReg = /^(0|86|17951)?(13[0-9]|15[012356789]|166|17[3678]|18[0-9]|14[57])[0-9]{8}$/,
     emailReg = /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
 /**
  * 表单校验方法类
@@ -13,9 +14,9 @@ class FromTest {
     islengthNoZero(dataSource) {
         let isArr = Array.isArray(dataSource);
         if (isArr) {
-            return dataSource.length === 0 ? false : true;
+            return dataSource.length !== 0;
         }
-        this._alter(`${dataSource}不是Array类型`)
+        MyTool._warn(`${dataSource}不是Array类型`)
         return false;
     }
 
@@ -36,7 +37,7 @@ class FromTest {
      */
     isValueNoUndefined(dataSource) {
         let type = typeof dataSource;
-        return type === "undefined" ? false : true;
+        return type !== "undefined";
     }
 
     /**
@@ -59,17 +60,31 @@ class FromTest {
 
     /**
      * 值是否相同
-     * @param {any} dataSource 实际值
-     * @param {String} value 目标值 
+     * @param {String | number} dataSource 表单实际值
+     * @param {String | number} value 比较大小的目标值 
      * @returns Boolean
      */
     isEqualsValue(dataSource, value) {
         return dataSource === value ? true : false;
     }
 
-    _alter(text) {
-        console.warn(text);
-        return false;
+    /**
+    * 校验表单是否小于某个值
+    * @param {String | Number} dataSource 表单实际值
+    * @param {String | Number} value 比较大小的目标值 
+    */
+    isLessThenValue(dataSource, value) {
+        return dataSource < value;
+    }
+
+    /**
+     * 校验表单是否大于某个值
+     * @param {String | Number} dataSource 表单实际值
+     * @param {String | Number} value 比较大小的目标值 
+     * @returns 
+     */
+    isGreaterThanValue(dataSource, value) {
+        return dataSource > value;
     }
 
     /**
@@ -81,7 +96,9 @@ class FromTest {
         let len = Number(value),
             isNan = Number.isNaN(len),
             isDataSourceLessThenValue = String(dataSource).length < value;
-        return isNan ? this._alter('传入值无法转化成Number类型,请检查!') : !isDataSourceLessThenValue;
+        return isNan ? MyMyTool._warn('传入值无法转化成Number类型,请检查!') : !isDataSourceLessThenValue;
     }
+
+
 }
 module.exports = new FromTest();

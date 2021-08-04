@@ -1,4 +1,5 @@
-const FromTest = require('./FromTest');
+const FromTest = require('./FromTest'),
+    MyTool = require('../tool');
 /**
  * 调用表单校验策略类
  * @class
@@ -14,8 +15,8 @@ class StrategyFromTest {
     }
 
     _triggerErrorFn(fn) {
-        fn();
         this._clearCache();
+        fn();
         return false;
     }
 
@@ -28,6 +29,8 @@ class StrategyFromTest {
     _oneConfig(dataSource, config) {
         let { description, errorFn = function () { } } = config,
             [methodName, value] = description.split(":");
+        //传入value优先级比截取高
+        value = config.value ? config.value : value;
         this.cacheTest.push({ dataSource, methodName, value, errorFn });
     }
 
@@ -46,9 +49,8 @@ class StrategyFromTest {
                     return this._triggerErrorFn(errorFn);
                 }
             } else {
-                console.warn(`${methodName}访方法不存在`);
                 this._clearCache();
-                return false;
+                return MyTool._warn(`${methodName}访方法不存在`);
             }
         }
         return true;
