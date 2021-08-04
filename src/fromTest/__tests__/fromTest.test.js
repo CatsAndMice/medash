@@ -44,3 +44,11 @@ it("errorFn字段可行性", () => {
     StrategyFromTest.addCacheTest('', { description: "isValueNoEmpty" });
     expect(StrategyFromTest.start()).toBeFalsy();
 })
+
+it("测试大于或小于", () => {
+    StrategyFromTest.addCacheTest(12, { description: "isLessThenValue", value: 13 });
+    StrategyFromTest.addCacheTest(12, { description: "isLessThenValue", value: 14 });
+    StrategyFromTest.addCacheTest(12, { description: "isGreaterThanValue", value: 11 });
+    StrategyFromTest.addCacheTest(12, { description: "isGreaterThanValue", value: 12 });
+    expect(StrategyFromTest.start()).toBeFalsy()
+})
