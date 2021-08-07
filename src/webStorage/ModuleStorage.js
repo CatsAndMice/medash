@@ -1,18 +1,14 @@
-const { isValueNoUndefined, isValueNoEmpty } = require('./TestMethods'),
+const { isValueNoEmpty } = require('../tool'),
     StrategyFromTest = require('../fromTest/StrategyFromTest');
 class ModuleStorage {
 
     _isKey(key) {
-        StrategyFromTest.addCacheTest(key, [
-            Object.assign(isValueNoUndefined, { errorFn: () => console.warn('key值不能为undefined') }),
-            Object.assign(isValueNoEmpty, { errorFn: () => console.warn('key值不能为空') })]);
+        StrategyFromTest.addCacheTest(key, Object.assign(isValueNoEmpty, { errorFn: () => console.warn('key值不能为空') }));
         return StrategyFromTest.start();
     }
 
     _isValue(value) {
-        StrategyFromTest.addCacheTest(value, [
-            Object.assign(isValueNoUndefined, { errorFn: () => console.warn('value值不能为undefined') }),
-            Object.assign(isValueNoEmpty, { errorFn: () => console.warn('value值不能为空') })]);
+        StrategyFromTest.addCacheTest(value, Object.assign(isValueNoEmpty, { errorFn: () => console.warn('value值不能为空') }));
         return StrategyFromTest.start();
     }
 
