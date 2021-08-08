@@ -1,20 +1,10 @@
-const MyEvent = require('../src/myEvent/MyEvent');
+const { MyEvent } = require('../main');
 MyEvent.on('click', () => {
-    console.log('点击事件');
-})
-
-MyEvent.once('click', () => {
-    console.log("只执行一次");
+    console.log('这是click事件');
 });
-
-MyEvent.once('focus', () => {
-    console.log("聚焦");
-})
-
-setTimeout(() => {
-    MyEvent.trigger('click');
-    MyEvent.trigger('focus');
-    MyEvent.trigger('click');
-    MyEvent.trigger('focus');
-    console.log(MyEvent);
-}, 3000)
+MyEvent.once('li',()=>{
+    console.log('这是li事件');
+});
+MyEvent.trigger('click');
+MyEvent.trigger('li');
+console.log(MyEvent);

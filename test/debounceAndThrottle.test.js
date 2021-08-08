@@ -1,4 +1,4 @@
-const DebounceAndThrottle = require('../DebounceAndThrottle');
+const DebounceAndThrottle = require('../src/debounceAndThrottle/DebounceAndThrottle');
 jest.useFakeTimers();
 it('防抖', () => {
     let fn = jest.fn(),

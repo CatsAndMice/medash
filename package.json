@@ -24,7 +24,7 @@
   "main": "main.js",
   "scripts": {
     "build": "webpack .",
-    "test": "jest ./src/fromTest/",
+    "test": "jest",
     "test-coverage": "jest --coverage",
     "patch": "npm version patch&&npm publish ",
     "minor": "npm version minor&&npm publish",

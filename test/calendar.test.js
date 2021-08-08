@@ -1,5 +1,5 @@
-const Calendar = require('../Calendar'),
-    MathTool = require('../../mathTool/MathTool');
+const Calendar = require('../src/calendar/Calendar'),
+    MathTool = require('../src/mathTool/MathTool');
 let curDate = new Date(),
     ymd = `${curDate.getFullYear()}-${MathTool.getUseTwoNumberToString(curDate.getMonth() + 1)}-${MathTool.getUseTwoNumberToString(curDate.getDate())}`,
     ymdAndHm = '',
@@ -12,7 +12,7 @@ test('测试获取今天的月份', () => {
 
 test('测试今天的日历', () => {
     expect(Calendar.getStringCalender(curDate.getTime(), 'YY-MM-DD')).toBe(ymd);
-    ymdAndHm = ymd + ` ${curDate.getHours()}:${curDate.getMinutes()}`
+    ymdAndHm = ymd + ` ${curDate.getHours()}:${ MathTool.getUseTwoNumberToString(curDate.getMinutes())}`
     expect(Calendar.getStringCalender(curDate.getTime(), 'YY-MM-DD hh:mm')).toBe(ymdAndHm);
     ymdAndHms = ymdAndHm + `:${curDate.getSeconds()}`;
     expect(Calendar.getStringCalender(curDate.getTime(), 'YY-MM-DD hh:mm:ss')).toBe(ymdAndHms);
