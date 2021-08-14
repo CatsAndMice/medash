@@ -349,6 +349,12 @@ throttle1();//throttle1两次调用 只会执行回调函数一次  输出 1
 
 
 
+
+
+#### 🏹发布订阅模块
+
+
+
 ### 👋最后
 
 这就是`@lihai-js/tool`目前封装的方法，比较少。后期我会一点一点的完善新增更多常用的方法🙈，欢迎提<a href="https://github.com/lihai-boop/js-tool/issues">issues</a>,当然也欢迎大家一起完善增强`@lihai-js/tool`🥺
