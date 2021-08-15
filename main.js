@@ -1,4 +1,5 @@
-const StrategyFrom = require("./src/fromTest/StrategyFromTest"),
+const FromTest = require('./src/fromTest/FromTest'),
+    StrategyFrom = require("./src/fromTest/StrategyFromTest"),
     MathTool = require('./src/mathTool/MathTool'),
     Calendar = require('./src/calendar/Calendar'),
     MyStorage = require('./src/webStorage'),
@@ -10,5 +11,6 @@ module.exports = {
     Calendar,
     MyStorage,
     MyEvent,
+    FromTest,
     DebounceAndThrottle
 }

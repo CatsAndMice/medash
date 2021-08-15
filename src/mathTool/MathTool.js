@@ -1,3 +1,5 @@
+const { _warn } = require('../tool');
+const extendsFunc = require('../tool/extends');
 /**处理数字转换常用类
  * @class 
  */
@@ -9,7 +11,7 @@ class MathTool {
      * @returns Number
      */
     getRangeNumber(min, max) {
-        return Math.round((Math.random() * (max - min)) + min);
+        return max > min ? Math.round((Math.random() * (max - min)) + min) : _warn('max值小于min,参数不合法!');
     }
 
     /**
@@ -39,6 +41,10 @@ class MathTool {
                 return $1 + char;
             })
         return numStrs[1] ? [thousandsChar, numStrs[1]].join('.') : thousandsChar;
+    }
+    //扩展
+    extends(callBacks) {
+        extendsFunc.call(this, callBacks);
     }
 }
 

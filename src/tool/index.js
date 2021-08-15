@@ -1,3 +1,4 @@
+
 module.exports = {
     isValueNoEmpty: { description: 'isValueNoEmpty' },
     _warn(msg) {

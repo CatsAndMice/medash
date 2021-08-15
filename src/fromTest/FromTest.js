@@ -1,4 +1,5 @@
 const MyTool = require('../tool'),
+    extendsFunc = require('../tool/extends'),
     telReg = /^(0|86|17951)?(13[0-9]|15[012356789]|166|17[3678]|18[0-9]|14[57])[0-9]{8}$/,
     emailReg = /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
 /**
@@ -99,6 +100,8 @@ class FromTest {
         return isNan ? MyMyTool._warn('传入值无法转化成Number类型,请检查!') : !isDataSourceLessThenValue;
     }
 
-
+    extends(callBacks) {
+        extendsFunc.call(this, callBacks);
+    }
 }
 module.exports = new FromTest();

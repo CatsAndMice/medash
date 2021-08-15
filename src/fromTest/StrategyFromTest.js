@@ -1,5 +1,6 @@
 const FromTest = require('./FromTest'),
     MyTool = require('../tool');
+
 /**
  * 调用表单校验策略类
  * @class
@@ -65,6 +66,9 @@ class StrategyFromTest {
         let isArr = Array.isArray(config);
         isArr ? this._moreConfig(dataSource, config) : this._oneConfig(dataSource, config);
     }
+
+
+
 }
 
 module.exports = new StrategyFromTest(FromTest);
