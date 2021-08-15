@@ -353,6 +353,39 @@ throttle1();//throttle1两次调用 只会执行回调函数一次  输出 1
 
 #### 🏹发布订阅模块
 
+<<<<<<< HEAD
+=======
+发布订阅类方法:
+
+|  方法名   |                  描述                  |
+| :-------: | :------------------------------------: |
+|   `on`    |                监听事件                |
+|  `once`   | 对事件只监听一次(触发后，不能再次触发) |
+| `trigger` |                触发事件                |
+| `remove`  |              移除事件监听              |
+
+
+
+举个🌰
+
+```js
+const { MyEvent } = require('@lihai-js/tool');
+
+MyEvent.on('click', () => {
+    console.log('这是click事件');
+});
+MyEvent.once('li',()=>{
+    console.log('这是li事件');
+});
+
+MyEvent.trigger('click');
+MyEvent.trigger('li');
+console.log(MyEvent);
+```
+
+
+
+>>>>>>> f573a36ec3f2b16d8202c7b2e1f00b1d52a60012
 
 
 ### 👋最后
