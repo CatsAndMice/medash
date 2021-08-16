@@ -1,8 +1,5 @@
 const { _warn } = require('../tool');
 const extendsFunc = require('../tool/extends');
-/**处理数字转换常用类
- * @class 
- */
 class MathTool {
     /**
      * 随机获取一个范围内的值
@@ -42,7 +39,8 @@ class MathTool {
             })
         return numStrs[1] ? [thousandsChar, numStrs[1]].join('.') : thousandsChar;
     }
-    //扩展
+
+    
     extends(callBacks) {
         extendsFunc.call(this, callBacks);
     }

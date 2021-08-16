@@ -1,5 +1,7 @@
 const MathTool = require('../mathTool/MathTool'),
     StrategyFromTest = require('../fromTest/StrategyFromTest'),
+    FormatTime = require('./FormatTime'),
+    extendsFunc = require('../tool/extends'),
     MyTool = require('../tool'),
     ymdReg = /^(YY).(MM).(DD).?$/,
     hmsReg = /^(hh).(mm).(ss).?$/,
@@ -117,8 +119,21 @@ class Calendar {
         return formatTimeReg.test(dataSource) ? Number(this._replace(dataSource)) : this._warn('时间格式错误!');
     }
 
+    /**
+     * 获取返回日历模版对应的时间戳
+     * @param {String} dataSource 日历模版
+     * @returns Number
+     */
     getTime(dataSource) {
         return dataSource ? this._stringToTime(dataSource.trim()) : this._getCurDate().getTime();
+    }
+
+    getFormatTime(time) {
+        return Number.isNaN(Number(time)) ? this._warn(`请传入正确的时间戳格式!`) : FormatTime.getFormatTime(time);
+    }
+
+    extends(callBacks) {
+        extendsFunc.call(this, callBacks)
     }
 }
 
