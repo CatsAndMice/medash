@@ -59,6 +59,45 @@ console.log(Calendar.getTime('2023'));
 
 
 
+`getFormatTime(dateTime):`将毫秒值格式化成具体的天，时，秒，毫秒  `v1.3.2新增`
+
+|    参数    |   类型   |   描述   |
+| :--------: | :------: | :------: |
+| `dateTime` | `Number` | 毫秒数值 |
+
+举个🌰
+
+```js
+const { Calendar } = require('@lihai-js/tool');
+Calendar.getFormatTime(1001);//'1 second, 1 millisecond'
+Calendar.getFormatTime(34325055574);//'397 days, 6 hours, 44 minutes, 15 seconds, 574 milliseconds'
+```
+
+
+
+`extends(callBacks):`模块扩展函数 `v1.3.2新增`
+
+|   参数    |   类型   |   描述   |
+| :-------: | :------: | :------: |
+| `extends` | `Object` | 扩展方法 |
+
+举个🌰
+
+```js
+const { Calendar } = require('@lihai-js/tool');
+Calendar.extends({
+    getCurFormatTime() {
+        console.log(Calendar.getFormatTime(new Date().getTime()));
+    }
+})
+
+Calendar.getCurFormatTime();//'18856 days, 12 hours, 33 minutes, 31 seconds, 511 milliseconds'
+```
+
+
+
+
+
 
 
 #### 🏹数字模块
@@ -108,6 +147,27 @@ MathTool.getUseTwoNumberToString(2);//'2'
 const {MathTool} =  require('@lihai-js/tool');
 MathTool.getThousandsChar(1000.04);//1,000.04
 MathTool.getThousandsChar(1000.04,"-");//1-000.04
+```
+
+
+
+`extends(callBacks):`模块扩展函数 `v1.3.2新增`
+
+|   参数    |   类型   |   描述   |
+| :-------: | :------: | :------: |
+| `extends` | `Object` | 扩展方法 |
+
+举个🌰
+
+```js
+const {MathTool} =  require('@lihai-js/tool');
+MathTool.extends({
+    logCurValue(num) {
+        console.log(num);
+    }
+})
+
+MathTool.logCurValue(2);//2
 ```
 
 
@@ -280,6 +340,35 @@ console.log(StrategyFrom.start());//true
 StrategyFrom.addCacheTest(5, { description: 'isGreaterThanValue',value:6});
 console.log(StrategyFrom.start());//false
 ```
+
+
+
+`extends(callBacks):`模块扩展函数 `v1.3.2新增`
+
+|   参数    |   类型   |   描述   |
+| :-------: | :------: | :------: |
+| `extends` | `Object` | 扩展方法 |
+
+举个🌰, `FromTest`模块`v1.3.2`开始暴露
+
+```js
+const {FromTest,StrategyFrom} =  require('@lihai-js/tool');
+const { FromTest, StrategyFrom } = require('../main');
+FromTest.extends({
+    //校验数值是否为NaN
+    isNumNoEqualsNan(num) {
+        return !Number.isNaN(Number(num));
+    }
+})
+
+StrategyFrom.addCacheTest('w', { description: 'isNumNoEqualsNan' });
+console.log(StrategyFrom.start());//false
+
+StrategyFrom.addCacheTest('2', { description: 'isNumNoEqualsNan' });
+console.log(StrategyFrom.start());//true
+```
+
+
 
 
 
