@@ -6,7 +6,7 @@ module.exports = {
         return false;
     },
     _error(msg) {
-        console.error(msg);
+        throw new Error(msg);
         return false;
     },
 

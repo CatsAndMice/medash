@@ -1,8 +1,9 @@
 const StrategyFromTest = require('../fromTest/StrategyFromTest'),
-    { isValueNoEmpty, _warn } = require('../tool')
+    { isValueNoEmpty, _error } = require('../tool')
 class MyEvent {
     constructor() {
         this.event = {};
+        this.maxCacheNum = 15;
     }
 
     _isHaveKey(key) {
@@ -25,11 +26,24 @@ class MyEvent {
         if (this._isHaveKeyAndValue(key, value)) {
             once && this._isTypeFunc(value) ? value.once = true : null;
             if (this.event.hasOwnProperty(key)) {
-                this.event[key].includes(value) ? null : this.event[key].push(value);
+                let callBacks = this.event[key];
+                if (!key.includes(value)) {
+                    let keyLen = callBacks.length;
+                    keyLen < this.maxCacheNum ? null : callBacks.shift() && _error('已超出最大缓存量!请注意内存泄露');
+                    callBacks.push(value);
+                }
+
                 return;
             }
             this.event[key] = [value];
         }
+    }
+
+    /**
+     * 设置最大缓存数
+     */
+    setMaxCacheNum(num) {
+        this.maxCacheNum = num;
     }
 
     on(key, value) {
@@ -50,7 +64,7 @@ class MyEvent {
         if (!this._isHaveKey(key) || !values) return;
         values.forEach((value, index) => {
             this._isTypeFunc(value) ? value() : null;
-            value.once ? this.event[key].splice(index, 1)&&this._deleteKey(key) : null;
+            value.once ? this.event[key].splice(index, 1) && this._deleteKey(key) : null;
         })
     }
 
