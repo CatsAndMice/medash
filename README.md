@@ -444,14 +444,15 @@ throttle1();//throttle1两次调用 只会执行回调函数一次  输出 1
 
 发布订阅类方法:
 
-|  方法名   |                  描述                  |
-| :-------: | :------------------------------------: |
-|   `on`    |                监听事件                |
-|  `once`   | 对事件只监听一次(触发后，不能再次触发) |
-| `trigger` |                触发事件                |
-| `remove`  |              移除事件监听              |
+|      方法名      |                  描述                  |
+| :--------------: | :------------------------------------: |
+|       `on`       |                监听事件                |
+|      `once`      | 对事件只监听一次(触发后，不能再次触发) |
+|    `trigger`     |                触发事件                |
+|     `remove`     |              移除事件监听              |
+| `setMaxCacheNum` |  设置最大缓存数(`v1.3.3新增`)，默认15  |
 
-
+当订阅某个事件量超出`15`会进行报错处理，目的的防止内存泄漏
 
 举个🌰
 
@@ -471,6 +472,19 @@ console.log(MyEvent);
 ```
 
 
+
+`setMaxCacheNum(num)`自定义订阅最大事件量
+
+举个🌰
+
+```js
+const { MyEvent } = require('../main');
+MyEvent.setMaxCacheNum(20)
+for (let index = 0; index < 20; index++) {
+    console.log(index);
+    MyEvent.on('num', index);
+}
+```
 
 
 
