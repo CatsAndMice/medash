@@ -24,7 +24,7 @@
   "main": "main.js",
   "scripts": {
     "build": "webpack .",
-    "test": "jest ./test/calendar.test.js",
+    "test": "jest ./test",
     "lint": "standard src/  --fix",
     "test-coverage": "jest --coverage",
     "patch": "npm version patch&&npm publish ",
@@ -48,7 +48,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "npm run lint && npm run test"
     }
   }
 }
