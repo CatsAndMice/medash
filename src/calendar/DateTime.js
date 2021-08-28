@@ -1,19 +1,19 @@
 class DateTime {
-    getCurDateTime() {
-        return new Date();
-    }
+  getCurDateTime () {
+    return new Date()
+  }
 
-    getCurDateMs() {
-        return this.getCurDateTime().getTime();
-    }
+  getCurDateMs () {
+    return this.getCurDateTime().getTime()
+  }
 
-    getCurDateMonth() {
-        return this.getCurDateTime().getMonth() + 1;
-    }
+  getCurDateMonth () {
+    return this.getCurDateTime().getMonth() + 1
+  }
 
-    setAndReturnDateTime(time) {
-        return new Date(time);
-    }
+  setAndReturnDateTime (time) {
+    return new Date(time)
+  }
 }
 
-module.exports = new DateTime();
+module.exports = new DateTime()

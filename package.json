@@ -25,6 +25,7 @@
   "scripts": {
     "build": "webpack .",
     "test": "jest ./test/calendar.test.js",
+    "lint": "standard src/  --fix",
     "test-coverage": "jest --coverage",
     "patch": "npm version patch&&npm publish ",
     "minor": "npm version minor&&npm publish",
@@ -41,12 +42,13 @@
     "babel-loader": "^8.2.2",
     "husky": "^4.3.8",
     "jest": "^27.0.6",
+    "standard": "^16.0.3",
     "webpack": "^5.45.1",
     "webpack-cli": "^4.7.2"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run test"
+      "pre-commit": "npm run lint"
     }
   }
 }

@@ -1,7 +1,7 @@
-const SessionStorage = require('./SessionStorage'),
-    LocalStorage = require('./LocalStorage');
+const SessionStorage = require('./SessionStorage')
+const LocalStorage = require('./LocalStorage')
 
 module.exports = {
-    SessionStorage,
-    LocalStorage
+  SessionStorage,
+  LocalStorage
 }
