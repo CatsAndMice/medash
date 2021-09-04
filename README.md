@@ -96,6 +96,40 @@ Calendar.getCurFormatTime();//'18856 days, 12 hours, 33 minutes, 31 seconds, 511
 
 
 
+`v1.3.4新增api`
+
+`getCurDayTime():`获取今日时间戳范围
+
+`getCurWeekTime():`获取本周时间戳范围
+
+`getCurMonthTime():`获取本月时间戳范围
+
+上述新增方法，均返回一个包括`start,end`字段对象
+
+举个🌰
+
+```js
+const { Calendar } = require('@lihai-js/tool');
+let {start,end} =  Calendar.getCurDayTime();
+console.log(Calendar.getFormatTime(end - start));//1 day
+```
+
+
+
+```js
+const { Calendar } = require('@lihai-js/tool');
+let {start,end} =  Calendar.getCurWeekTime();
+console.log(Calendar.getFormatTime(end - start));//7 days
+```
+
+
+
+```js
+const { Calendar } = require('@lihai-js/tool');
+let {start,end} =  Calendar.getCurMonthTime();
+console.log(Calendar.getFormatTime(end - start));//30 days
+```
+
 
 
 
