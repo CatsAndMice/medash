@@ -31,11 +31,11 @@ class Calendar {
   }
 
   getCurWeekTime () {
-    return FormatTime.getCurWeek()
+    return FormatTime.getCurWeekTime()
   }
 
-  getMonthTime () {
-    return FormatTime.getMonthTime()
+  getCurMonthTime () {
+    return FormatTime.getCurMonthTime()
   }
 
   extends (callBacks) {

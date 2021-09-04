@@ -95,7 +95,7 @@ class FormatTime {
   /**
    * 获取本周时间戳范围
    */
-  getCurWeek () {
+  getCurWeekTime () {
     const curTime = this.setAndReturnDaTe()
     let curDay = curTime.getDay()
     curDay = curDay > 0 ? curDay : seven
@@ -106,7 +106,7 @@ class FormatTime {
     }
   }
 
-  getMonthTime () {
+  getCurMonthTime () {
     const curTime = this.setAndReturnDaTe()
     curTime.setDate(1)
     const start = curTime.getTime()

@@ -33,16 +33,28 @@ it('格式化毫秒值', () => {
 })
 
 
+describe('获取今日,本周,本月的时间戳范围', () => {
+    let one = 1000 * 60 * 60 * 24;
+    it('获取今日的时间戳范围', () => {
+        let { start, end } = Calendar.getCurDayTime();
+        expect(Calendar.getFormatTime(end - start)).toBe(Calendar.getFormatTime(one))
+    })
 
-it('获取今日,本周,本月的时间戳范围', () => {
-    let { start, end } = Calendar.getMonthTime()
-    let curDate = new Date();
-    curDate.setDate(1);
-    curDate.setHours(0)
-    curDate.setMinutes(0)
-    curDate.setSeconds(0)
-    let curStart = curDate.getTime();
-    curDate.setMonth(curDate.getMonth() + 1);
-    let curEnd = curDate.getTime()
-    expect(Calendar.getFormatTime(end-start)).toBe(Calendar.getFormatTime(curEnd - curStart))
+    it('获取本周的时间戳范围', () => {
+        let { start, end } = Calendar.getCurWeekTime();
+        expect(Calendar.getFormatTime(end - start)).toBe(Calendar.getFormatTime(one * 7));
+    })
+
+    it('获取本月的时间戳范围', () => {
+        let { start, end } = Calendar.getCurMonthTime();
+        let curDate = new Date();
+        curDate.setDate(1);
+        curDate.setHours(0);
+        curDate.setMinutes(0);
+        curDate.setSeconds(0);
+        let curMonth = curDate.getMonth();
+        curDate.setMonth(curMonth + 1);
+        curDate = new Date(curDate.getTime() - 1000 * 60 * 60 * 24);
+        expect(Calendar.getFormatTime(end - start)).toBe(Calendar.getFormatTime(one * (curDate.getDate())));
+    })
 })
