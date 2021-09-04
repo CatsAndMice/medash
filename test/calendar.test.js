@@ -31,3 +31,18 @@ it('格式化毫秒值', () => {
     expect(Calendar.getFormatTime(1001)).toBe('1 second, 1 millisecond');
     expect(Calendar.getFormatTime(34325055574)).toBe('397 days, 6 hours, 44 minutes, 15 seconds, 574 milliseconds');
 })
+
+
+
+it('获取今日,本周,本月的时间戳范围', () => {
+    let { start, end } = Calendar.getMonthTime()
+    let curDate = new Date();
+    curDate.setDate(1);
+    curDate.setHours(0)
+    curDate.setMinutes(0)
+    curDate.setSeconds(0)
+    let curStart = curDate.getTime();
+    curDate.setMonth(curDate.getMonth() + 1);
+    let curEnd = curDate.getTime()
+    expect(Calendar.getFormatTime(end-start)).toBe(Calendar.getFormatTime(curEnd - curStart))
+})

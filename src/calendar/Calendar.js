@@ -26,6 +26,18 @@ class Calendar {
     return Number.isNaN(Number(time)) ? _warn('请传入正确的时间戳格式!') : FormatTime.getFormatTime(time)
   }
 
+  getCurDayTime () {
+    return FormatTime.getCurDayTime()
+  }
+
+  getCurWeekTime () {
+    return FormatTime.getCurWeek()
+  }
+
+  getMonthTime () {
+    return FormatTime.getMonthTime()
+  }
+
   extends (callBacks) {
     extendsFunc.call(this, callBacks)
   }

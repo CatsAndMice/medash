@@ -88,7 +88,7 @@ class FormatTime {
     const start = curTime.getTime()
     return {
       start,
-      end: start + day - second
+      end: start + day
     }
   }
 
@@ -102,7 +102,19 @@ class FormatTime {
     const start = curTime.getTime() - ((seven - curDay) * day)
     return {
       start,
-      end: start + seven * day - second
+      end: start + seven * day
+    }
+  }
+
+  getMonthTime () {
+    const curTime = this.setAndReturnDaTe()
+    curTime.setDate(1)
+    const start = curTime.getTime()
+    const month = curTime.getMonth()
+    curTime.setMonth(month + 1)
+    return {
+      start,
+      end: curTime.getTime()
     }
   }
 }
