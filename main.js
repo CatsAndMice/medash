@@ -1,18 +1,20 @@
-const FromTest = require('./src/fromTest/FromTest'),
-    StrategyFrom = require("./src/fromTest/StrategyFromTest"),
-    MathTool = require('./src/mathTool/MathTool'),
-    Calendar = require('./src/calendar/Calendar'),
-    MyStorage = require('./src/webStorage'),
-    MyEvent = require('./src/myEvent/MyEvent'),
-    Format = require('./src/format/format'),
-    DebounceAndThrottle = require('./src/debounceAndThrottle/DebounceAndThrottle');
+const FromTest = require('./src/fromTest/FromTest')
+const StrategyFrom = require('./src/fromTest/StrategyFromTest')
+const MathTool = require('./src/mathTool/MathTool')
+const Calendar = require('./src/calendar/Calendar')
+const MyStorage = require('./src/webStorage')
+const MyEvent = require('./src/myEvent/MyEvent')
+const Format = require('./src/format/format')
+const Clone = require('./src/clone/clone')
+const DebounceAndThrottle = require('./src/debounceAndThrottle/DebounceAndThrottle')
 module.exports = {
-    StrategyFrom,
-    MathTool,
-    Calendar,
-    MyStorage,
-    MyEvent,
-    FromTest,
-    DebounceAndThrottle,
-    Format
+  StrategyFrom,
+  MathTool,
+  Calendar,
+  MyStorage,
+  MyEvent,
+  FromTest,
+  DebounceAndThrottle,
+  Format,
+  Clone
 }

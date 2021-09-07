@@ -23,9 +23,9 @@
   ],
   "main": "main.js",
   "scripts": {
-    "build": "webpack .",
+    "build": "webpack",
     "test": "jest ./test",
-    "lint": "standard src/  --fix",
+    "lint": "standard ./*.js  --fix",
     "test-coverage": "jest --coverage",
     "patch": "npm version patch&&npm publish ",
     "minor": "npm version minor&&npm publish",
