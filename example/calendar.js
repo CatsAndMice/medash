@@ -1,4 +1,4 @@
-const { MathTool } = require('../main');
+const { MathTool } = require('../main')
 // const time = new Date(Calendar.getTime('2021-2-5 23时a'));
 // console.log(Calendar.getTime('2023年12月23日 9:34'));
 // console.log(Calendar.getTime('2023'));
@@ -6,9 +6,9 @@ const { MathTool } = require('../main');
 
 // console.log(Calendar.getFormatTime('w1001'));
 MathTool.extends({
-    logCurValue(num) {
-        console.log(num);
-    }
+  logCurValue (num) {
+    console.log(num)
+  }
 })
 
-MathTool.logCurValue(2);
+MathTool.logCurValue(2)
