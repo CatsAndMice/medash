@@ -4,6 +4,7 @@ const FromTest = require('./src/fromTest/FromTest'),
     Calendar = require('./src/calendar/Calendar'),
     MyStorage = require('./src/webStorage'),
     MyEvent = require('./src/myEvent/MyEvent'),
+    Format = require('./src/format/format'),
     DebounceAndThrottle = require('./src/debounceAndThrottle/DebounceAndThrottle');
 module.exports = {
     StrategyFrom,
@@ -12,5 +13,6 @@ module.exports = {
     MyStorage,
     MyEvent,
     FromTest,
-    DebounceAndThrottle
+    DebounceAndThrottle,
+    Format
 }
