@@ -12,7 +12,7 @@ class FromTest {
      * @param {Array} dataSource 值
      * @returns Boolean
      */
-  islengthNoZero (dataSource) {
+  islengthNoZero(dataSource) {
     const isArr = Array.isArray(dataSource)
     if (isArr) {
       return dataSource.length !== 0
@@ -27,7 +27,7 @@ class FromTest {
      * @returns Boolean
      *
      */
-  isValueNoEmpty (dataSource) {
+  isValueNoEmpty(dataSource) {
     return dataSource === '' ? false : this.isValueNoUndefined(dataSource)
   }
 
@@ -36,7 +36,7 @@ class FromTest {
      * @param {any} dataSource
      * @returns Boolean
      */
-  isValueNoUndefined (dataSource) {
+  isValueNoUndefined(dataSource) {
     const type = typeof dataSource
     return type !== 'undefined'
   }
@@ -46,7 +46,7 @@ class FromTest {
      * @param {String} dataSource 电话号码
      * @returns Boolean
      */
-  isQualifiedTel (dataSource) {
+  isQualifiedTel(dataSource) {
     return telReg.test(dataSource)
   }
 
@@ -55,7 +55,7 @@ class FromTest {
      * @param {String} dataSource 邮箱
      * @returns Boolean
      */
-  isQualifiedEmail (dataSource) {
+  isQualifiedEmail(dataSource) {
     return emailReg.test(dataSource)
   }
 
@@ -65,7 +65,7 @@ class FromTest {
      * @param {String | number} value 比较大小的目标值
      * @returns Boolean
      */
-  isEqualsValue (dataSource, value) {
+  isEqualsValue(dataSource, value) {
     return dataSource === value
   }
 
@@ -74,7 +74,7 @@ class FromTest {
     * @param {String | Number} dataSource 表单实际值
     * @param {String | Number} value 比较大小的目标值
     */
-  isLessThenValue (dataSource, value) {
+  isLessThenValue(dataSource, value) {
     return dataSource < value
   }
 
@@ -84,7 +84,7 @@ class FromTest {
      * @param {String | Number} value 比较大小的目标值
      * @returns
      */
-  isGreaterThanValue (dataSource, value) {
+  isGreaterThanValue(dataSource, value) {
     return dataSource > value
   }
 
@@ -93,14 +93,19 @@ class FromTest {
      * @param {String | Number} dataSource 密码值
      * @param {Number} value 密码需要的最小长度
      */
-  isPaddWordMinLen (dataSource, value) {
+  isPaddWordMinLen(dataSource, value) {
     const len = Number(value)
     const isNan = Number.isNaN(len)
     const isDataSourceLessThenValue = String(dataSource).length < value
     return isNan ? _warn('传入值无法转化成Number类型,请检查!') : !isDataSourceLessThenValue
   }
 
-  extends (callBacks) {
+  isNull(dataSource) {
+    let type = typeof dataSource;
+    return this.isEqualsValue(type, "object") && this.isEqualsValue(dataSource, null);
+  }
+
+  extends(callBacks) {
     extendsFunc.call(this, callBacks)
   }
 }
