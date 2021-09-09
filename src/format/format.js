@@ -6,6 +6,7 @@ class Format {
       _error('参数类型错误,仅支持数组类型!')
       return
     }
+    
     params = params.flat(Infinity)
     return data.map(val => {
       const formatObj = {}
