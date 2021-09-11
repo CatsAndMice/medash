@@ -66,7 +66,28 @@ class FromTest {
      * @returns Boolean
      */
   isEqualsValue(dataSource, value) {
-    return dataSource === value
+    if (dataSource === value) {
+      return true;
+    }
+
+    //比较类型为Date对象时，比较时间戳格式值
+    if (dataSource instanceof Date && value instanceof Date) {
+      return dataSource.getTime() === value.getTime();
+    }
+
+    //其中有一个值为空，则不相等
+    //排除值为空，或值为引用值的可能性
+    if (!dataSource || !value || (typeof dataSource !== "object" && typeof value !== "object")) {
+      return dataSource === value;
+    }
+
+    //引用类型
+    console.log(1);
+    if (dataSource.prototype !== value.prototype) return false;
+    console.log(2);
+    const keys = Object.keys(dataSource);
+    if (keys.length !== value.length) return false;
+    return keys.every(key => this.isEqualsValue(dataSource[key], value[key]));
   }
 
   /**
