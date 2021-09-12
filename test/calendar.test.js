@@ -13,7 +13,7 @@ it('获取月份', () => {
 
 it('测试今天的日历', () => {
   expect(Calendar.getStringCalender(curDate.getTime(), 'YY-MM-DD')).toBe(ymd)
-  ymdAndHm = ymd + ` ${curDate.getHours()}:${MathTool.getUseTwoNumberToString(curDate.getMinutes())}`
+  ymdAndHm = ymd + ` ${MathTool.getUseTwoNumberToString(curDate.getHours())}:${MathTool.getUseTwoNumberToString(curDate.getMinutes())}`
   expect(Calendar.getStringCalender(curDate.getTime(), 'YY-MM-DD hh:mm')).toBe(ymdAndHm)
   ymdAndHms = ymdAndHm + `:${MathTool.getUseTwoNumberToString(curDate.getSeconds())}`
   expect(Calendar.getStringCalender(curDate.getTime(), 'YY-MM-DD hh:mm:ss')).toBe(ymdAndHms)

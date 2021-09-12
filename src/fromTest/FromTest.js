@@ -82,9 +82,7 @@ class FromTest {
     }
 
     //引用类型
-    console.log(1);
     if (dataSource.prototype !== value.prototype) return false;
-    console.log(2);
     const keys = Object.keys(dataSource);
     if (keys.length !== value.length) return false;
     return keys.every(key => this.isEqualsValue(dataSource[key], value[key]));

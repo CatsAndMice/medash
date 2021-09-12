@@ -5,7 +5,7 @@ const Calendar = require('./src/calendar/Calendar')
 const MyStorage = require('./src/webStorage')
 const MyEvent = require('./src/myEvent/MyEvent')
 const Format = require('./src/format/format')
-const Clone = require('./src/clone/clone')
+const Clone = require('./src/clone/Clone')
 const DebounceAndThrottle = require('./src/debounceAndThrottle/DebounceAndThrottle')
 module.exports = {
   StrategyFrom,
