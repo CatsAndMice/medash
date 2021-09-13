@@ -10,7 +10,7 @@ class StringCalender {
   }
 
   _createYMDArray () {
-    return [this.CurDate.getFullYear(), DateTime.getCurDateMonth(), this.CurDate.getDate()]
+    return [this.CurDate.getFullYear(),this.CurDate.getMonth()+1, this.CurDate.getDate()]
   }
 
   _createArray (format, captures) {
