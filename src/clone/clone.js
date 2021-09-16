@@ -7,7 +7,7 @@ class Clone {
     if (isArray) {
       return keys.map(key => origin[key]);
     }
-    Object.assign(target, origin);
+    return Object.assign(target, origin);
   }
 
   getDeelClone(origin, target = {}) {
