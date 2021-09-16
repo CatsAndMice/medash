@@ -1,5 +1,6 @@
 // TODO:深克隆，㳀克隆
 const FromTest = require('../fromTest/FromTest');
+const { _warn } = require('../tool');
 class Clone {
   getClone(origin, target = {}) {
     let isArray = Array.isArray(origin);
@@ -14,18 +15,42 @@ class Clone {
     let keys = Object.keys(origin);
     for (let index = 0; index < keys.length; index++) {
       let key = keys[index];
-      let type = typeof origin[key];
+      let value = origin[key]
+      let type = typeof value;
       if (type === "object") {
-        let isNull = FromTest.isNull(origin[key])
+        let isNull = FromTest.isNull(value)
         if (isNull) {
-          target[key] = origin[key];
+          target[key] = value;
           continue
         }
 
-        target[key] = Array.isArray(origin[key]) ? this.getDeelClone(origin[key], []) : this.getDeelClone(origin[key]);
+        //Date
+        if (value instanceof Date) {
+          target[key] = new Date(value.getTime())
+          continue
+        }
+
+        //正则
+        if (value instanceof RegExp) {
+          target[key] = new RegExp(value)
+          continue
+        }
+
+        try {
+          //dom
+          if (value instanceof Element) {
+            target[key] = value.cloneNode(true);
+            continue
+          }
+        } catch {
+          _warn('该运行环境中没有DOM元素')
+        }
+
+
+        target[key] = Array.isArray(value) ? this.getDeelClone(value, []) : this.getDeelClone(value);
         continue
       }
-      target[key] = origin[key];
+      target[key] = value;
     }
 
     return target;
