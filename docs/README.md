@@ -259,6 +259,7 @@ LocalStorage.clear();
 |  `isPaddWordMinLen`  | 校验密码长度是否符合最小长度的要求<small>`v1.2.5新增`</small> |
 |  `isLessThenValue`   |            校验表单值是否小于指定值 `v1.2.6新增`             |
 | `isGreaterThanValue` |            校验表单值是否大于指定值 `v1.2.6新增`             |
+|       `isNull`       |           校验表单值是否为`null`     `v1.3.4新增`            |
 
 
 
@@ -402,6 +403,31 @@ StrategyFrom.addCacheTest('2', { description: 'isNumNoEqualsNan' });
 console.log(StrategyFrom.start());//true
 ```
 
+`StrategyFrom`模块使用的规则校验均来自`FromTest`
+
+|      可选方法名      |                             描述                             |
+| :------------------: | :----------------------------------------------------------: |
+|   `isValueNoEmpty`   |                      校验表单值是否为空                      |
+|   `islengthNoZero`   |                  校验表单值数组长度是否为零                  |
+| `isValueNoUndefined` |                   表单值是否为`undefined`                    |
+|   `isQualifiedTel`   |                表单值是否符合电话号码常用格式                |
+|   `isEqualsValue`    |                   表单值是否与传入的值相等                   |
+|  `isQualifiedEmail`  |    表单值是否符合电子邮件格式 <small>`v1.2.3新增`</small>    |
+|  `isPaddWordMinLen`  | 校验密码长度是否符合最小长度的要求<small>`v1.2.5新增`</small> |
+|  `isLessThenValue`   |            校验表单值是否小于指定值 `v1.2.6新增`             |
+| `isGreaterThanValue` |            校验表单值是否大于指定值 `v1.2.6新增`             |
+|       `isNull`       |           校验表单值是否为`null`     `v1.3.4新增`            |
+
+上表格内，规则名均单独可以`FromTest`调用，举个🌰
+
+```js
+const {FromTest} =  require('@lihai-js/tool');
+FromTest.isEqualsValue(1,2)//false
+console.log(FromTest.isEqualsValue(1,2));//false
+console.log(FromTest.isNull(null));//true
+console.log(FromTest.islengthNoZero([]))//false
+```
+
 
 
 
@@ -519,6 +545,8 @@ for (let index = 0; index < 20; index++) {
     MyEvent.on('num', index);
 }
 ```
+
+
 
 
 
