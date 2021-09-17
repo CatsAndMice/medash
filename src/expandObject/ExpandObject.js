@@ -1,6 +1,10 @@
 // TODO:深克隆，㳀克隆
 const FromTest = require('../fromTest/FromTest');
-class Clone {
+class ExpandObject extends Object {
+  constructor(){
+    super()
+  }
+
   getClone(origin, target = {}) {
     let isArray = Array.isArray(origin);
     let keys = Object.keys(origin);
@@ -21,7 +25,6 @@ class Clone {
           target[key] = origin[key];
           continue
         }
-
         target[key] = Array.isArray(origin[key]) ? this.getDeelClone(origin[key], []) : this.getDeelClone(origin[key]);
         continue
       }
@@ -31,5 +34,4 @@ class Clone {
     return target;
   }
 }
-
-module.exports = new Clone()
+module.exports = new ExpandObject()

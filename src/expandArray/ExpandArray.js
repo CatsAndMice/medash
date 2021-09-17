@@ -1,6 +1,9 @@
 const { _error } = require('../tool')
 const FromTest = require('../fromTest/FromTest');
-class Format {
+class ExpandArray extends Array {
+  constructor() {
+    super();
+  }
 
   /**
    * 
@@ -28,4 +31,5 @@ class Format {
   }
 }
 
-module.exports = new Format()
+
+module.exports = new ExpandArray()
