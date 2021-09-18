@@ -30,7 +30,9 @@ class ExpandArray extends Array {
         }
       })
 
-      if (FromTest.islengthNoZero(Object.keys(formatObj))) return formatObj;
+      if (FromTest.islengthNoZero(Object.keys(formatObj))) {
+        return formatObj;
+      }
     }).filter(val => FromTest.isValueNoUndefined(val));
   }
 }

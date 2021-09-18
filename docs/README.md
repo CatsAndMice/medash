@@ -438,8 +438,6 @@ console.log(FromTest.islengthNoZero([]))//false
 
 
 
-
-
 #### 🏹节流,防抖模块
 
 ```js
@@ -675,6 +673,44 @@ console.log(deelCloneTarget.childrens.name);//"子类"
 
 
 #### 🏹`Array`扩展方法
+
+`format(date,params,isClone):`将数组格式化成自定义字段值
+
+|   参数    |       类型       |           描述           |
+| :-------: | :--------------: | :----------------------: |
+|  `date`   |     `Array`      |   需要被格式化的数据源   |
+| `params`  | `Array | Object` |    将字段格式化的规则    |
+| `isClone` |    `Boolean`     | 是否深克隆 ，默认`false` |
+
+`params`应包含`attr,formatName`字段
+
+|     字段     |   类型   |        描述        |
+| :----------: | :------: | :----------------: |
+|    `attr`    | `String` | 需要被改变的字段名 |
+| `formatName` | `String` |  格式化成的字段名  |
+| `skipValue`  | `String` | 格式化需要跳转的值 |
+
+
+
+```js
+const { ExpandArray } = require('@lihai-js/tool');
+let origin = [{ name: "a", age: 1, params: { name: 'params1' } }, { name: "b", age: 2, params: { name: 'params2' } }, { name: "c", age: 3, params: { name: 'params2' } }]
+
+//㳀克隆 格式化
+let target1 = ExpandArray.format(origin, { attr: 'params', formatName: "keys" })
+console.log(target1);//[{ keys: { name: 'params1' } },{ keys: { name: 'params2' } },{ keys: { name: 'params2' } } ]
+console.log(origin[0].params === target1[0].keys);//true
+```
+
+深克隆格式化
+
+```js
+const { ExpandArray } = require('@lihai-js/tool');
+//深克隆 格式化
+let target2 = ExpandArray.format(origin, [{ attr: 'params', formatName: "keys" }, { attr: "name", formatName: "name", skipValue: 'a' }], true)
+console.log(target2);//[{ keys: { name: 'params1' } },{ keys: { name: 'params2' }, name: 'b' },{ keys: { name: 'params2' }, name: 'c' } ]
+console.log(origin[0].params === target2[0].keys);//false
+```
 
 
 
