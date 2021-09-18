@@ -1,8 +1,8 @@
-const MathTool = require('../src/mathTool/MathTool')
-MathTool.extends({
-  getNum (num) {
+const ExpandNumber = require('../src/ExpandNumber/ExpandNumber')
+ExpandNumber.extends({
+  getNum(num) {
     return num / 2
   }
 })
 
-console.log(MathTool.getNum(1))
+console.log(ExpandNumber.getNum(1))

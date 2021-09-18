@@ -1,5 +1,5 @@
 const { _warn } = require('../tool/index')
-const MathTool = require('../mathTool/MathTool')
+const ExpandNumber = require('../expandNumber/ExpandNumber')
 const DateTime = require('./DateTime')
 const ymdReg = /^(YY).(MM).(DD).?$/
 const hmsReg = /^(hh).(mm).(ss).?$/
@@ -21,7 +21,7 @@ class StringCalender {
       date = ymdReg.test(format) ? this._createYMDArray() : this._createHMSArray()
     }
     return captures.map((val, index) => {
-      return { key: val, value: MathTool.getUseTwoNumberToString(date[index]) }
+      return { key: val, value: ExpandNumber.getUseTwoNumberToString(date[index]) }
     })
   }
 

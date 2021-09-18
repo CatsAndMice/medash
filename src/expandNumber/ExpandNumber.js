@@ -1,13 +1,13 @@
 const { _warn } = require('../tool')
 const extendsFunc = require('../tool/extends')
-class MathTool {
+class ExpandNumber extends Number {
   /**
      * 随机获取一个范围内的值
      * @param {Number} min 最小值
      * @param {Number} max 最大值
      * @returns Number
      */
-  getRangeNumber (min, max) {
+  getRangeNumber(min, max) {
     return max > min ? Math.round((Math.random() * (max - min)) + min) : _warn('max值小于min,参数不合法!')
   }
 
@@ -16,7 +16,7 @@ class MathTool {
      * @param {Number} num 传入的数字
      * @returns String
      */
-  getUseTwoNumberToString (num) {
+  getUseTwoNumberToString(num) {
     const absNum = Math.abs(num)
     return absNum < 10 ? `0${absNum}` : String(absNum)
   }
@@ -27,7 +27,7 @@ class MathTool {
      * @param {String} char 千位字符
      * @returns String
      */
-  getThousandsChar (num, char = ',') {
+  getThousandsChar(num, char = ',') {
     if (num < 1000) {
       return String(num)
     }
@@ -40,9 +40,9 @@ class MathTool {
     return numStrs[1] ? [thousandsChar, numStrs[1]].join('.') : thousandsChar
   }
 
-  extends (callBacks) {
+  extends(callBacks) {
     extendsFunc.call(this, callBacks)
   }
 }
 
-module.exports = new MathTool()
+module.exports = new ExpandNumber()

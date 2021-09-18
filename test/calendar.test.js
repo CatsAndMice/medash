@@ -1,9 +1,9 @@
 const Calendar = require('../src/calendar/Calendar')
-const MathTool = require('../src/mathTool/MathTool')
+const ExpandNumber = require('../src/expandNumber/ExpandNumber')
 const DateTime = require('../src/calendar/DateTime')
 const curDate = new Date()
 
-const ymd = `${curDate.getFullYear()}-${MathTool.getUseTwoNumberToString(curDate.getMonth() + 1)}-${MathTool.getUseTwoNumberToString(curDate.getDate())}`
+const ymd = `${curDate.getFullYear()}-${ExpandNumber.getUseTwoNumberToString(curDate.getMonth() + 1)}-${ExpandNumber.getUseTwoNumberToString(curDate.getDate())}`
 let ymdAndHm = ''
 let ymdAndHms = ''
 
@@ -13,9 +13,9 @@ it('获取月份', () => {
 
 it('测试今天的日历', () => {
   expect(Calendar.getStringCalender(curDate.getTime(), 'YY-MM-DD')).toBe(ymd)
-  ymdAndHm = ymd + ` ${MathTool.getUseTwoNumberToString(curDate.getHours())}:${MathTool.getUseTwoNumberToString(curDate.getMinutes())}`
+  ymdAndHm = ymd + ` ${ExpandNumber.getUseTwoNumberToString(curDate.getHours())}:${ExpandNumber.getUseTwoNumberToString(curDate.getMinutes())}`
   expect(Calendar.getStringCalender(curDate.getTime(), 'YY-MM-DD hh:mm')).toBe(ymdAndHm)
-  ymdAndHms = ymdAndHm + `:${MathTool.getUseTwoNumberToString(curDate.getSeconds())}`
+  ymdAndHms = ymdAndHm + `:${ExpandNumber.getUseTwoNumberToString(curDate.getSeconds())}`
   expect(Calendar.getStringCalender(curDate.getTime(), 'YY-MM-DD hh:mm:ss')).toBe(ymdAndHms)
 })
 
