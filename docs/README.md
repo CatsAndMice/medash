@@ -134,7 +134,9 @@ console.log(Calendar.getFormatTime(end - start));//30 days
 
 
 
-#### 🏹数字模块
+#### 🏹数字模块(`v2.0.0`弃)
+
+放弃**数字模块**命名，更换成**`Number`扩展方法**，详情请查看**`Number`扩展方法**
 
 `getRangeNumber(min,max)`随机获取一个`min`与`max`之间的一个整数
 
@@ -208,9 +210,13 @@ MathTool.logCurValue(2);//2
 
 
 
-#### 🏹`SessionStorage,LocalStorage`模块
+
+
+#### 🏹` WebStorage`模块
 
 > 针对浏览器中`sessionStorage`，`localStorage`进行封装，所以适用于**浏览器环境**。`nodeJs`环境调用不会报错仅会输出警告方案。
+>
+> ` WebStorage`包括`sessionStorage`,`localStorage`
 
 这里用node环境演示一下方法
 
@@ -545,6 +551,130 @@ for (let index = 0; index < 20; index++) {
     MyEvent.on('num', index);
 }
 ```
+
+
+
+
+
+####  🏹`Number`扩展方法
+
+> **数字模块**更换为**`Number`扩展方法**
+
+
+
+`getRangeNumber(min,max)`随机获取一个`min`与`max`之间的一个整数
+
+| 参数  |   类型   |  描述  |
+| :---: | :------: | :----: |
+| `min` | `Number` | 最小值 |
+| `max` | `Number` | 最大值 |
+
+举个🌰
+
+```js
+const {ExpandNumber} =  require('@lihai-js/tool');
+ExpandNumber.getRangeNumber(1,7);//3
+```
+
+
+
+`getUseTwoNumberToString(num)`:`num`小`10`,返回一个字符串
+
+| 参数  |   类型   |     描述     |
+| :---: | :------: | :----------: |
+| `num` | `Number` | 一个任意数字 |
+
+举个🌰
+
+```js
+const {ExpandNumber} =  require('@lihai-js/tool');
+ExpandNumber.getUseTwoNumberToString(-2);//'02'
+ExpandNumber.getUseTwoNumberToString(2);//'2'
+```
+
+
+
+`getThousandsChar(num,char)`:获取`num`的千位符
+
+|  参数  |   类型   |      描述       |
+| :----: | :------: | :-------------: |
+| `num`  | `Number` |    任意数字     |
+| `char` | `String` | 千位符，默认`,` |
+
+举个🌰
+
+```js
+const {ExpandNumber} =  require('@lihai-js/tool');
+ExpandNumber.getThousandsChar(1000.04);//1,000.04
+ExpandNumber.getThousandsChar(1000.04,"-");//1-000.04
+```
+
+
+
+`extends(callBacks):`模块扩展函数 `v1.3.2新增`
+
+|   参数    |   类型   |   描述   |
+| :-------: | :------: | :------: |
+| `extends` | `Object` | 扩展方法 |
+
+举个🌰
+
+```js
+const {ExpandNumber} =  require('@lihai-js/tool');
+ExpandNumber.extends({
+    logCurValue(num) {
+        console.log(num);
+    }
+})
+
+ExpandNumber.logCurValue(2);//2
+```
+
+
+
+
+
+#### 🏹`Object`扩展方法
+
+`getClone(origin):`㳀克隆
+
+|   参数   |   类型   |     描述     |
+| :------: | :------: | :----------: |
+| `origin` | `Object` | 被㳀克隆对象 |
+
+```js
+const {ExpandObject} =  require('@lihai-js/tool');
+let origin = { name: '克隆', childrens: { name: "子类" } }
+let cloneTarget = ExpandObject.getClone(origin)
+console.log(cloneTarget === origin);//false
+console.log(origin.childrens === cloneTarget.childrens);//true
+origin.childrens.name = "修改㳀克隆源数据"
+console.log(cloneTarget.childrens.name);//"修改㳀克隆源数据"
+```
+
+
+
+`getDeelClone(origin):` 深克隆
+
+|   参数   |   类型   |     描述     |
+| :------: | :------: | :----------: |
+| `origin` | `Object` | 被深克隆对象 |
+
+```js
+const {ExpandNumber} =  require('@lihai-js/tool');
+let origin = { name: '克隆', childrens: { name: "子类" } }
+let deelCloneTarget = ExpandObject.getDeelClone(origin);
+console.log(deelCloneTarget === origin); //false
+console.log(deelCloneTarget.childrens === origin.childrens);//false
+origin.childrens.name = "修改深克隆源数据" 
+console.log(deelCloneTarget.childrens.name);//"子类"
+```
+
+
+
+
+
+#### 🏹`Array`扩展方法
 
 
 

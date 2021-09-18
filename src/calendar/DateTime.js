@@ -1,17 +1,18 @@
 class DateTime {
-  getCurDateTime () {
+
+  getCurDateTime() {
     return new Date()
   }
 
-  getCurDateMs () {
+  getCurDateMs() {
     return this.getCurDateTime().getTime()
   }
 
-  getCurDateMonth () {
+  getCurDateMonth() {
     return this.getCurDateTime().getMonth() + 1
   }
 
-  setAndReturnDateTime (time) {
+  setAndReturnDateTime(time) {
     return new Date(time)
   }
 }

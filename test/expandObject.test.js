@@ -1,4 +1,4 @@
-const { Clone } = require('../main')
+const { ExpandObject } = require('../main')
 describe('克隆', () => {
     it('㳀克隆', () => {
         let obj = {
@@ -8,7 +8,7 @@ describe('克隆', () => {
                 name: 'children'
             }
         }
-        let cloneObj = Clone.getClone(obj);
+        let cloneObj = ExpandObject.getClone(obj);
         cloneObj.age = 10
         expect(obj.age).not.toBe(cloneObj.age);
         obj.childrens.name = Math.random();
@@ -17,8 +17,8 @@ describe('克隆', () => {
         expect(obj.childrens.name).toEqual(cloneObj.childrens.name)
 
         const arr1 = [2, 3, { name: 22 }]
-        expect(Clone.getClone(arr1)).not.toBe(arr1)
-        const arr2 = Clone.getClone(arr1)
+        expect(ExpandObject.getClone(arr1)).not.toBe(arr1)
+        const arr2 = ExpandObject.getClone(arr1)
         expect(arr2[0]).toBe(arr1[0])
         arr2[2].name = '22'
         expect(arr2[2].name).toBe(arr1[2].name);
@@ -33,7 +33,7 @@ describe('克隆', () => {
             wifi: [1, 2, 3, 4]
         }
 
-        let obj2 = Clone.getDeelClone(obj)
+        let obj2 = ExpandObject.getDeelClone(obj)
         expect(obj).not.toBe(obj2)
         expect(obj).toEqual(obj2)
         expect(obj.name).not.toBe(obj2.name)

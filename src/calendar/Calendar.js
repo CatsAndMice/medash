@@ -9,7 +9,7 @@ class Calendar {
      * @param {*} format 时间格式  默认时间格式YY.MM.DD hh:mm:ss 可选YY.MM.DD或hh:mm:ss
      * @returns String
      */
-  getStringCalender (dateTime, format = 'YY.MM.DD hh:mm:ss') {
+  getStringCalender(dateTime, format = 'YY.MM.DD hh:mm:ss') {
     return StringCalender.getStringCalender(dateTime, format)
   }
 
@@ -18,27 +18,27 @@ class Calendar {
      * @param {String} dataSource 日历模版
      * @returns Number
      */
-  getTime (dataSource) {
+  getTime(dataSource) {
     return FormatTime.getTime(dataSource)
   }
 
-  getFormatTime (time) {
+  getFormatTime(time) {
     return Number.isNaN(Number(time)) ? _warn('请传入正确的时间戳格式!') : FormatTime.getFormatTime(time)
   }
 
-  getCurDayTime () {
+  getCurDayTime() {
     return FormatTime.getCurDayTime()
   }
 
-  getCurWeekTime () {
+  getCurWeekTime() {
     return FormatTime.getCurWeekTime()
   }
 
-  getCurMonthTime () {
+  getCurMonthTime() {
     return FormatTime.getCurMonthTime()
   }
 
-  extends (callBacks) {
+  extends(callBacks) {
     extendsFunc.call(this, callBacks)
   }
 }
