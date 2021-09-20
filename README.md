@@ -1,3 +1,40 @@
+# [@lihai-js/tool]([Moment.js](http://momentjs.com/))
+
+![npm](https://img.shields.io/npm/v/@lihai-js/tool)
+![npm](https://img.shields.io/npm/dt/@lihai-js/tool)
+
+一个应对企业工作常用方法，进行代码片段汇总编写的JavaScipt工具库，旨在减少重复Coding。
+
+
+
+## Install
+
+```shell
+npm install @lihai-js/tool
+```
+
+
+
+## Usage
+
+```js
+const { ExpandObject } = require('../../main');
+let origin = { name: '克隆', childrens: { name: "子类" } }
+let cloneTarget = ExpandObject.getClone(origin)
+```
+
+导出对应的模块调用
+
+更多方法详情，请查阅
+
+## License
+
+[MIT](http://opensource.org/licenses/MIT)
+
+
+
+
+
 ## 🦄@lihai-js/tool
 > 工作中总是要写重复的一些工具方法，浪费时间又没有意义。即想将常用方法函数封装成多个模块，所以就有了`@lihai-js/tool`
 
