@@ -719,6 +719,26 @@ console.log(origin[0].params === target2[0].keys);//false
 
 
 
+| 方法名         | 参数    | 说明             |
+| -------------- | ------- | ---------------- |
+| `getMax(data)` | `Array` | 获取数组中最大值 |
+| `getMin(data)` | `Array` | 获取数组中最小值 |
+| `unique(data)` | `Array` | 数组去重         |
+
+举个🌰
+
+```js
+const { ExpandArray } = require('@lihai-js/tool');
+let arr = [1, 3, "3", 5, 2, 4, 4, 6, 2]
+console.log(ExpandArray.getMax(arr));//6
+console.log(ExpandArray.getMix(arr));//1
+console.log(ExpandArray.unique(arr));//[1, 3, '3', 5,2, 4, 6]
+```
+
+
+
+
+
 
 
 ### 👋最后
