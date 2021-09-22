@@ -25,7 +25,7 @@ let cloneTarget = ExpandObject.getClone(origin)
 
 导出对应的模块调用
 
-更多方法详情，请查阅
+更多方法详情，请查阅 http://jshai.gitee.io/tool
 
 
 
