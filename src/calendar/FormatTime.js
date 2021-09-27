@@ -1,8 +1,7 @@
 const DateTime = require('./DateTime')
 const { _warn } = require('../tool/index')
 const StrategyFromTest = require('../fromTest/StrategyFromTest')
-const seven = 7// 一周7天
-const day = 1000 * 60 * 60 * 24
+const {day} = require('./const')
 const hour = 1000 * 60 * 60
 const minute = 1000 * 60
 const second = 1000
@@ -70,52 +69,6 @@ class FormatTime {
       millisecond: Math.floor(ms) % 1000
     }
     return Object.entries(params).filter(val => val[1] !== 0).map(([key, val]) => `${val} ${key}${val === 1 ? '' : 's'}`).join(', ')
-  }
-
-  setAndReturnDaTe () {
-    const curDate = new Date()
-    curDate.setHours(0)
-    curDate.setSeconds(0)
-    curDate.setMinutes(0)
-    return curDate
-  }
-
-  /**
-   * 获取今日的时间戳范围
-   */
-  getCurDayTime () {
-    const curTime = this.setAndReturnDaTe()
-    const start = curTime.getTime()
-    return {
-      start,
-      end: start + day
-    }
-  }
-
-  /**
-   * 获取本周时间戳范围
-   */
-  getCurWeekTime () {
-    const curTime = this.setAndReturnDaTe()
-    let curDay = curTime.getDay()
-    curDay = curDay > 0 ? curDay : seven
-    const start = curTime.getTime() - ((seven - curDay) * day)
-    return {
-      start,
-      end: start + seven * day
-    }
-  }
-
-  getCurMonthTime () {
-    const curTime = this.setAndReturnDaTe()
-    curTime.setDate(1)
-    const start = curTime.getTime()
-    const month = curTime.getMonth()
-    curTime.setMonth(month + 1)
-    return {
-      start,
-      end: curTime.getTime()
-    }
   }
 }
 module.exports = new FormatTime()

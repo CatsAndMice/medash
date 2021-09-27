@@ -1,4 +1,5 @@
 const FormatTime = require('./FormatTime')
+const DateRange = require('./DateRange')
 const extendsFunc = require('../tool/extends')
 const { _warn } = require('../tool/index')
 const StringCalender = require('./StringCalender')
@@ -27,15 +28,15 @@ class Calendar {
   }
 
   getCurDayTime() {
-    return FormatTime.getCurDayTime()
+    return DateRange.getCurDayTime()
   }
 
   getCurWeekTime() {
-    return FormatTime.getCurWeekTime()
+    return DateRange.getCurWeekTime()
   }
 
   getCurMonthTime() {
-    return FormatTime.getCurMonthTime()
+    return DateRange.getCurMonthTime()
   }
 
   extends(callBacks) {
