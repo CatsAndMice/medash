@@ -11,4 +11,9 @@ let target2 = ExpandArray.format(origin, [{ attr: 'params', formatName: "keys" }
 console.log(target2);
 console.log(origin[0].params === target2[0].keys);
 
+let arr = [1, 3, "3", 5, 2, 4, 4, 6, 2]
+console.log(ExpandArray.getMax(arr));
+console.log(ExpandArray.getMix(arr));
+console.log(ExpandArray.unique(arr));
+
 

@@ -6,6 +6,18 @@ class ExpandArray extends Array {
     super();
   }
 
+  getMax(data = []) {
+    return Math.max.apply(Math, data)
+  }
+
+  getMix(data = []) {
+    return Math.min.apply(Math, data)
+  }
+
+  unique(data = []) {
+    return Array.from(new Set(data));
+  }
+
   //格式化数组成自定义格式
   format(data = [], params, isClone = false) {
     if (!Array.isArray(data)) {
