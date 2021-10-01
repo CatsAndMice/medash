@@ -45,7 +45,7 @@ class File extends ModuleStorage {
 
     clear() {
         let isExists = fs.existsSync(dbPath);
-        return isExists ? !fs.rmdirSync(dbPath) : true;
+        return isExists ? !fs.rmdirSync(dbPath, { recursive: true, force: true }) : true;
     }
 
 }

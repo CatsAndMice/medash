@@ -1,14 +1,14 @@
 const DateTime = require('./DateTime')
 const { _warn } = require('../tool/index')
 const StrategyFromTest = require('../fromTest/StrategyFromTest')
-const {day} = require('./const')
+const { day } = require('./const')
 const hour = 1000 * 60 * 60
 const minute = 1000 * 60
 const second = 1000
 const formatTimeReg = /^(\d{4})(?:\D(\d{1,2})\D?)?(?:\D(\d{1,2})\D?)?(?:\s+(?:(\d{1,2})\D?)(?:\D(\d{1,2})\D?)?(?:\D(\d{1,2}))?\D?)?$/
 class FormatTime {
   // 校验日历值是否与实际情况一致
-  _test ({ months, days, hours, minutes, seconds }) {
+  _test({ months, days, hours, minutes, seconds }) {
     const CurDate = DateTime.getCurDateTime()
     const oneDayTime = 1000 * 60 * 60 * 24
     CurDate.setMonth(months)
@@ -26,7 +26,7 @@ class FormatTime {
     return StrategyFromTest.start()
   }
 
-  _dealWith ([year, months = 1, days = 1, hours = 0, minutes = 0, seconds = 0]) {
+  _dealWith([year, months = 1, days = 1, hours = 0, minutes = 0, seconds = 0]) {
     const curDate = DateTime.getCurDateTime()
     if (this._test({ months, days, hours, minutes, seconds })) {
       curDate.setFullYear(year)
@@ -39,18 +39,18 @@ class FormatTime {
     return curDate.getTime()
   }
 
-  _replace (dataSource) {
+  _replace(dataSource) {
     return dataSource.replace(formatTimeReg, (match, ...arg) => {
       arg.splice(-2)
       return this._dealWith(arg)
     })
   }
 
-  _stringToTime (dataSource) {
+  _stringToTime(dataSource) {
     return formatTimeReg.test(dataSource) ? Number(this._replace(dataSource)) : _warn('时间格式错误!')
   }
 
-  getTime (dataSource) {
+  getTime(dataSource) {
     return dataSource ? this._stringToTime(dataSource.trim()) : DateTime.getCurDateMs()
   }
 
@@ -59,7 +59,7 @@ class FormatTime {
      * @param {Number} ms 时间戳
      * @returns
      */
-  getFormatTime (ms) {
+  getFormatTime(ms) {
     ms = Math.abs(ms)
     const params = {
       day: Math.floor(ms / day),
@@ -70,5 +70,28 @@ class FormatTime {
     }
     return Object.entries(params).filter(val => val[1] !== 0).map(([key, val]) => `${val} ${key}${val === 1 ? '' : 's'}`).join(', ')
   }
+
+  /**
+   * 格式化时间，返回一个年月日时分秒对象
+   * @param {Number | Date} ms 时间戳
+   * @return Object
+   */
+  getYmdHms(ms) {
+    let isDate = ms instanceof Date
+    let isNumber = typeof ms === 'number'
+    if (!isDate && !isNumber) {
+      return
+    }
+    isNumber && (ms = new Date(ms))
+    return {
+      year: ms.getFullYear(),
+      month: ms.getMonth() ,
+      date: ms.getDate(),
+      hours: ms.getHours(),
+      minutes: ms.getMinutes(),
+      seconds: ms.getSeconds()
+    }
+  }
 }
+
 module.exports = new FormatTime()
