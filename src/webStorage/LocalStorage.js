@@ -1,7 +1,4 @@
 const ModuleStorage = require('./ModuleStorage')
-/** 浏览器localStorage对象方法封装类
- * @class
- */
 class LocalStorage extends ModuleStorage {
   constructor () {
     super()

@@ -23,6 +23,10 @@ class Calendar {
     return FormatTime.getTime(dataSource)
   }
 
+  getYmdHms(dataSource) {
+    return FormatTime.getYmdHms(dataSource)
+  }
+
   getFormatTime(time) {
     return Number.isNaN(Number(time)) ? _warn('请传入正确的时间戳格式!') : FormatTime.getFormatTime(time)
   }

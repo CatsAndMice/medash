@@ -12,6 +12,7 @@ module.exports = {
   ExpandNumber,
   Calendar,
   MyStorage,
+  ...MyStorage,
   MyEvent,
   FromTest,
   DebounceAndThrottle,

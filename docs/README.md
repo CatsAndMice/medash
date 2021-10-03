@@ -137,6 +137,23 @@ console.log(Calendar.getFormatTime(end - start));//30 days
 
 
 
+`v2.0.2+`
+
+`getYmdHms(date):`时间戳转化成年月日时分秒，返回对象
+
+|  参数  |       类型        |       描述       |
+| :----: | :---------------: | :--------------: |
+| `date` | `Object | Number` | Date对象或时间戳 |
+
+```js
+const { Calendar } = require('@lihai-js/tool');
+console.log( Calendar.getYmdHms(Date.now()))//{year: 2021,month: 9,date: 3,hours: 19,minutes: 32,seconds: 31,day: 0}
+```
+
+
+
+
+
 
 
 #### 🏹数字模块(`v2.0.0`弃)
@@ -240,6 +257,25 @@ LocalStorage.clear();
 
 
 
+`v2.0.2+` 更改:
+
+1. 支持` LocalStorage, SessionStorage`进行缩写直接导出 `Sdb,Ldb`，不需要用借助`MyStorage`
+
+```js
+const {Sdb,Ldb} = require('@lihai-js/tool'),
+```
+
+2. 支持`node`环境中，对数据进行储存。导出`LowDb`对象对数据存储时，**自动判断当前执行环境是否为浏览器**，为浏览器数据存储于`LocalStorage`,否则使用`node`文件模块，将数据以`json`文件的形式，存于本地
+
+```js
+const { LowDb } = require('@lihai-js/tool')
+LowDb.setItem('key', { name: 'db',age:20 })
+```
+
+
+
+
+
 #### 🏹表单校验模块
 
 `addCacheTest(dataSource,config)`将表单校验方法添加至缓存区
@@ -271,6 +307,7 @@ LocalStorage.clear();
 |  `isLessThenValue`   |            校验表单值是否小于指定值 `v1.2.6新增`             |
 | `isGreaterThanValue` |            校验表单值是否大于指定值 `v1.2.6新增`             |
 |       `isNull`       |           校验表单值是否为`null`     `v1.3.4新增`            |
+|     `isBrowser`      |           校验当前环境是否处于浏览器中  `v2.0.2+`            |
 
 
 
@@ -428,6 +465,7 @@ console.log(StrategyFrom.start());//true
 |  `isLessThenValue`   |            校验表单值是否小于指定值 `v1.2.6新增`             |
 | `isGreaterThanValue` |            校验表单值是否大于指定值 `v1.2.6新增`             |
 |       `isNull`       |           校验表单值是否为`null`     `v1.3.4新增`            |
+|     `isBrowser`      |           校验当前环境是否处于浏览器中  `v2.0.2+`            |
 
 上表格内，规则名均单独可以`FromTest`调用，举个🌰
 

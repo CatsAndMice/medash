@@ -1,42 +1,42 @@
 const { isValueNoEmpty } = require('../tool')
 const StrategyFromTest = require('../fromTest/StrategyFromTest')
 class ModuleStorage {
-  _isKey (key) {
+  _isKey(key) {
     StrategyFromTest.addCacheTest(key, Object.assign(isValueNoEmpty, { errorFn: () => console.warn('key值不能为空') }))
     return StrategyFromTest.start()
   }
 
-  _isValue (value) {
+  _isValue(value) {
     StrategyFromTest.addCacheTest(value, Object.assign(isValueNoEmpty, { errorFn: () => console.warn('value值不能为空') }))
     return StrategyFromTest.start()
   }
 
-  _warn () {
+  _warn() {
     console.warn('webStorge仅适用于浏览器环境')
     return false
   }
 
-  _isHaveStoarge () {
+  _isHaveStoarge() {
     return this.Storage ? true : this._warn()
   }
 
-  _isHaveStoargeAndKey (key) {
+  _isHaveStoargeAndKey(key) {
     return this._isHaveStoarge() ? this._isKey(key) : false
   }
 
-  setItem () {
+  setItem() {
     throw new Error('抽象方法setItem不能直接调用')
   }
 
-  getItem () {
+  getItem() {
     throw new Error('抽象方法getItem不能直接调用')
   }
 
-  removeItem () {
+  removeItem() {
     throw new Error('抽象方法removeItem不能直接调用')
   }
 
-  clear () {
+  clear() {
     throw new Error('抽象方法clear不能直接调用')
   }
 }

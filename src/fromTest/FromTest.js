@@ -124,6 +124,11 @@ class FromTest {
     return this.isEqualsValue(type, "object") && this.isEqualsValue(dataSource, null);
   }
 
+  isBrowser() {
+    let type = typeof window;
+    return type !== 'undefined';
+  }
+
   extends(callBacks) {
     extendsFunc.call(this, callBacks)
   }

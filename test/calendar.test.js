@@ -57,4 +57,16 @@ describe('获取今日,本周,本月的时间戳范围', () => {
     curDate = new Date(curDate.getTime() - 1000 * 60 * 60 * 24)
     expect(Calendar.getFormatTime(end - start)).toBe(Calendar.getFormatTime(one * (curDate.getDate())))
   })
+
+  it('getYmdHms', () => {
+    let data = new Date()
+    let { year, month, date, hours, minutes, seconds, day } = Calendar.getYmdHms(data);
+    expect(year).toBe(data.getFullYear())
+    expect(month).toBe(data.getMonth())
+    expect(date).toBe(data.getDate())
+    expect(hours).toBe(data.getHours())
+    expect(minutes).toBe(data.getMinutes())
+    expect(seconds).toBe(data.getSeconds())
+    expect(day).toBe(data.getDay())
+  })
 })
