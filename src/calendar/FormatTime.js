@@ -85,11 +85,12 @@ class FormatTime {
     isNumber && (ms = new Date(ms))
     return {
       year: ms.getFullYear(),
-      month: ms.getMonth() ,
+      month: ms.getMonth(),
       date: ms.getDate(),
       hours: ms.getHours(),
       minutes: ms.getMinutes(),
-      seconds: ms.getSeconds()
+      seconds: ms.getSeconds(),
+      day: ms.getDay()
     }
   }
 }
