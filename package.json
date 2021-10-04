@@ -1,6 +1,6 @@
 {
   "name": "@lihai-js/tool",
-  "version": "2.0.2",
+  "version": "2.0.2-test",
   "description": "📦@lihai-js/tool是总结企业项目中常用方法进行系统性实现封装💡，旨在减少不必要重复coding，抽出更多时间🏊 ,开箱即用🚀 🚀",
   "bugs": {
     "url": "https://github.com/lihai-boop/tool/issues"
@@ -25,6 +25,7 @@
   "scripts": {
     "serve": "docsify serve docs",
     "build": "webpack",
+    "serve-web": "webpack servey",
     "test": "jest ./test",
     "lint": "standard ./*.js  --fix",
     "test-coverage": "jest --coverage",
@@ -37,18 +38,13 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.14.8",
-    "@babel/preset-env": "^7.14.8",
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
     "@types/jest": "^26.0.24",
-    "babel-loader": "^8.2.2",
     "docsify-cli": "^4.4.3",
     "husky": "^4.3.8",
     "jest": "^27.0.6",
-    "standard": "^16.0.3",
-    "webpack": "^5.45.1",
-    "webpack-cli": "^4.7.2"
+    "standard": "^16.0.3"
   },
   "husky": {
     "hooks": {
