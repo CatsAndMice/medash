@@ -1,6 +1,7 @@
+const ModuleStorage = require('./ModuleStorage');
 const fs = require('fs')
 const path = require('path')
-const ModuleStorage = require('./ModuleStorage');
+const process = require('process')
 const cwd = process.cwd()
 const dbPath = path.join(cwd, `db`)
 
@@ -12,6 +13,7 @@ class File extends ModuleStorage {
     setItem(key, value) {
         let isKeyAndValue = super._isKey(key) && super._isValue(value);
         if (isKeyAndValue) {
+            console.log(fs);
             !fs.existsSync(dbPath) && fs.mkdirSync(dbPath)
             fs.writeFileSync(path.join(dbPath, `${key}.json`), JSON.stringify(value));
         }

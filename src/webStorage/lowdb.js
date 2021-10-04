@@ -1,7 +1,7 @@
-const File = require('./file')
 const Ldb = require('./LocalStorage')
 const FromTest = require('../fromTest/FromTest')
 const isBrowser = FromTest.isBrowser()
+const File = !isBrowser&&require('./file')
 class LowDb {
     setItem(key, value) {
         isBrowser ? Ldb.setItem(key, value) : File.setItem(key, value)
