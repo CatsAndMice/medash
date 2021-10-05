@@ -1,9 +1,11 @@
 const ModuleStorage = require('./ModuleStorage');
 const FromTest = require('../fromTest/FromTest')
 const isBrowser = FromTest.isBrowser()
-const fs = require('fs')
-const path = require('path')
-const process = require('process')
+//防止被打包
+const fs = eval("require('fs')")
+const path = eval("require('path')")
+const process = eval("require('process')")
+
 //浏览器环境打包
 const cwd = !isBrowser && process.cwd()
 const dbPath = !isBrowser && path.join(cwd, `db`)
@@ -16,7 +18,6 @@ class File extends ModuleStorage {
     setItem(key, value) {
         let isKeyAndValue = super._isKey(key) && super._isValue(value);
         if (isKeyAndValue) {
-            console.log(fs);
             !fs.existsSync(dbPath) && fs.mkdirSync(dbPath)
             fs.writeFileSync(path.join(dbPath, `${key}.json`), JSON.stringify(value));
         }
