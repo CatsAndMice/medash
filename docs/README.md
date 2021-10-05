@@ -308,6 +308,7 @@ LowDb.setItem('key', { name: 'db',age:20 })
 | `isGreaterThanValue` |            校验表单值是否大于指定值 `v1.2.6新增`             |
 |       `isNull`       |           校验表单值是否为`null`     `v1.3.4新增`            |
 |     `isBrowser`      |           校验当前环境是否处于浏览器中  `v2.0.2+`            |
+|       `isFunc`       |               校验参数类型是否为函数 `v2.0.4+`               |
 
 
 
@@ -466,6 +467,7 @@ console.log(StrategyFrom.start());//true
 | `isGreaterThanValue` |            校验表单值是否大于指定值 `v1.2.6新增`             |
 |       `isNull`       |           校验表单值是否为`null`     `v1.3.4新增`            |
 |     `isBrowser`      |           校验当前环境是否处于浏览器中  `v2.0.2+`            |
+|       `isFunc`       |               校验参数类型是否为函数 `v2.0.4+`               |
 
 上表格内，规则名均单独可以`FromTest`调用，举个🌰
 
