@@ -2,40 +2,20 @@ const { _warn } = require('../tool')
 const extendsFunc = require('../tool/extends')
 const telReg = /^(0|86|17951)?(13[0-9]|15[012356789]|166|17[3678]|18[0-9]|14[57])[0-9]{8}$/
 const emailReg = /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/
-/**
- * 表单校验方法类
- * @class
- */
 class FromTest {
-  /**
-     * 数组长度不为0
-     * @param {Array} dataSource 值
-     * @returns Boolean
-     */
   islengthNoZero(dataSource) {
     const isArr = Array.isArray(dataSource)
     if (isArr) {
       return dataSource.length !== 0
     }
-    _warn(`${dataSource}不是Array类型`)
+    console.warn(`${dataSource}不是Array类型`);
     return false
   }
 
-  /**
-     * 值不为空
-     * @param {String|Number} dataSource 值
-     * @returns Boolean
-     *
-     */
   isValueNoEmpty(dataSource) {
     return dataSource === '' ? false : this.isValueNoUndefined(dataSource)
   }
 
-  /**
-     *
-     * @param {any} dataSource
-     * @returns Boolean
-     */
   isValueNoUndefined(dataSource) {
     const type = typeof dataSource
     return type !== 'undefined'
@@ -88,21 +68,10 @@ class FromTest {
     return keys.every(key => this.isEqualsValue(dataSource[key], value[key]));
   }
 
-  /**
-    * 校验表单是否小于某个值
-    * @param {String | Number} dataSource 表单实际值
-    * @param {String | Number} value 比较大小的目标值
-    */
   isLessThenValue(dataSource, value) {
     return dataSource < value
   }
 
-  /**
-     * 校验表单是否大于某个值
-     * @param {String | Number} dataSource 表单实际值
-     * @param {String | Number} value 比较大小的目标值
-     * @returns
-     */
   isGreaterThanValue(dataSource, value) {
     return dataSource > value
   }
@@ -116,7 +85,7 @@ class FromTest {
     const len = Number(value)
     const isNan = Number.isNaN(len)
     const isDataSourceLessThenValue = String(dataSource).length < value
-    return isNan ? _warn('传入值无法转化成Number类型,请检查!') : !isDataSourceLessThenValue
+    return isNan ? console.warn('传入值无法转化成Number类型,请检查!') : !isDataSourceLessThenValue
   }
 
   isNull(dataSource) {
@@ -127,6 +96,10 @@ class FromTest {
   isBrowser() {
     let type = typeof window;
     return type !== 'undefined';
+  }
+
+  isFunc(callBack) {
+    return typeof callBack === "function";
   }
 
   extends(callBacks) {
