@@ -1,9 +1,12 @@
 const ModuleStorage = require('./ModuleStorage');
+const FromTest = require('../fromTest/FromTest')
+const isBrowser = FromTest.isBrowser()
 const fs = require('fs')
 const path = require('path')
 const process = require('process')
-const cwd = process.cwd()
-const dbPath = path.join(cwd, `db`)
+//浏览器环境打包
+const cwd = !isBrowser && process.cwd()
+const dbPath = !isBrowser && path.join(cwd, `db`)
 
 class File extends ModuleStorage {
     constructor() {
