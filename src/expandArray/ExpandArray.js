@@ -1,4 +1,3 @@
-const { _error } = require('../tool')
 const FromTest = require('../fromTest/FromTest');
 const ExpandObject = require('../expandObject/ExpandObject');
 class ExpandArray extends Array {
@@ -21,7 +20,7 @@ class ExpandArray extends Array {
   //格式化数组成自定义格式
   format(data = [], params, isClone = false) {
     if (!Array.isArray(data)) {
-      _error('参数类型错误,仅支持数组类型!')
+      console.warn('参数类型错误,仅支持数组类型!');
       return
     }
 

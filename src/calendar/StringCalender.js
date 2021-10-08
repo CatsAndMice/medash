@@ -1,19 +1,18 @@
-const { _warn } = require('../tool/index')
 const ExpandNumber = require('../expandNumber/ExpandNumber')
 const DateTime = require('./DateTime')
 const ymdReg = /^(YY).(MM).(DD).?$/
 const hmsReg = /^(hh).(mm).(ss).?$/
 const dateReg = /^(YY).(MM).(DD).?\s(hh).(mm).?(ss)?.?$/
 class StringCalender {
-  _createHMSArray () {
+  _createHMSArray() {
     return [this.CurDate.getHours(), this.CurDate.getMinutes(), this.CurDate.getSeconds()]
   }
 
-  _createYMDArray () {
-    return [this.CurDate.getFullYear(),this.CurDate.getMonth()+1, this.CurDate.getDate()]
+  _createYMDArray() {
+    return [this.CurDate.getFullYear(), this.CurDate.getMonth() + 1, this.CurDate.getDate()]
   }
 
-  _createArray (format, captures) {
+  _createArray(format, captures) {
     let date = null
     if (captures.length === 6) {
       date = [].concat(this._createYMDArray(), this._createHMSArray())
@@ -31,9 +30,9 @@ class StringCalender {
     * @param {*} reg 正则
     * @returns String
     */
-  _getReplaceFormat (format, reg) {
+  _getReplaceFormat(format, reg) {
     if (!reg) {
-      _warn(`${format}格式不正确`)
+      console.warn(`${format}格式不正确`)
       return
     }
     return format.replace(reg, (match, ...captures) => {
@@ -47,7 +46,7 @@ class StringCalender {
     })
   }
 
-  getStringCalender (dateTime, format = 'YY.MM.DD hh:mm:ss') {
+  getStringCalender(dateTime, format = 'YY.MM.DD hh:mm:ss') {
     this.CurDate = dateTime ? DateTime.setAndReturnDateTime(dateTime) : DateTime.getCurDateTime()
     const regs = [ymdReg, hmsReg, dateReg]
     return this._getReplaceFormat(format, regs.find(reg => reg.test(format)))

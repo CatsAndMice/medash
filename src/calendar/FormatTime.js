@@ -1,5 +1,4 @@
 const DateTime = require('./DateTime')
-const { _warn } = require('../tool/index')
 const StrategyFromTest = require('../fromTest/StrategyFromTest')
 const { day } = require('./const')
 const hour = 1000 * 60 * 60
@@ -14,15 +13,15 @@ class FormatTime {
     CurDate.setMonth(months)
     CurDate.setDate(1)
     const maxData = new Date(CurDate.getTime() - oneDayTime).getDate()
-    StrategyFromTest.addCacheTest(months, { description: 'isLessThenValue', value: 13, errorFn: () => _warn('月份不应超出12个月!') })
+    StrategyFromTest.addCacheTest(months, { description: 'isLessThenValue', value: 13, errorFn: () => console.warn('月份不应超出12个月!') })
     StrategyFromTest.addCacheTest(days, [
-      { description: 'isLessThenValue', value: 32, errorFn: () => _warn('日期不应大于31号!') },
+      { description: 'isLessThenValue', value: 32, errorFn: () => console.warn('日期不应大于31号!') },
       // 该校验日期不应大于当月的最大日期
-      { description: 'isLessThenValue', value: maxData + 1, errorFn: () => _warn(`日期不应大于${months}月最大日期${maxData}!`) }
+      { description: 'isLessThenValue', value: maxData + 1, errorFn: () => console.warn(`日期不应大于${months}月最大日期${maxData}!`) }
     ])
-    StrategyFromTest.addCacheTest(hours, { description: 'isLessThenValue', value: 24, errorFn: () => _warn('小时不应超过24!') })
-    StrategyFromTest.addCacheTest(minutes, { description: 'isLessThenValue', value: 60, errorFn: () => _warn('分钟不应超出60分钟!') })
-    StrategyFromTest.addCacheTest(seconds, { description: 'isLessThenValue', value: 60, errorFn: () => _warn('秒不应超出60秒!') })
+    StrategyFromTest.addCacheTest(hours, { description: 'isLessThenValue', value: 24, errorFn: () => console.warn('小时不应超过24!') })
+    StrategyFromTest.addCacheTest(minutes, { description: 'isLessThenValue', value: 60, errorFn: () => console.warn('分钟不应超出60分钟!') })
+    StrategyFromTest.addCacheTest(seconds, { description: 'isLessThenValue', value: 60, errorFn: () => console.warn('秒不应超出60秒!') })
     return StrategyFromTest.start()
   }
 
@@ -47,7 +46,7 @@ class FormatTime {
   }
 
   _stringToTime(dataSource) {
-    return formatTimeReg.test(dataSource) ? Number(this._replace(dataSource)) : _warn('时间格式错误!')
+    return formatTimeReg.test(dataSource) ? Number(this._replace(dataSource)) : console.warn('时间格式错误!')
   }
 
   getTime(dataSource) {

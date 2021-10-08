@@ -1,7 +1,6 @@
-const { _error } = require('./index')
 module.exports = function (callBacks) {
   if (Object.prototype.toString.call(callBacks) !== '[object Object]') {
-    _error('参数仅支持对象')
+    console.warn('参数仅支持对象')
     return
   }
 
@@ -9,7 +8,7 @@ module.exports = function (callBacks) {
   keys.forEach(key => {
     // 判断扩展方法是否已存在原型上
     if (key in this) {
-      _error(key + '已存在原型中,禁止覆盖!')
+      console.warn(key + '已存在原型中,禁止覆盖!');
       return
     }
 

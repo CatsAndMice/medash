@@ -7,13 +7,13 @@ class MyEvent {
   }
 
   _isHaveKey(key) {
-    StrategyFromTest.addCacheTest(key, Object.assign(isValueNoEmpty, { errorFn: () => _warn('事件名不能为空') }))
+    StrategyFromTest.addCacheTest(key, Object.assign(isValueNoEmpty, { errorFn: () => console.warn('事件名不能为空') }))
     return StrategyFromTest.start()
   }
 
   _isHaveKeyAndValue(key, value) {
     const isHaveKey = this._isHaveKey(key)
-    StrategyFromTest.addCacheTest(value, Object.assign(isValueNoEmpty, { errorFn: () => _warn('事件事件不能为空') }))
+    StrategyFromTest.addCacheTest(value, Object.assign(isValueNoEmpty, { errorFn: () => console.warn('事件事件不能为空') }))
     return isHaveKey && StrategyFromTest.start()
   }
 

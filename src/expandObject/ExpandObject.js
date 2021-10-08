@@ -1,5 +1,4 @@
 const FromTest = require('../fromTest/FromTest');
-const { _warn } = require('../tool');
 class ExpandObject {
   getClone(origin, target = {}) {
     let isArray = Array.isArray(origin);
@@ -42,7 +41,7 @@ class ExpandObject {
             continue
           }
         } catch {
-          _warn('该运行环境中没有DOM元素')
+          console.warn('该运行环境中没有DOM元素');
         }
 
 

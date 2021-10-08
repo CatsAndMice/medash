@@ -1,7 +1,6 @@
 const FormatTime = require('./FormatTime')
 const DateRange = require('./DateRange')
 const extendsFunc = require('../tool/extends')
-const { _warn } = require('../tool/index')
 const StringCalender = require('./StringCalender')
 class Calendar {
   /**
@@ -28,7 +27,7 @@ class Calendar {
   }
 
   getFormatTime(time) {
-    return Number.isNaN(Number(time)) ? _warn('请传入正确的时间戳格式!') : FormatTime.getFormatTime(time)
+    return Number.isNaN(Number(time)) ? console.warn('请传入正确的时间戳格式!') : FormatTime.getFormatTime(time)
   }
 
   getCurDayTime() {

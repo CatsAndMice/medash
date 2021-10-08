@@ -1,4 +1,3 @@
-const { _warn } = require('../tool')
 const extendsFunc = require('../tool/extends')
 class ExpandNumber extends Number {
   /**
@@ -8,7 +7,7 @@ class ExpandNumber extends Number {
      * @returns Number
      */
   getRangeNumber(min, max) {
-    return max > min ? Math.round((Math.random() * (max - min)) + min) : _warn('max值小于min,参数不合法!')
+    return max > min ? Math.round((Math.random() * (max - min)) + min) : console.warn('max值小于min,参数不合法!')
   }
 
   /**
