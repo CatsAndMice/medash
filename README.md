@@ -33,7 +33,7 @@ MyEvent.trigger('click');
 ```
 
 导出对应的模块使用
-更多方法详情，请根据网络情况选择https://catsandmice.github.io/tool/#/或http://jshai.gitee.io/tool进行查阅
+更多方法详情，请根据网络情况选择https://catsandmice.github.io/tool/#/ 或 http://jshai.gitee.io/tool 进行查阅
 
 
 ## License
