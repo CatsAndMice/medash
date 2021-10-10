@@ -11,27 +11,34 @@
 
 ```shell
 npm install @lihai-js/tool
+//yarn add  @lihai-js/tool
 ```
-
 
 
 ## Usage
-
+深克隆
 ```js
-const { ExpandObject } = require('../../main');
+const { ExpandObject } = require('@lihai-js/tool');
 let origin = { name: '克隆', childrens: { name: "子类" } }
 let cloneTarget = ExpandObject.getClone(origin)
 ```
-导出对应的模块调用
+订阅事件
+```js
+const { MyEvent } = require('@lihai-js/tool');
+MyEvent.on('click', () => {
+    console.log('订阅一个click事件');
+});
 
-更多方法详情，请查阅 http://jshai.gitee.io/tool
+MyEvent.trigger('click');
+```
 
+导出对应的模块使用
+更多方法详情，请根据网络情况选择https://catsandmice.github.io/tool/#/或http://jshai.gitee.io/tool进行查阅
 
 
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)
-
 
 
 ## Contact me 

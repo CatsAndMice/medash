@@ -10,4 +10,4 @@
 
 
 [GitHub](https://github.com/CatsAndMice/tool)
-[Get Started](?id=🦄lihai-jstool)
+[Get Started](/v2/README.md)

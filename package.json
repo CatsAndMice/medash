@@ -24,7 +24,6 @@
   "main": "main.js",
   "scripts": {
     "serve": "docsify serve docs",
-    "build": "webpack",
     "serve-web": "webpack servey",
     "test": "jest ./test",
     "lint": "standard ./*.js  --fix",
