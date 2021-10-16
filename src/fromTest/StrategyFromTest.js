@@ -27,8 +27,10 @@ class StrategyFromTest {
   }
 
   _oneConfig(dataSource, config) {
-    const { description, errorFn = function () { } } = config
-    let [methodName, value] = description.split(':')
+    const { description, key, errorFn = function () { } } = config
+    //description简化成key值, key优先值更高
+    let [methodName, value] = key ? key.split(':') : description.split(':')
+
     // 传入value优先级比截取高
     value = config.value ? config.value : value
     this.cacheTest.push({ dataSource, methodName, value, errorFn })
