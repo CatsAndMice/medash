@@ -12,8 +12,13 @@ class FromTest {
     return false
   }
 
+  //0,null,'',undefined 均认为成空值
   isValueNoEmpty(dataSource) {
-    return dataSource === '' ? false : this.isValueNoUndefined(dataSource)
+    let isNoNull = !this.isNull(dataSource);
+    let isNoUndefined = this.isValueNoUndefined(dataSource)
+    let isNoEqualsStr = !this.isEqualsValue(dataSource, "");
+    let isNoZero = !this.isEqualsValue(dataSource, 0)
+    return isNoNull && isNoUndefined && isNoEqualsStr && isNoZero;
   }
 
   isValueNoUndefined(dataSource) {
@@ -86,6 +91,14 @@ class FromTest {
     const isNan = Number.isNaN(len)
     const isDataSourceLessThenValue = String(dataSource).length < value
     return isNan ? console.warn('传入值无法转化成Number类型,请检查!') : !isDataSourceLessThenValue
+  }
+
+  //密码是否满足安全性
+  isSafePaddWord(dataSource) {
+
+
+
+    return
   }
 
   isNull(dataSource) {
