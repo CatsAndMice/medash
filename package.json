@@ -1,6 +1,6 @@
 {
   "name": "@lihai-js/tool",
-  "version": "2.0.5",
+  "version": "2.1.0",
   "description": "📦@lihai-js/tool是总结企业项目中常用方法进行系统性实现封装💡，旨在减少不必要重复coding，抽出更多时间🏊 ,开箱即用🚀 🚀",
   "bugs": {
     "url": "https://github.com/lihai-boop/tool/issues"
