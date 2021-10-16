@@ -287,17 +287,17 @@ LowDb.setItem('key', { name: 'db',age:20 })
 
 
 
-|   对象字段    |                         描述                         |
-| :-----------: | :--------------------------------------------------: |
-| `description` |               调用哪个方法来校验表单值               |
-|   `errorFn`   |             表单校验不失败执行的回调函数             |
-|    `value`    | `v1.2.6新增`，取代`description`字段中使用`:`进行传值 |
+|          对象字段          |                         描述                         |
+| :------------------------: | :--------------------------------------------------: |
+| `description(可简写成key)` |               调用哪个方法来校验表单值               |
+|         `errorFn`          |             表单校验不失败执行的回调函数             |
+|          `value`           | `v1.2.6新增`，取代`description`字段中使用`:`进行传值 |
 
-`description`字段可选值有：
+`description(key)`字段可选值有：
 
 |      可选方法名      |                             描述                             |
 | :------------------: | :----------------------------------------------------------: |
-|   `isValueNoEmpty`   |                      校验表单值是否为空                      |
+|   `isValueNoEmpty`   |  校验表单值是否为空，其中`0,null,'',undefined`将认为成空值   |
 |   `islengthNoZero`   |                  校验表单值数组长度是否为零                  |
 | `isValueNoUndefined` |                   表单值是否为`undefined`                    |
 |   `isQualifiedTel`   |                表单值是否符合电话号码常用格式                |
@@ -456,7 +456,7 @@ console.log(StrategyFrom.start());//true
 
 |      可选方法名      |                             描述                             |
 | :------------------: | :----------------------------------------------------------: |
-|   `isValueNoEmpty`   |                      校验表单值是否为空                      |
+|   `isValueNoEmpty`   |  校验表单值是否为空，其中`0,null,'',undefined`将认为成空值   |
 |   `islengthNoZero`   |                  校验表单值数组长度是否为零                  |
 | `isValueNoUndefined` |                   表单值是否为`undefined`                    |
 |   `isQualifiedTel`   |                表单值是否符合电话号码常用格式                |
