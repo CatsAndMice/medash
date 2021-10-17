@@ -22,5 +22,7 @@ describe('校验表单方法', () => {
         expect(FromTest.isSafePaddWord('12ABabc')).toBeFalsy()
         expect(FromTest.isSafePaddWord('12Aab*c')).toBeFalsy()
         expect(FromTest.isSafePaddWord('aAB**12')).toBeFalsy()
+        expect(FromTest.isSafePaddWord('12AabB##')).toBeTruthy()
+        expect(FromTest.isSafePaddWord('aAB@!aa11?')).toBeTruthy()
     })
 })
