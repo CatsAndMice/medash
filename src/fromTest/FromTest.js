@@ -95,10 +95,8 @@ class FromTest {
 
   //密码是否满足安全性
   isSafePaddWord(dataSource) {
-
-
-
-    return
+    let reg = /^.*(?=.{6,16})(?=.*\d)(?=.*[A-Z]{1,}(.*)?[A-Z]{1,})(?=.*[a-z]{1,}(.*)?[a-z]{1,})(?=.*[!@#$%^&*?\(\)]).*$/
+    return reg.test(dataSource);
   }
 
   isNull(dataSource) {

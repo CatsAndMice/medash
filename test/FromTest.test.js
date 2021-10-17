@@ -16,4 +16,11 @@ describe('校验表单方法', () => {
         expect(FromTest.isValueNoEmpty(0)).toBeFalsy()
         expect(FromTest.isValueNoEmpty('0')).toBeTruthy()
     })
+
+    it('isSafePaddWord', () => {
+        expect(FromTest.isSafePaddWord('123AbA*a')).toBeTruthy()
+        expect(FromTest.isSafePaddWord('12ABabc')).toBeFalsy()
+        expect(FromTest.isSafePaddWord('12Aab*c')).toBeFalsy()
+        expect(FromTest.isSafePaddWord('aAB**12')).toBeFalsy()
+    })
 })
