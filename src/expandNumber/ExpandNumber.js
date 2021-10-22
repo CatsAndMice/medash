@@ -1,11 +1,5 @@
 const extendsFunc = require('../tool/extends')
 class ExpandNumber extends Number {
-  /**
-     * 随机获取一个范围内的值
-     * @param {Number} min 最小值
-     * @param {Number} max 最大值
-     * @returns Number
-     */
   getRangeNumber(min, max) {
     return max > min ? Math.round((Math.random() * (max - min)) + min) : console.warn('max值小于min,参数不合法!')
   }
