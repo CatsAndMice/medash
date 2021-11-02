@@ -26,7 +26,6 @@
     "serve": "docsify serve docs",
     "serve-web": "webpack servey",
     "test": "jest ./test",
-    "lint": "standard ./*.js  --fix",
     "test-coverage": "jest --coverage",
     "patch": "npm version patch&&npm publish ",
     "minor": "npm version minor&&npm publish",
@@ -49,7 +48,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm run test",
+      "pre-commit": "npm run test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
