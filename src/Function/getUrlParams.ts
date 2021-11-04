@@ -1,3 +1,8 @@
+/**
+ * 获取路径中传递的参数
+ * @param url 
+ * @returns 
+ */
 export default function getParams(url: string): Object {
     let params: any = {};
     let createUrl: URL = new URL(url);
@@ -9,3 +14,4 @@ export default function getParams(url: string): Object {
     }
     return params;
 }
+
