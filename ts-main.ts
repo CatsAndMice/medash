@@ -16,7 +16,7 @@ import isTel from "./src/Function/isTel";
 import isUndefined from "./src/Function/isUndefined";
 import isSafePaddWord from "./src/Function/isSafePaddWord";
 import isFunc from "./src/Function/isFunc";
-
+import debounce from "./src/Function/debounce"
 
 export {
     getMax,
@@ -36,7 +36,8 @@ export {
     isTel,
     isUndefined,
     isSafePaddWord,
-    isFunc
+    isFunc,
+    debounce
 }
 
 export default {
@@ -57,5 +58,6 @@ export default {
     isTel,
     isUndefined,
     isSafePaddWord,
-    isFunc
+    isFunc,
+    debounce
 }
