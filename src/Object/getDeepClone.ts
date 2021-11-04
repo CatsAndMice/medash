@@ -1,3 +1,4 @@
+import isNull from "../Function/isNull";
 export default function getDeelClone(origin: { [key: string]: any }, target: { [key: string]: any } = {}): object {
     let keys = Object.keys(origin);
     for (let index = 0; index < keys.length; index++) {
@@ -5,8 +6,7 @@ export default function getDeelClone(origin: { [key: string]: any }, target: { [
         let value = origin[key]
         let type = typeof value;
         if (type === "object") {
-            let isNull = FromTest.isNull(value)
-            if (isNull) {
+            if (isNull(value)) {
                 target[key] = value;
                 continue
             }

@@ -1,8 +1,4 @@
-/**
- * 获取路径中传递的参数
- * @param url 
- * @returns 
- */
+// 获取路径中传递的参数
 export default function getParams(url: string): Object {
     let params: any = {};
     let createUrl: URL = new URL(url);
