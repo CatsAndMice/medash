@@ -12,11 +12,17 @@ export default function eq(value: any, target: any): boolean {
         return value.getTime() === target.getTime();
     }
 
+    //正则
+    if (value instanceof RegExp && target instanceof RegExp) {
+        return String(value) === String(target)
+    }
+
 
     //排除其中值有为空,全部为空的情况
     if (!target || !value || (typeof target !== "object" && typeof value !== "object")) {
         return value === target;
     }
+
 
     //引用类型
     if (value.prototype !== target.prototype) return false;
