@@ -18,14 +18,12 @@ export function getUrlParams(url: string): Object {
 
 export function getConcatParams(params: Params = {}) {
     let keys = Object.keys(params);
-    let len = keys.length - 1;
     let values = '?'
-    keys.forEach((key, index) => {
+    keys.forEach((key) => {
         let value = params[key];
         if (isEmpty(value)) return;
         values += `${key}=${value}&`;
     })
-
     return values.replace(/&$/g, '');
 }
 

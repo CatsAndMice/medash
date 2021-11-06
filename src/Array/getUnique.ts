@@ -1,4 +1,4 @@
-export default function getUniqueArray(args: []): any[] {
+export default (args: []): any[] => {
     let arrs: any[] = [];
     if (Set) {
         return Array.from(new Set(args))

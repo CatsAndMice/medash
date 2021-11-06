@@ -6,6 +6,7 @@ import getClone from "./src/Object/getClone";
 import getDeelClone from "./src/Object/getDeepClone";
 import eq from "./src/Function/eq";
 import { getUrlParams, getConcatParams } from "./src/Function/url";
+import { getThousandsChar, getGtTenStr, getNumber } from "./src/Function/number";
 import gt from "./src/Function/gt";
 import lt from "./src/Function/lt";
 import isBrowser from "./src/Function/isBrowser";
@@ -40,7 +41,11 @@ export {
     isFunc,
     debounce,
     throttle,
-    getConcatParams
+    getConcatParams,
+    getNumber,
+    getGtTenStr,
+    getThousandsChar
+
 }
 
 export default {
@@ -64,5 +69,8 @@ export default {
     isFunc,
     debounce,
     throttle,
-    getConcatParams
+    getConcatParams,
+    getNumber,
+    getGtTenStr,
+    getThousandsChar
 }
