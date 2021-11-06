@@ -5,7 +5,7 @@ import isZeroLen from "./src/Array/isZeroLen"
 import getClone from "./src/Object/getClone";
 import getDeelClone from "./src/Object/getDeepClone";
 import eq from "./src/Function/eq";
-import getUrlParams from "./src/Function/getUrlParams";
+import { getUrlParams, getConcatParams } from "./src/Function/url";
 import gt from "./src/Function/gt";
 import lt from "./src/Function/lt";
 import isBrowser from "./src/Function/isBrowser";
@@ -16,7 +16,8 @@ import isTel from "./src/Function/isTel";
 import isUndefined from "./src/Function/isUndefined";
 import isSafePaddWord from "./src/Function/isSafePaddWord";
 import isFunc from "./src/Function/isFunc";
-import debounce from "./src/Function/debounce"
+import debounce from "./src/Function/debounce";
+import throttle from "./src/Function/throttle";
 
 export {
     getMax,
@@ -37,7 +38,9 @@ export {
     isUndefined,
     isSafePaddWord,
     isFunc,
-    debounce
+    debounce,
+    throttle,
+    getConcatParams
 }
 
 export default {
@@ -59,5 +62,7 @@ export default {
     isUndefined,
     isSafePaddWord,
     isFunc,
-    debounce
+    debounce,
+    throttle,
+    getConcatParams
 }

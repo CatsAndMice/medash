@@ -24,6 +24,6 @@ export default (callBack: () => void, option: Params | number = 1000, immediate:
         timer = setTimeout(() => {
             callBack();
             timer = null;
-        })
+        }, wait)
     }
 }

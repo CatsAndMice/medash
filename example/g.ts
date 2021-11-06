@@ -1,3 +1,9 @@
-import { debounce } from "../main"
-console.log(debounce(() => { }, { immediate: true, wait: 1 }));
-console.log(debounce(() => { },2000));
+import { debounce, throttle } from "../main"
+let fn = debounce(() => console.log(11));
+let fn1 = throttle(() => {
+    console.log(222);
+})
+fn()
+fn1()
+fn1()
+
