@@ -2,6 +2,7 @@ import getMax from "./src/Array/getMax";
 import getMin from "./src/Array/getMin";
 import getUnique from "./src/Array/getUnique";
 import isZeroLen from "./src/Array/isZeroLen"
+import customKey from "./src/Array/customKey";
 import getClone from "./src/Object/getClone";
 import getDeelClone from "./src/Object/getDeepClone";
 import eq from "./src/Function/eq";
@@ -19,6 +20,7 @@ import isSafePaddWord from "./src/Function/isSafePaddWord";
 import isFunc from "./src/Function/isFunc";
 import debounce from "./src/Function/debounce";
 import throttle from "./src/Function/throttle";
+
 
 export {
     getMax,
@@ -44,7 +46,8 @@ export {
     getConcatParams,
     getNumber,
     getGtTenStr,
-    getThousandsChar
+    getThousandsChar,
+    customKey
 
 }
 
@@ -72,5 +75,6 @@ export default {
     getConcatParams,
     getNumber,
     getGtTenStr,
-    getThousandsChar
+    getThousandsChar,
+    customKey
 }

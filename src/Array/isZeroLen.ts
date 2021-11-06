@@ -3,5 +3,5 @@ export default (args: any[]): boolean => {
         console.warn(`${args}不是Array类型`);
         return false
     }
-    return args.length !== 0
+    return args.length === 0
 }
