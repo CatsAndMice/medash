@@ -6,21 +6,18 @@ import commonjs from '@rollup/plugin-commonjs';
 import { terser } from "rollup-plugin-terser";
 
 export default {
-    input: { main: "./main.ts" },
-    output: [{
-        main: [{
-            file: pkg.main,
-            format: 'cjs'
-        },
+    input: ["./main.ts", './src/Array/getMin.ts'],
+    output: [
         {
-            file: pkg.module,
+            dir: 'lib/esm',
             format: 'esm'
-        }, {
-            file: pkg.browser,
-            format: 'umd',
-            name: '_t'
-        }]
-    }],
+        },
+
+        {
+            dir: 'lib/cjs',
+            format: 'cjs'
+        }
+    ],
     plugins: [
         typescript(),
         commonjs(),

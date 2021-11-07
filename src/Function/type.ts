@@ -8,4 +8,5 @@ export const params: Params = {
     wait: 1000,
     immediate: false
 }
+
 export default Params;

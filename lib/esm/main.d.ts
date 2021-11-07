@@ -1,0 +1,68 @@
+import getMax from "./src/Array/getMax";
+import getMin from "./src/Array/getMin";
+import getUnique from "./src/Array/getUnique";
+import isZeroLen from "./src/Array/isZeroLen";
+import customKey from "./src/Array/customKey";
+import getClone from "./src/Object/getClone";
+import getDeelClone from "./src/Object/getDeepClone";
+import eq from "./src/Function/eq";
+import getUrlParams from "./src/Function/getUrlParams";
+import getConcatParams from "./src/Function/getConcatParams";
+import getThousandsChar from "./src/Function/getThousandsChar";
+import getNumber from "./src/Function/getNumber";
+import getGtTenStr from "./src/Function/getGtTenStr";
+import gt from "./src/Function/gt";
+import lt from "./src/Function/lt";
+import isBrowser from "./src/Function/isBrowser";
+import isEmail from "./src/Function/isEmail";
+import isEmpty from "./src/Function/isEmpty";
+import isNull from "./src/Function/isNull";
+import isTel from "./src/Function/isTel";
+import isUndefined from "./src/Function/isUndefined";
+import isSafePaddWord from "./src/Function/isSafePaddWord";
+import isFunc from "./src/Function/isFunc";
+import debounce from "./src/Function/debounce";
+import throttle from "./src/Function/throttle";
+export { getMax, getMin, getUnique, isZeroLen, getClone, getDeelClone, eq, lt, gt, getUrlParams, isBrowser, isEmail, isEmpty, isNull, isTel, isUndefined, isSafePaddWord, isFunc, debounce, throttle, getConcatParams, getNumber, getGtTenStr, getThousandsChar, customKey };
+declare const _default: {
+    getMax: (ages: number[]) => number;
+    getMin: typeof getMin;
+    getUnique: (args: any[]) => any[];
+    isZeroLen: (args: any[]) => boolean;
+    getClone: typeof getClone;
+    getDeelClone: typeof getDeelClone;
+    eq: typeof eq;
+    lt: (value: string | number, target: string | number) => boolean;
+    gt: (value: string | number, target: string | number) => boolean;
+    getUrlParams: (url: string) => Object;
+    isBrowser: () => boolean;
+    isEmail: (value: string) => boolean;
+    isEmpty: (value: any) => boolean;
+    isNull: (value: any) => boolean;
+    isTel: (tel: string | number) => boolean;
+    isUndefined: (value: any) => boolean;
+    isSafePaddWord: (paddWord: string) => boolean;
+    isFunc: (callBack: any) => boolean;
+    debounce: (callBack: () => void, option?: number | import("./src/Function/type").default, immediate?: boolean) => () => void;
+    throttle: (callBack: () => void, option?: number | import("./src/Function/type").default, immediate?: boolean) => () => void;
+    getConcatParams: (params?: {
+        [key: string]: any;
+    }) => string;
+    getNumber: (min: number, max: number) => number | void;
+    getGtTenStr: (num: number) => string;
+    getThousandsChar: (num: number, char?: string) => string;
+    customKey: (args: {
+        [key: string]: any;
+    }[], option: {
+        key: string;
+        customKey: string;
+        skip?: (string | number | any[]) | undefined;
+        isClone?: boolean | undefined;
+    } | {
+        key: string;
+        customKey: string;
+        skip?: (string | number | any[]) | undefined;
+        isClone?: boolean | undefined;
+    }[], isClone?: boolean) => any[];
+};
+export default _default;
