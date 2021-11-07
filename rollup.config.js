@@ -9,12 +9,7 @@ export default {
     input: ["./main.ts", ...build],
     output: [
         {
-            dir: 'lib/esm',
-            format: 'esm'
-        },
-
-        {
-            dir: 'lib/cjs',
+            dir: 'lib',
             format: 'cjs'
         }
     ],

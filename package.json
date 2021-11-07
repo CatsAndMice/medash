@@ -11,8 +11,7 @@
     "url": "https://github.com/lihai-boop/tool.git"
   },
   "files": [
-    "src",
-    "main.js"
+    "lib"
   ],
   "keywords": [
     "class",
@@ -21,10 +20,8 @@
     "工具方法",
     "开箱即用"
   ],
-  "main": "lib/main.cjs",
-  "module": "lib/main.mjs",
-  "browser": "lib/main.min.js",
-  "types": "lib/main.d.ts",
+  "main": "lib/main.js",
+  "types": "lib/esm/main.d.ts",
   "scripts": {
     "serve": "docsify serve docs",
     "build": "rollup -c",

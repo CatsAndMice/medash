@@ -1,4 +1,4 @@
-const fs = require('fs')
+const fs = require('fs');
 const Path = require('path');
 
 let buildInputs = [];
@@ -30,7 +30,5 @@ function startBuild({ files, path }) {
 
     })
 }
-
 startBuild(getFileNames(__dirname, '../src'))
-console.log(buildInputs);
 module.exports = buildInputs;
