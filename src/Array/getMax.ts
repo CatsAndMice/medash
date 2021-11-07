@@ -1,3 +1,3 @@
-export default function getMax(ages: number[]): number {
+export default (ages: number[]): number => {
     return Math.max.apply(Math, ages)
 }
