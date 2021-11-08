@@ -1,5 +1,5 @@
 {
-  "name": "@lihai-js/tool",
+  "name": "medash",
   "version": "2.1.0",
   "description": "📦@lihai-js/tool是总结企业项目中常用方法进行系统性实现封装💡，旨在减少不必要重复coding，抽出更多时间🏊 ,开箱即用🚀 🚀",
   "bugs": {
@@ -27,10 +27,10 @@
     "build": "rollup -c",
     "test": "jest ./test",
     "test-coverage": "jest --coverage",
-    "patch": "npm version patch&&npm publish ",
-    "minor": "npm version minor&&npm publish",
-    "major": "npm version major&&npm publish",
-    "publish": "npm run build&&npm publish --access=public"
+    "patch": "npm version patch&&npm run publish",
+    "minor": "npm version minor&&npm run publish",
+    "major": "npm version major&&npm run publish",
+    "publish": "npm run build&&npm publish"
   },
   "author": "hai",
   "license": "MIT",
