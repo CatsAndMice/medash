@@ -1,4 +1,11 @@
-import { debounce, customKey } from "../main"
-let a = [{ name: 2, sex: 'lihai' }]
-console.log(customKey(a, [{ key: 'name', customKey: 'age', skip: 2 }, { key: 'sex', customKey: 'name' }]));
+import medash from "../main"
+const fn = () => { }
+medash.once('one', function () {
+    console.log(1)
+})
+medash.once('one', fn)
+medash.once('one', fn)
+medash.watchCache()
+medash.trigger('one')
+medash.watchCache()
 

@@ -23,7 +23,7 @@ import isSafePaddWord from "./src/Function/isSafePaddWord";
 import isFunc from "./src/Function/isFunc";
 import debounce from "./src/Function/debounce";
 import throttle from "./src/Function/throttle";
-
+import { on, once, remove, setMaxCache, watchCache, trigger } from './src/Object/event';
 
 export {
     getMax,
@@ -50,7 +50,13 @@ export {
     getNumber,
     getGtTenStr,
     getThousandsChar,
-    customKey
+    customKey,
+    on,
+    once,
+    remove,
+    setMaxCache,
+    watchCache,
+    trigger
 
 }
 
@@ -79,5 +85,11 @@ export default {
     getNumber,
     getGtTenStr,
     getThousandsChar,
-    customKey
+    customKey,
+    on,
+    once,
+    remove,
+    setMaxCache,
+    watchCache,
+    trigger
 }
