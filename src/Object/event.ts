@@ -2,6 +2,7 @@ import isEmpty from "../Function/isEmpty";
 import isFunc from "../Function/isFunc";
 import gt from "../Function/gt";
 import isLenZero from "../Array/isZeroLen";
+import eq from "../Function/eq";
 
 let maxCache: number = 15;
 const events = new Map();
@@ -10,12 +11,18 @@ function _isHaveKeyAndValue(key: string, value: () => void): boolean {
     return !isEmpty(key) && isFunc(value);
 }
 
+function isSomeFunction(args: any[], value): boolean {
+    return args.some(arg => {
+        return eq(arg, value)
+    })
+}
+
 function _addEvent(key: string, value: () => void, once: boolean = false) {
     if (_isHaveKeyAndValue(key, value)) {
         once && isFunc(value) && ((value as any).once = true)
         if (events.has(key)) {
             const callBacks = events.get(key)
-            if (!callBacks.includes(value)) {
+            if (!callBacks.includes(value) && !isSomeFunction(callBacks, value)) {
                 const keyLen = callBacks.length
                 if (gt(keyLen, maxCache)) {
                     console.warn('已超出最大缓存量!请注意内存泄露');
@@ -66,6 +73,10 @@ export function remove(key) {
 
 export function setMaxCache(num: number) {
     maxCache = num
+}
+
+export function getMaxCache() {
+    return maxCache;
 }
 
 export function watchCache() {

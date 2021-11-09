@@ -9,3 +9,10 @@ medash.watchCache()
 medash.trigger('one')
 medash.watchCache()
 
+console.log(medash.eq(() => {
+    console.log(11);
+}, () => {
+    console.log(11);
+}));
+
+

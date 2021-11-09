@@ -1,3 +1,4 @@
+import isFunc from "./isFunc";
 
 /**
  * 比较值是否相等
@@ -15,6 +16,13 @@ export default function eq(value: any, target: any): boolean {
     //正则
     if (value instanceof RegExp && target instanceof RegExp) {
         return String(value) === String(target)
+    }
+
+    //函数 
+    if (isFunc(value) && isFunc(target)) {
+        let valueStr = value.toString();
+        let targetStr = target.toString();
+        return valueStr === targetStr;
     }
 
 
