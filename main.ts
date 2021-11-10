@@ -25,7 +25,9 @@ import debounce from "./src/Function/debounce";
 import throttle from "./src/Function/throttle";
 import { on, once, remove, setMaxCache, watchCache, trigger, getMaxCache } from './src/Object/event';
 import getYmdHms from "./src/Date/getYmdHms"
-
+import diff from "./src/Date/diff"
+import formatDate from "./src/Date/formatDate";
+//diff
 
 export {
     getMax,
@@ -60,7 +62,9 @@ export {
     watchCache,
     trigger,
     getMaxCache,
-    getYmdHms
+    getYmdHms,
+    diff,
+    formatDate
 
 }
 
@@ -98,4 +102,6 @@ export default {
     trigger,
     getMaxCache,
     getYmdHms,
+    diff,
+    formatDate
 }
