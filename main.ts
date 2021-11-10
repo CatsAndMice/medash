@@ -24,6 +24,8 @@ import isFunc from "./src/Function/isFunc";
 import debounce from "./src/Function/debounce";
 import throttle from "./src/Function/throttle";
 import { on, once, remove, setMaxCache, watchCache, trigger, getMaxCache } from './src/Object/event';
+import getYmdHms from "./src/Date/getYmdHms"
+
 
 export {
     getMax,
@@ -57,7 +59,8 @@ export {
     setMaxCache,
     watchCache,
     trigger,
-    getMaxCache
+    getMaxCache,
+    getYmdHms
 
 }
 
@@ -93,5 +96,6 @@ export default {
     setMaxCache,
     watchCache,
     trigger,
-    getMaxCache
+    getMaxCache,
+    getYmdHms,
 }
