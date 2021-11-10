@@ -53,5 +53,9 @@ describe('event', () => {
         medash.once('someFunc',fn2);
         expect(medash.watchCache().get('someFunc').length).toBe(1)
         medash.on('someFunc',fn3)
+        medash.once('someFunc',fn4)
+        expect(medash.watchCache().get('someFunc').length).toBe(3);
+        medash.trigger('someFunc');
+        expect(medash.watchCache().get('someFunc').length).toBe(2);
     })
 })
