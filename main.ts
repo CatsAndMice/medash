@@ -27,7 +27,7 @@ import { on, once, remove, setMaxCache, watchCache, trigger, getMaxCache } from 
 import getYmdHms from "./src/Date/getYmdHms"
 import diff from "./src/Date/diff"
 import formatDate from "./src/Date/formatDate";
-//diff
+import getCalender from "./src/Date/getCalender"
 
 export {
     getMax,
@@ -64,8 +64,8 @@ export {
     getMaxCache,
     getYmdHms,
     diff,
-    formatDate
-
+    formatDate,
+    getCalender
 }
 
 export default {
@@ -103,5 +103,6 @@ export default {
     getMaxCache,
     getYmdHms,
     diff,
-    formatDate
+    formatDate,
+    getCalender
 }
