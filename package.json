@@ -1,14 +1,14 @@
 {
   "name": "medash",
   "version": "3.0.0",
-  "description": "📦@lihai-js/tool是总结企业项目中常用方法进行系统性实现封装💡，旨在减少不必要重复coding，抽出更多时间🏊 ,开箱即用🚀 🚀",
+  "description": "📦medash个人常用代码片段汇总💡,减少不必要重复coding,开箱即用🚀 🚀",
   "bugs": {
-    "url": "https://github.com/lihai-boop/tool/issues"
+    "url": "https://github.com/CatsAndMice/medash/issues"
   },
-  "homepage": "http://jshai.gitee.io/tool",
+  "homepage": "https://catsandmice.github.io/medash/#/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lihai-boop/tool.git"
+    "url": "https://github.com/CatsAndMice/medash.git"
   },
   "files": [
     "lib"
@@ -17,11 +17,12 @@
     "class",
     "tool",
     "nodeJs",
+    "typeScirpt",
     "工具方法",
     "开箱即用"
   ],
   "main": "lib/main.js",
-  "types": "lib/esm/main.d.ts",
+  "types": "lib/main.d.ts",
   "scripts": {
     "serve": "docsify serve docs",
     "build": "rollup -c",
