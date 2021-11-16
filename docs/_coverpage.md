@@ -1,6 +1,6 @@
 ![logo](./single.svg)
 
-# 🦄@lihai-js/tool <small>2.0</small>
+# 🦄medash <small>3.0</small>
 
 > 一个日常开发代码片段汇总的JavaScipt工具库
 
@@ -9,5 +9,5 @@
 - 扩展方法、开箱即用
 
 
-[GitHub](https://github.com/CatsAndMice/tool)
-[Get Started](/v2/README.md)
+[GitHub](https://github.com/CatsAndMice/medash)
+[Get Started](/v3/function/eq.md)
