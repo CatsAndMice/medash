@@ -3,3 +3,8 @@
     * [gt](v3/function/gt.md)
     * [lt](v3/function/lt.md)
     * [isEmpty](v3/function/isEmpty.md)
+    * [isEmail](v3/function/isEmail.md)
+    * [isBrowser](v3/function/isBrowser.md)
+    * [isTel](v3/function/isTel.md)
+    * [isNull](v3/function/isNull.md)
+    * [isUndefined](v3/function/isUndefined.md)
