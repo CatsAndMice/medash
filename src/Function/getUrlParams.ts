@@ -1,3 +1,4 @@
+import isEmpty from "./isEmpty";
 export default (url: string): Object => {
     let params: any = {};
     let createUrl: URL = new URL(url);
@@ -5,7 +6,9 @@ export default (url: string): Object => {
     let strs: string[] = search.replace('?', '').split('&')
     for (const str of strs) {
         let [key, value] = str.split('=');
-        params[key] = value;
+        if (!isEmpty(key)) {
+            params[key] = value;
+        }
     }
     return params;
 }

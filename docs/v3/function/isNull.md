@@ -1,5 +1,5 @@
 ```js
-medash.isNull(any): boolean 
+medash.isNull(value:any): boolean 
 ```
 传入的值是否为`null`
 

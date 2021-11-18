@@ -8,3 +8,6 @@
     * [isTel](v3/function/isTel.md)
     * [isNull](v3/function/isNull.md)
     * [isUndefined](v3/function/isUndefined.md)
+    * [getNumber](v3/function/getNumber.md)
+    * [getUrlParams](v3/function/getUrlParams.md)
+    * [getConcatParams](v3/function/getConcatParams.md)
