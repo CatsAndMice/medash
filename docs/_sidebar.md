@@ -7,7 +7,12 @@
     * [isBrowser](v3/function/isBrowser.md)
     * [isTel](v3/function/isTel.md)
     * [isNull](v3/function/isNull.md)
+    * [isFunc](v3/function/isFunc.md)
     * [isUndefined](v3/function/isUndefined.md)
-    * [getNumber](v3/function/getNumber.md)
+    * [isSafePaddWord](v3/function/isSafePaddWord.md)
+    * [randomNum](v3/function/randomNum.md)
     * [getUrlParams](v3/function/getUrlParams.md)
     * [getConcatParams](v3/function/getConcatParams.md)
+    * [getGtTenStr](v3/function/getGtTenStr)
+    * [getThousandsChar](v3/function/getThousandsChar)
+ 

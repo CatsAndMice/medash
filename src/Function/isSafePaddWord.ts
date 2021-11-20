@@ -1,4 +1,10 @@
 let safe = /^.*(?=.{6,16})(?=.*\d)(?=.*[A-Z]{1,}(.*)?[A-Z]{1,})(?=.*[a-z]{1,}(.*)?[a-z]{1,})(?=.*[!@#$%^&*?]).*$/
-export default (paddWord:string):boolean=>{
-return safe.test(paddWord);
+/**
+ * 安全等级: 
+ * 1.长度至少达到六位数
+ * 2.至少包含大小写字母各两位
+ * 3.至少包含一位特殊字符`!@#$%^&*?`
+ */
+export default (paddWord: string): boolean => {
+    return safe.test(paddWord);
 }

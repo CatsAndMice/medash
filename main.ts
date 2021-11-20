@@ -9,7 +9,7 @@ import eq from "./src/Function/eq";
 import getUrlParams from "./src/Function/getUrlParams";
 import getConcatParams from "./src/Function/getConcatParams";
 import getThousandsChar from "./src/Function/getThousandsChar";
-import getNumber from "./src/Function/getNumber";
+import randomNum from "./src/Function/randomNum";
 import getGtTenStr from "./src/Function/getGtTenStr";
 import gt from "./src/Function/gt";
 import lt from "./src/Function/lt";
@@ -51,7 +51,7 @@ export {
     debounce,
     throttle,
     getConcatParams,
-    getNumber,
+    randomNum,
     getGtTenStr,
     getThousandsChar,
     customKey,
@@ -90,7 +90,7 @@ export default {
     debounce,
     throttle,
     getConcatParams,
-    getNumber,
+    randomNum,
     getGtTenStr,
     getThousandsChar,
     customKey,
