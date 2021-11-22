@@ -1,5 +1,5 @@
 ```js
-medash.getNumber(min: number, max: number): number 
+medash.randomNum(min: number, max: number): number 
 ```  
 随机获取一个大于min，小于max的值
 
@@ -12,7 +12,7 @@ medash.getNumber(min: number, max: number): number
 
 **例子**
 ```js
-medash.getNumber(1,9);
-medash.getNumber(5,9);
-medash.getNumber(-10,0);
+medash.randomNum(1,9);
+medash.randomNum(5,9);
+medash.randomNum(-10,0);
 ```
