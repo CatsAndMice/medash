@@ -14,9 +14,8 @@
     "lib"
   ],
   "keywords": [
-    "class",
-    "tool",
     "nodeJs",
+    "medash",
     "typeScirpt",
     "工具方法",
     "开箱即用"
