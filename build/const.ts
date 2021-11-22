@@ -6,5 +6,13 @@ export const docsPath = path.join(__dirname, '../docs');
 export const lists = ['Date', 'Array', 'Function', 'Object'];
 export const err = (msg) => {
     console.log(chalk.red(msg));
+}
 
+export const testContext = (name: string) => {
+    return `import { ${name} } from "../../main";
+    
+describe("${name} test",()=>{
+    it("${name}",()=>{})
+})
+    `
 }
