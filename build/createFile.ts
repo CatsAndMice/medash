@@ -1,7 +1,8 @@
-import { testContext } from './const';
+import { srcContext } from './const';
 import { write, create } from './createAndWrite';
+
 export default (createPath: string, name: string) => {
-    const suffixName = name + '.test.ts';
+    const suffixName = name + '.ts';
     createPath = create(createPath, suffixName);
-    write(createPath, testContext(name))
+    write(createPath, srcContext())
 }
