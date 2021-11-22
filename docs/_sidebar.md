@@ -1,0 +1,18 @@
+* 函数
+    * [eq](v3/function/eq.md)
+    * [gt](v3/function/gt.md)
+    * [lt](v3/function/lt.md)
+    * [isEmpty](v3/function/isEmpty.md)
+    * [isEmail](v3/function/isEmail.md)
+    * [isBrowser](v3/function/isBrowser.md)
+    * [isTel](v3/function/isTel.md)
+    * [isNull](v3/function/isNull.md)
+    * [isFunc](v3/function/isFunc.md)
+    * [isUndefined](v3/function/isUndefined.md)
+    * [isSafePaddWord](v3/function/isSafePaddWord.md)
+    * [randomNum](v3/function/randomNum.md)
+    * [getUrlParams](v3/function/getUrlParams.md)
+    * [getConcatParams](v3/function/getConcatParams.md)
+    * [getGtTenStr](v3/function/getGtTenStr)
+    * [getThousandsChar](v3/function/getThousandsChar)
+ 

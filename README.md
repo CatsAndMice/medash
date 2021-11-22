@@ -1,47 +1,48 @@
-# [@lihai-js/tool](http://jshai.gitee.io/tool)
+# medash
 
-![npm](https://img.shields.io/npm/v/@lihai-js/tool)
-![npm](https://img.shields.io/npm/dt/@lihai-js/tool)
+![npm](https://img.shields.io/npm/v/medash)
+![npm](https://img.shields.io/npm/dt/medash)
 
-一个应对企业工作常用方法，进行代码片段汇总编写的JavaScipt工具库，旨在减少重复Coding。
+前端`JavaScipt`业务代码工具库
 
+> 业务常用代码片段汇总，高效率完成Task
 
+业务开发过程中，经常用到`日期格式化`、`url参数转对象`、`浏览器类型判断`、`节流函数`等常用函数，为避免不同项目多次复制粘贴的麻烦，这里统一封装，并发布到npm，以提高开发效率。如果你也有常用的代码，欢迎为本项目提交pr。
 
-## Install
+## :building_construction:  安装使用
 
 ```shell
-npm install @lihai-js/tool
-//yarn add  @lihai-js/tool
+npm install medash
+//或 yarn add  medash
 ```
 
+### 完整导入
 
-## Usage
-深克隆
 ```js
-const { ExpandObject } = require('@lihai-js/tool');
-let origin = { name: '克隆', childrens: { name: "子类" } }
-let cloneTarget = ExpandObject.getClone(origin)
+const medash = require('medash');
+medash.eq('medash','medash');//true
 ```
-订阅事件
+
+### 按需导入
+
+> 按需导入只会加载需要代码，减少文件体格
+
 ```js
-const { MyEvent } = require('@lihai-js/tool');
-MyEvent.on('click', () => {
-    console.log('订阅一个click事件');
-});
-
-MyEvent.trigger('click');
+const eq = require('medash/eq');
+eq('medash','medash');//true
 ```
 
-导出对应的模块使用
-更多方法详情，请根据网络情况选择https://catsandmice.github.io/tool/#/ 或 http://jshai.gitee.io/tool 进行查阅
+## :package:  API文档
+
+[查看文档](https://catsandmice.github.io/medash/#/) 
 
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT)
+[MIT](http://opensource.org/licenses/MIT) 
 
 
 ## Contact me 
 
-<img alt="公众号搜索隔壁姥爷" src="https://p.pstatp.com/origin/pgc-image/45fd0fc3498547faaea870528de101e6" width="500px">
+<img alt="微信公众号搜索CatsAndMice" src = 'https://i.bmp.ovh/imgs/2021/10/cd69e46c3bdc6ee3.png' width="500"/>
 
