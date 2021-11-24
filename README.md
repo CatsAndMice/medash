@@ -1,7 +1,9 @@
 # medash
 
 ![npm](https://img.shields.io/npm/v/medash)
-![npm](https://img.shields.io/npm/dt/medash)
+![npm](https://img.shields.io/npm/dt/medash)  
+
+![medash](./docs/medash.png)
 
 前端`JavaScipt`业务代码工具库
 
