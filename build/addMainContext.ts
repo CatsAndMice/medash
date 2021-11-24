@@ -9,7 +9,12 @@ const getFilePath = function (filePath: string, name: string) {
 }
 
 const addContext = (args: string[], name: string) => {
-    let imports = args[0] + `import ${name} from "${getFilePath(filePath, name)}";\r\n`
+    let importsHeader = `import ${name} from "${getFilePath(filePath, name)}";\r\n`;
+    if (args[0].includes(importsHeader)) {
+        err(name + '已导入!');
+        return
+    }
+    let imports = args[0] + importsHeader;
     let contexts = args[1].split('{');
     let ctx = contexts[0] + `{\r\n${name},` + contexts[1];
     let dafaultContexts = args[2].split('{')
@@ -17,16 +22,20 @@ const addContext = (args: string[], name: string) => {
     return [imports, ctx, ctxs].join('export');
 }
 
+const writeFile = (context: string) => {
+    fs.writeFile('./main.ts', context, (error) => {
+        console.error(error);
+    })
+}
+
 export default (path: string, name: string) => {
     filePath = path
     fs.readFile('./main.ts', 'utf-8', (readError, data) => {
         if (readError) {
             console.error(readError);
-
             return;
         }
-        fs.writeFile('./main.ts', addContext(data.split('export'), name), (error) => {
-            console.error(error);
-        })
+        let context = addContext(data.split('export'), name);
+        context ? writeFile(context) : null
     })
 }
