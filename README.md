@@ -1,4 +1,4 @@
-<img src="./docs/medash.png" style="width:100%">    
+<img src="./docs/medash.png" style="height:400px;">    
 
 ![npm](https://img.shields.io/npm/v/medash)
 ![npm](https://img.shields.io/npm/dt/medash)   
