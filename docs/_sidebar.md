@@ -17,4 +17,8 @@
     * [getThousandsChar](v3/function/getThousandsChar)
 * 数组  
     * [customKey](v3/Array/customKey.md)
+    * [getMin](v3/Array/getMin.md) 
+    * [getMax](v3/Array/getMax.md)
+    * [isZeroLen](v3/Array/isZeroLen.md)
+    * [getUnique](v3/Array/getUnique.md)
  

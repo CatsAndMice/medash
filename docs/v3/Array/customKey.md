@@ -18,7 +18,8 @@ type Option = {
 3. `isClone`(boolean):是否深克隆
   
 **返回**        
-  
+`any[]`:返回一个自定义key的数组 
+
 **例子**  
 
 ```js

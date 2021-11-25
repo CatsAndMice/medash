@@ -23,7 +23,7 @@
   "main": "lib/main.js",
   "types": "lib/main.d.ts",
   "scripts": {
-    "create:unilt": "ts-node ./build/create.ts",
+    "create": "ts-node ./build/create.ts",
     "serve": "docsify serve docs",
     "build": "rollup -c",
     "test": "jest ./test",

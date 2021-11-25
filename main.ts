@@ -1,7 +1,6 @@
 import getMax from "./src/Array/getMax";
 import getMin from "./src/Array/getMin";
 import getUnique from "./src/Array/getUnique";
-import isZeroLen from "./src/Array/isZeroLen"
 import customKey from "./src/Array/customKey";
 import getClone from "./src/Object/getClone";
 import getDeelClone from "./src/Object/getDeepClone";
@@ -28,6 +27,7 @@ import getYmdHms from "./src/Date/getYmdHms"
 import diff from "./src/Date/diff"
 import formatDate from "./src/Date/formatDate";
 import getCalender from "./src/Date/getCalender";
+import isZeroLen from "./src/Array/isZeroLen";
 export {
     getMax,
     getMin,
@@ -68,11 +68,11 @@ export {
 }
 
 export default {
+    isZeroLen,
     customKey,
     getMax,
     getMin,
     getUnique,
-    isZeroLen,
     getClone,
     getDeelClone,
     eq,
