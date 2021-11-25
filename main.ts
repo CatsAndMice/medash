@@ -6,8 +6,8 @@ import customKey from "./src/Array/customKey";
 import getClone from "./src/Object/getClone";
 import getDeelClone from "./src/Object/getDeepClone";
 import eq from "./src/Function/eq";
-import getUrlParams from "./src/Function/getUrlParams";
-import getConcatParams from "./src/Function/getConcatParams";
+import parseQuery from "./src/Function/parseQuery";
+import stringfyQuery from "./src/Function/stringfyQuery";
 import getThousandsChar from "./src/Function/getThousandsChar";
 import randomNum from "./src/Function/randomNum";
 import getGtTenStr from "./src/Function/getGtTenStr";
@@ -38,7 +38,7 @@ export {
     eq,
     lt,
     gt,
-    getUrlParams,
+    stringfyQuery,
     isBrowser,
     isEmail,
     isEmpty,
@@ -49,7 +49,7 @@ export {
     isFunc,
     debounce,
     throttle,
-    getConcatParams,
+    parseQuery,
     randomNum,
     getGtTenStr,
     getThousandsChar,
@@ -77,7 +77,7 @@ export default {
     eq,
     lt,
     gt,
-    getUrlParams,
+    stringfyQuery,
     isBrowser,
     isEmail,
     isEmpty,
@@ -88,7 +88,7 @@ export default {
     isFunc,
     debounce,
     throttle,
-    getConcatParams,
+    parseQuery,
     randomNum,
     getGtTenStr,
     getThousandsChar,

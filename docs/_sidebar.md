@@ -11,8 +11,8 @@
     * [isUndefined](v3/function/isUndefined.md)
     * [isSafePaddWord](v3/function/isSafePaddWord.md)
     * [randomNum](v3/function/randomNum.md)
-    * [getUrlParams](v3/function/getUrlParams.md)
-    * [getConcatParams](v3/function/getConcatParams.md)
+    * [parseQuery](v3/function/parseQuery.md)
+    * [stringfyQuery](v3/function/stringfyQuery.md)
     * [getGtTenStr](v3/function/getGtTenStr)
     * [getThousandsChar](v3/function/getThousandsChar)
  
