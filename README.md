@@ -1,7 +1,8 @@
 <img src="./docs/medash.png" style="width:100%;">    
 
 ![npm](https://img.shields.io/npm/v/medash)
-![npm](https://img.shields.io/npm/dt/medash)   
+![npm](https://img.shields.io/npm/dt/medash)
+[![LICENSE MIT](https://img.shields.io/npm/l/medash.svg)](https://www.npmjs.com/package/medash)
 
  
 
