@@ -68,6 +68,7 @@ export {
 }
 
 export default {
+    customKey,
     getMax,
     getMin,
     getUnique,
@@ -92,7 +93,6 @@ export default {
     randomNum,
     getGtTenStr,
     getThousandsChar,
-    customKey,
     on,
     once,
     remove,

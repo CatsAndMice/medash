@@ -5,7 +5,7 @@ let filePath = '';
 const getFilePath = function (filePath: string, name: string) {
     let afterPath = filePath.split('src')[1];
     afterPath = afterPath.replace('\\', '/');
-    return '.' + afterPath + '/' + name;
+    return './src' + afterPath + '/' + name;
 }
 
 const addContext = (args: string[], name: string) => {
