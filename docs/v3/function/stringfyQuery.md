@@ -1,5 +1,5 @@
 ```js
-medash.getConcatParams(params: { [key: string]: any } = {}):string 
+medash.stringfyQuery(params: { [key: string]: any } = {}):string 
 ```  
 将传递的对象拼接成一个链接参数形式
 
@@ -12,6 +12,6 @@ medash.getConcatParams(params: { [key: string]: any } = {}):string
 
 **例子**
 ```js
-medash.getConcatParams({name:'url',age:20});//?name=url&age=20
-medash.getConcatParams({});//''
+medash.stringfyQuery({name:'url',age:20});//name=url&age=20
+medash.stringfyQuery({});//''
 ```

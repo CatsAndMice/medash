@@ -1,5 +1,5 @@
 ```js
-medash.getUrlParams(url: string): Object 
+medash.parseQuery(url: string): Object 
 ```  
 获取路径链接中的参数
 
@@ -11,7 +11,7 @@ medash.getUrlParams(url: string): Object
 
 **例子**
 ```js
-medash.getUrlParams('https://www.iconfont.cn/manage/index?manage_type=myprojects&projectId=2749274');
+medash.parseQuery('https://www.iconfont.cn/manage/index?manage_type=myprojects&projectId=2749274');
 //{ manage_type: 'myprojects', projectId: '2749274' }
-medash.getUrlParams('https://www.npmjs.com/package/@lihai-js/tool');//{}
+medash.parseQuery('https://www.npmjs.com/package/@lihai-js/tool');//{}
 ```
