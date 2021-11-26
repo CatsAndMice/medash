@@ -28,7 +28,11 @@ import diff from "./src/Date/diff"
 import formatDate from "./src/Date/formatDate";
 import getCalender from "./src/Date/getCalender";
 import isZeroLen from "./src/Array/isZeroLen";
+import isEmptyObj from "./src/Object/isEmptyObj";
+import getType from "./src/Function/getType";
 export {
+getType,
+isEmptyObj,
     getMax,
     getMin,
     getUnique,
@@ -68,6 +72,8 @@ export {
 }
 
 export default {
+getType,
+isEmptyObj,
     isZeroLen,
     customKey,
     getMax,
