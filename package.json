@@ -28,10 +28,10 @@
     "build": "rollup -c",
     "test": "jest ./test",
     "test-coverage": "jest --coverage",
-    "patch": "npm version patch&&npm run publish",
-    "minor": "npm version minor&&npm run publish",
-    "major": "npm version major&&npm run publish",
-    "publish": "npm run build&&npm publish"
+    "patch": "npm version patch&&npm run release",
+    "minor": "npm version minor&&npm run release",
+    "major": "npm version major&&npm run release",
+    "release": "npm run build&&npm publish"
   },
   "author": "hai",
   "license": "MIT",
