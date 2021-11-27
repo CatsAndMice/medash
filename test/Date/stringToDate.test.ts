@@ -11,4 +11,5 @@ it('stringToDate', () => {
     expect(date).toBe(12);
     expect(hours).toBe(9);
     expect(minutes).toBe(12)
+    expect(stringToDate('')).toBeNaN()
 })

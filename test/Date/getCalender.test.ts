@@ -10,7 +10,11 @@ describe('日历', () => {
         ymdAndHm = ymd + ` ${getGtTenStr(curDate.getHours())}:${getGtTenStr(curDate.getMinutes())}`
         expect(getCalender(curDate.getTime(), 'YYYY-MM-DD hh:mm')).toBe(ymdAndHm)
         ymdAndHms = ymdAndHm + `:${getGtTenStr(curDate.getSeconds())}`
-        expect(getCalender(curDate.getTime(), 'YYYY-MM-DD hh:mm:ss')).toBe(ymdAndHms)
+        expect(getCalender(curDate.getTime())).toBe(ymdAndHms.replace(/-/g, '.'))
+    })
+
+    it('空值测试', () => {
+        expect(getCalender(0, 'YYYY-MM-DD')).toBe(ymd);
     })
 
     it('测试不规范的格式', () => {
