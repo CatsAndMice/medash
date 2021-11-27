@@ -5,7 +5,7 @@ const commonjs = require('@rollup/plugin-commonjs')
 const { terser } = require("rollup-plugin-terser")
 const build = require('./build/build')
 
-export default {
+export default [{
     input: ["./main.ts", ...build],
     output: [
         {
@@ -23,5 +23,23 @@ export default {
         }),
         terser()
     ]
-
-};
+// }, {
+//     input: "./main.ts",
+//     output: [
+//         {
+//             file: 'dist/medash.min.js',
+//             name:'medash',
+//             format: 'umd'
+//         }
+//     ],
+//     plugins: [
+//         typescript(),
+//         commonjs(),
+//         resolve(),
+//         getBabelOutputPlugin({
+//             presets: ['@babel/preset-env'],
+//             allowAllFormats: true,
+//         }),
+//         terser()
+//     ]
+}];

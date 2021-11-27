@@ -7,7 +7,8 @@ medash.isEmptyObj (origin: { [key: string]: any }):boolean
 1. `origin`({ [key: string]: any }): 检验的对象
   
 **返回**        
-`boolean`:对象为一个空对象返回`true`,否则返回`false`
+`boolean`:对象为一个空对象返回`true`,否则返回`false`  
+
 **例子**  
 
 ```js
