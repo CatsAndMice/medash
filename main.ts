@@ -30,7 +30,9 @@ import getCalender from "./src/Date/getCalender";
 import isZeroLen from "./src/Array/isZeroLen";
 import isEmptyObj from "./src/Object/isEmptyObj";
 import getType from "./src/Function/getType";
+import getDeepClone from "./src/Object/getDeepClone";
 export {
+getDeepClone,
 getType,
 isEmptyObj,
     getMax,
@@ -72,6 +74,7 @@ isEmptyObj,
 }
 
 export default {
+getDeepClone,
 getType,
 isEmptyObj,
     isZeroLen,

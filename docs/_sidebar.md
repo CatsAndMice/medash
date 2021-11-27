@@ -23,3 +23,5 @@
     * [getUnique](v3/Array/getUnique.md)
 * 对象
     * [isEmptyObj](v3/Object/isEmptyObj.md)
+    * [getClone](v3/Object/getClone.md)
+    * [getDeepClone](v3/Object/getDeepClone.md)

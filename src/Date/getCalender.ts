@@ -1,4 +1,3 @@
-// const DateTime = require('./DateTime')
 import isEmpty from "../Function/isEmpty"
 import getGtTenStr from "../Function/getGtTenStr"
 import getYmdHms from "./getYmdHms"

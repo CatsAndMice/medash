@@ -8,5 +8,6 @@ it('parseQuery', () => {
 
 it('stringfyQuery', () => {
     let person = { name: 'lihai', age: '20', sex: null };
+    expect(stringfyQuery()).toBe('')
     expect(stringfyQuery(person)).toBe('name=lihai&age=20')
 })

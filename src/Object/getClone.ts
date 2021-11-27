@@ -1,4 +1,4 @@
-export default function getClone(origin: { [key: string]: any }, target = {}) {
+export default (origin: { [key: string]: any } | any[], target = {}) => {
     let isArray = Array.isArray(origin);
     let keys = Object.keys(origin);
     if (isArray) {

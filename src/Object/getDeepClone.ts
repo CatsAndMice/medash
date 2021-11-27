@@ -1,4 +1,6 @@
 import isNull from "../Function/isNull";
+import isBrowser from '../Function/isBrowser';
+import { isFunc } from "main";
 export default function getDeelClone(origin: { [key: string]: any }, target: { [key: string]: any } = {}): object {
     let keys = Object.keys(origin);
     for (let index = 0; index < keys.length; index++) {
@@ -23,15 +25,14 @@ export default function getDeelClone(origin: { [key: string]: any }, target: { [
                 continue
             }
 
-            try {
-                //dom
+
+            if (isBrowser()) {
                 if (value instanceof Element) {
                     target[key] = value.cloneNode(true);
                     continue
                 }
-            } catch {
-                console.warn('该运行环境中没有DOM元素');
             }
+
             target[key] = Array.isArray(value) ? getDeelClone(value, []) : getDeelClone(value);
             continue
         }

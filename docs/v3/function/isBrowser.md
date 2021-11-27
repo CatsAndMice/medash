@@ -8,5 +8,6 @@ medash.isBrowser(): boolean
 
 **例子**
 ```js
+//运行node环境中
 medash.isBrowser();//false
 ```
