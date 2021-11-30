@@ -13,6 +13,7 @@
     * [randomNum](v3/function/randomNum.md)
     * [parseQuery](v3/function/parseQuery.md)
     * [stringfyQuery](v3/function/stringfyQuery.md)
+    * [getType](v3/function/getType.md)
     * [getGtTenStr](v3/function/getGtTenStr)
     * [getThousandsChar](v3/function/getThousandsChar)
 * 数组  
