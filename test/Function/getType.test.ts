@@ -22,6 +22,10 @@ describe("getType test", () => {
         expect(eq(getType(0), 'number')).toBeTruthy()
     })
 
+    it('boolean', () => {
+        expect(eq(getType(false), 'boolean')).toBeTruthy()
+    })
+
     it('function', () => {
         expect(eq(getType(() => { }), 'function')).toBeTruthy()
     })
@@ -32,6 +36,11 @@ describe("getType test", () => {
 
     it('Number', () => {
         expect(eq(getType(new Number(0)), 'Number')).toBeTruthy()
+    })
+
+
+    it('Boolean', () => {
+        expect(eq(getType(new Boolean()), 'Boolean')).toBeTruthy()
     })
 
     it('Array', () => {

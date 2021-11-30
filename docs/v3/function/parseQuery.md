@@ -14,4 +14,8 @@ medash.parseQuery(url: string): Object
 medash.parseQuery('https://www.iconfont.cn/manage/index?manage_type=myprojects&projectId=2749274');
 //{ manage_type: 'myprojects', projectId: '2749274' }
 medash.parseQuery('https://www.npmjs.com/package/@lihai-js/tool');//{}
+
+const query = medash.stringfyQuery({ name: 'lihai', age: '20', other: [ 2,'8', '', { name: 'lihai' }, [1]] })
+medash.parseQuery('https://www.npmjs.com/package/@lihai-js/tool?' + query);
+//=>{ name: 'lihai', age: '20', other: [ '2', '8' ] }
 ```

@@ -17,8 +17,10 @@ medash.getType(undefined) === 'undefined';//true
 medash.getType(Symbol(1)) === 'symbol';//true
 medash.getType(1) === 'number';//true
 medash.getType('1') === 'string';//true
+medash.getType(false) === 'boolean';//true
 medash.getType(new String('')) === 'String';//true
 medash.getType(new Number('')) === 'Number';//true
+medash.getType(new Boolean()) === 'Boolean';//true
 medash.getType({}) === 'Object';//true
 medash.getType([]) === 'Array';//true
 medash.getType(/1/g) === 'RegExp';//true

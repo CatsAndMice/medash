@@ -13,7 +13,7 @@ export default (value: any) => {
         return 'function';
     }
 
-    const types: Set<string> = new Set(['number', 'string', 'symbol']);
+    const types: Set<string> = new Set(['number', 'string', 'symbol', 'boolean']);
     const baseType = typeof value;
     const reg = /^\[object\s(\w+)\]$/;
     const type = toString.call(value);

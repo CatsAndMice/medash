@@ -14,4 +14,5 @@ medash.stringfyQuery(params: { [key: string]: any } = {}):string
 ```js
 medash.stringfyQuery({name:'url',age:20});//name=url&age=20
 medash.stringfyQuery({});//''
+medash.stringfyQuery({name:['li','hai','',0,{name:'lihai'},[1,2]],age:20});//name=li&name=hai&age=20
 ```
