@@ -23,18 +23,18 @@ import isFunc from "./src/Function/isFunc";
 import debounce from "./src/Function/debounce";
 import throttle from "./src/Function/throttle";
 import { on, once, remove, setMaxCache, watchCache, trigger, getMaxCache } from './src/Object/event';
-import getYmdHms from "./src/Date/getYmdHms"
-import diff from "./src/Date/diff"
+import diff from "./src/Date/diff";
 import formatDate from "./src/Date/formatDate";
 import getCalender from "./src/Date/getCalender";
 import isZeroLen from "./src/Array/isZeroLen";
 import isEmptyObj from "./src/Object/isEmptyObj";
 import getType from "./src/Function/getType";
 import getDeepClone from "./src/Object/getDeepClone";
+import getYmdHms from "./src/Date/getYmdHms";
 export {
-getDeepClone,
-getType,
-isEmptyObj,
+    getDeepClone,
+    getType,
+    isEmptyObj,
     getMax,
     getMin,
     getUnique,
@@ -74,9 +74,10 @@ isEmptyObj,
 }
 
 export default {
-getDeepClone,
-getType,
-isEmptyObj,
+    getYmdHms,
+    getDeepClone,
+    getType,
+    isEmptyObj,
     isZeroLen,
     customKey,
     getMax,
@@ -109,7 +110,6 @@ isEmptyObj,
     watchCache,
     trigger,
     getMaxCache,
-    getYmdHms,
     diff,
     formatDate,
     getCalender

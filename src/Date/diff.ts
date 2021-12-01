@@ -7,6 +7,5 @@ export default (origin: Date | number, target: Date | number) => {
     if (target instanceof Date) {
         target = target.getTime();
     }
-
-    return formatDate(origin - target)
+    return formatDate(Math.abs(origin - target))
 }

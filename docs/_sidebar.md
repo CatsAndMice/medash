@@ -26,3 +26,7 @@
     * [isEmptyObj](v3/Object/isEmptyObj.md)
     * [getClone](v3/Object/getClone.md)
     * [getDeepClone](v3/Object/getDeepClone.md)
+* 日期
+    * [getYmdHms](v3/Date/getYmdHms.md)
+    * [formatDate](v3/Date/formatDate.md)
+    * [diff](v3/Date/diff.md)
