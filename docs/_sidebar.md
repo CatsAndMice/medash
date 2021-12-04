@@ -30,3 +30,4 @@
     * [getYmdHms](v3/Date/getYmdHms.md)
     * [formatDate](v3/Date/formatDate.md)
     * [diff](v3/Date/diff.md)
+    * [getCalender](v3/Date/getCalender.md)
