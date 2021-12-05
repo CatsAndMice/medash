@@ -4,6 +4,7 @@
     * [lt](v3/function/lt.md)
     * [isEmpty](v3/function/isEmpty.md)
     * [isEmail](v3/function/isEmail.md)
+    * [isIos](v3/Function/isIos.md)
     * [isBrowser](v3/function/isBrowser.md)
     * [isTel](v3/function/isTel.md)
     * [isNull](v3/function/isNull.md)
@@ -23,6 +24,7 @@
     * [isZeroLen](v3/Array/isZeroLen.md)
     * [getUnique](v3/Array/getUnique.md)
 * 对象
+    * [each](v3/Object/each.md)
     * [isEmptyObj](v3/Object/isEmptyObj.md)
     * [getClone](v3/Object/getClone.md)
     * [getDeepClone](v3/Object/getDeepClone.md)

@@ -31,7 +31,13 @@ import isEmptyObj from "./src/Object/isEmptyObj";
 import getType from "./src/Function/getType";
 import getDeepClone from "./src/Object/getDeepClone";
 import getYmdHms from "./src/Date/getYmdHms";
+import createNamespace from "./src/Function/createNamespace";
+import isIos from "./src/Function/isIos";
+import each from "./src/Object/each";
 export {
+    each,
+    isIos,
+    createNamespace,
     getDeepClone,
     getType,
     isEmptyObj,
@@ -74,6 +80,9 @@ export {
 }
 
 export default {
+    each,
+    isIos,
+    createNamespace,
     getYmdHms,
     getDeepClone,
     getType,
