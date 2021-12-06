@@ -34,7 +34,13 @@ import getYmdHms from "./src/Date/getYmdHms";
 import createNamespace from "./src/Function/createNamespace";
 import isIos from "./src/Function/isIos";
 import each from "./src/Object/each";
+import getWeekRange from "./src/Date/getWeekRange";
+import getTodayRange from "./src/Date/getTodayRange";
+import getMonthRange from "./src/Date/getMonthRange";
 export {
+getMonthRange,
+getTodayRange,
+getWeekRange,
     each,
     isIos,
     createNamespace,
@@ -80,6 +86,9 @@ export {
 }
 
 export default {
+getMonthRange,
+getTodayRange,
+getWeekRange,
     each,
     isIos,
     createNamespace,
