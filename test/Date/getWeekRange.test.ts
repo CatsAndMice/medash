@@ -4,6 +4,6 @@ describe("getWeekRange test", () => {
     it("getWeekRange", () => {
         const { start, end } = getWeekRange();
         expect(end).toBeGreaterThan(start);
-        expect(formatDate(end - start)).toBe('7 days');
+        expect(formatDate(end - start,'us')).toBe('7 days');
     })
 })

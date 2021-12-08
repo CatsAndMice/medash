@@ -8,6 +8,6 @@ describe("getMonthRange test", () => {
         today.setMonth(today.getMonth() + 1);
         const data = new Date(today.getTime() - 1000);
         expect(end).toBeGreaterThan(start);
-        expect(formatDate(end - start)).toBe(`${data.getDate()} days`);
+        expect(formatDate(end - start,'us')).toBe(`${data.getDate()} days`);
     })
 })

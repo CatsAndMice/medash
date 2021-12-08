@@ -10,4 +10,7 @@ it('isEmpty', () => {
     expect(isEmpty(num)).toBeTruthy();
     expect(isEmpty(n)).toBeTruthy();
     expect(isEmpty(str1)).toBeFalsy();
+    expect(isEmpty(NaN)).toBeTruthy();
+    expect(isEmpty({})).toBeTruthy();
+    expect(isEmpty([])).toBeTruthy()
 })

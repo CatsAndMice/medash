@@ -8,7 +8,7 @@ medash.isEmpty(value: any):boolean
 1. `value`(any): 需要判断的值
 
 **返回**  
-`boolean:`值等于`0,null,'',undefined,{},[]`其中之一返回`true`,否则返回`false`
+`boolean:`值等于`0,null,'',undefined,{},[] ,NaN`其中之一返回`true`,否则返回`false`
 
 **例子**
 ```js
