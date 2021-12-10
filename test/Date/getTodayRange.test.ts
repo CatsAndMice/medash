@@ -4,6 +4,6 @@ describe("getTodayRange test", () => {
     it("getTodayRange", () => {
         const { start, end } = getTodayRange();
         expect(end).toBeGreaterThan(start)
-        expect(formatDate(end - start,'us')).toBe('1 day')
+        expect(formatDate(end - start,{day:'天'})).toBe('1天')
     })
 })

@@ -2,20 +2,30 @@ const day = 1000 * 60 * 60 * 24
 const hour = 1000 * 60 * 60
 const minute = 1000 * 60
 const second = 1000
-enum chinese {
-    day = "天",
-    hour = "小时",
-    minute = "分钟",
-    second = "秒",
-    millisecond = "毫秒"
+export const option = {
+    day: '天',
+    hour: '小时',
+    minute: '分钟',
+    second: '秒',
+    millisecond: '毫秒',
+    concat: ','
 }
-type langs = 'ch' | 'us'
+
+export type Format = {
+    day?: string,
+    hour?: string,
+    minute?: string,
+    second?: string,
+    millisecond?: string
+    concat?: string
+}
+
 /**
 * 格式化时间戳，返回 *day *hour *minute *second
 * @param {Number} ms 时间戳
 * @returns
 */
-export default (ms: Date | number, lang: langs = 'ch') => {
+export default (ms: Date | number, format: Format = option) => {
     if (ms instanceof Date) {
         ms = ms.getTime();
     }
@@ -27,7 +37,8 @@ export default (ms: Date | number, lang: langs = 'ch') => {
         second: Math.floor(ms / second) % 60,
         millisecond: Math.floor(ms) % 1000
     }
-    return Object.entries(params).filter(val => val[1] !== 0).map(([key, val]) => {
-        return lang === 'us' ? `${val} ${key}${val === 1 ? '' : 's'}` : `${val}${chinese[key]}`;
-    }).join(', ')
+    return Object.entries(params).map(([key, val]) => {
+        const isHasKey = key in format;
+        return isHasKey ? `${val}${format[key]}` : null;
+    }).filter(val => val).join(format.concat)
 }
