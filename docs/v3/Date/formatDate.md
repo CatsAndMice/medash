@@ -30,4 +30,5 @@ medash.formatDate(10000,{second:'秒'}));//10秒
 medash.formatDate(1000,{second:'秒'}));//1秒
 medash.formatDate(1000 * 2 + 5,{second:'秒',millisecond:'毫秒'});//2秒, 5毫秒
 console.log(formatDate(302544543));//3天, 12小时, 2分钟, 24秒, 543毫秒
+console.log(formatDate(302544543,{hour:'时',minute:'分',concat:''}));//12时2分
 ```
