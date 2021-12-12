@@ -38,7 +38,9 @@ import getWeekRange from "./src/Date/getWeekRange";
 import getTodayRange from "./src/Date/getTodayRange";
 import getMonthRange from "./src/Date/getMonthRange";
 import { default as db, setLocalDb, setSionDb, getLocalDb, getSionDb, removeLocalDb, removeSionDb, clearLocalDb, clearSionDb } from "./src/Object/db";
+import valueLen from "./src/Function/valueLen";
 export {
+valueLen,
     db,
     setLocalDb,
     setSionDb,
@@ -96,6 +98,7 @@ export {
 }
 
 export default {
+valueLen,
     db,
     setLocalDb,
     setSionDb,
