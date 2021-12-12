@@ -40,3 +40,14 @@ export const removeSionDb = (key) => {
 }
 
 export const clearSionDb = () => sionDb?.clear();
+
+export default {
+    setLocalDb,
+    setSionDb,
+    getLocalDb,
+    getSionDb,
+    removeLocalDb,
+    removeSionDb,
+    clearLocalDb,
+    clearSionDb
+}

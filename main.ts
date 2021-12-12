@@ -37,8 +37,9 @@ import each from "./src/Object/each";
 import getWeekRange from "./src/Date/getWeekRange";
 import getTodayRange from "./src/Date/getTodayRange";
 import getMonthRange from "./src/Date/getMonthRange";
-import { setLocalDb, setSionDb, getLocalDb, getSionDb, removeLocalDb, removeSionDb, clearLocalDb, clearSionDb } from "./src/Object/db";
+import { default as db, setLocalDb, setSionDb, getLocalDb, getSionDb, removeLocalDb, removeSionDb, clearLocalDb, clearSionDb } from "./src/Object/db";
 export {
+    db,
     setLocalDb,
     setSionDb,
     getLocalDb,
@@ -95,6 +96,7 @@ export {
 }
 
 export default {
+    db,
     setLocalDb,
     setSionDb,
     getLocalDb,
