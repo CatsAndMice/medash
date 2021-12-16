@@ -39,7 +39,9 @@ import getTodayRange from "./src/Date/getTodayRange";
 import getMonthRange from "./src/Date/getMonthRange";
 import { default as db, setLocalDb, setSionDb, getLocalDb, getSionDb, removeLocalDb, removeSionDb, clearLocalDb, clearSionDb } from "./src/Object/db";
 import valueLen from "./src/Function/valueLen";
+import isSpecialChar from "./src/Function/isSpecialChar";
 export {
+isSpecialChar,
 valueLen,
     db,
     setLocalDb,
@@ -98,6 +100,7 @@ valueLen,
 }
 
 export default {
+isSpecialChar,
 valueLen,
     db,
     setLocalDb,
