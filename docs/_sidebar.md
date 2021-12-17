@@ -9,7 +9,7 @@
     * [isTel](v3/function/isTel.md)
     * [isNull](v3/function/isNull.md)
     * [isFunc](v3/function/isFunc.md)
-    * [isSpecialChar](v3/function/isSpecialChar.md)
+    * [specialChar](v3/function/specialChar.md)
     * [isSafePaddWord](v3/function/isSafePaddWord.md)
     * [isUndefined](v3/function/isUndefined.md)
     * [randomNum](v3/function/randomNum.md)

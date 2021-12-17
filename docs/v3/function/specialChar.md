@@ -1,5 +1,5 @@
 ```js
-medash.isSpecialChar(value: string, reg: RegExp = regChar):boolean
+medash.specialChar(value: string, reg: RegExp = regChar):result
 ```
 判断是否包含`~!@#$%^&*()_-+=<>?:"{}|,.\/;'[]·~！@#￥%……&*（）——-+={}|《》？：“”【】、；‘’，。、特殊字符
 
@@ -8,12 +8,17 @@ medash.isSpecialChar(value: string, reg: RegExp = regChar):boolean
 2. `reg`:(RegExp): 正则,默认为/[`~!@#$%^&*()_\-+=<>?:"{}|,.\/;'\\[\]·~！@#￥%……&*（）——\-+={}|《》？：“”【】、；‘’，。、]/
   
 **返回**  
-`boolean`: 包含有特殊字符返回`true`,否则返回`false`;        
-  
+`result`:返回一个包含`isSpecialChar,value`属性的对象
+```js
+type result = {
+    isSpecialChar: boolean,//是否包含特殊字符
+    value: string//去除所有特殊字符后的值
+}
+```
 **例子**  
 
 ```js
-medash.isSpecialChar('1');//false
-medash.isSpecialChar('&');//true
-medash.isSpecialChar('，');//true
+medash.specialChar('1');//false
+medash.specialChar('&');//true
+medash.specialChar('，');//true
 ```
