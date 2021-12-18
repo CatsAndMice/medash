@@ -7,12 +7,13 @@ const version = pkg.version;
 const reg = /([1-9])\.([0-9])\.([0-9])(?:(\-\w*)\.([1-9]+))?/g
 const execs = reg.exec(version) as Array<any>;
 const addOne = (num) => Number(num) + 1;
-const getVersion = ([major, minor, patch]) => `${major}.${minor}.${patch}`
+const getVersion = ([major, minor, patch]) => `v${major}.${minor}.${patch}`
 const getVersionlists = () => ([
     getVersion([addOne(execs[1]), execs[2], execs[3]]),
     getVersion([execs[1], addOne(execs[2]), execs[3]]),
     getVersion([execs[1], execs[2], addOne(execs[3])])
 ])
+
 const getBetaVersionLists = (beta) => ([
     getVersion([execs[1], execs[2], execs[3]]),
     getVersion([execs[1], execs[2], execs[3]]) + `${beta}.${addOne(execs[5])}`
