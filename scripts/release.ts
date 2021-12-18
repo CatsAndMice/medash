@@ -1,14 +1,37 @@
-import { execSync } from "child_process";
-import fs from "fs/promises";
-import inquirer from 'inquirer';
+import pkg from "../package.json";
+import inquirer from "inquirer";
+import { exec } from "child_process";
+import path from "path";
 
-const creatName = async () => {
-    const { input } = await inquirer.prompt([
-        {
-            name:"input",
-            type:'input',
-            message:'本次'
-        }
-    ])
+const version = pkg.version;
+const reg = /([1-9])\.([0-9])\.([0-9])(?:(\-\w*)\.([1-9]+))?/g
+const execs = reg.exec(version) as Array<any>;
+const addOne = (num) => Number(num) + 1;
+const getVersion = ([major, minor, patch]) => `${major}.${minor}.${patch}`
+const getVersionlists = () => ([
+    getVersion([addOne(execs[1]), execs[2], execs[3]]),
+    getVersion([execs[1], addOne(execs[2]), execs[3]]),
+    getVersion([execs[1], execs[2], addOne(execs[3])])
+])
+const getBetaVersionLists = (beta) => ([
+    getVersion([execs[1], execs[2], execs[3]]),
+    getVersion([execs[1], execs[2], execs[3]]) + `${beta}.${addOne(execs[5])}`
+])
+
+const onSelectVersion = async () => {
+    const beta = execs[4];
+    const lists = beta ? getBetaVersionLists(beta) : getVersionlists();
+    inquirer.prompt([{
+        name: 'list',
+        type: 'list',
+        message: '请选择发布的版本:',
+        choices: lists,
+        default: [lists[0]]
+    }]).then(({ list }) => {
+        console.log(list);
+        exec(`${path.join(__dirname, './release.sh')} ${list}`);
+    })
 }
+onSelectVersion()
+
 
