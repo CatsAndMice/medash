@@ -30,7 +30,11 @@ const onSelectVersion = async () => {
         default: [lists[0]]
     }]).then(({ list }) => {
         console.log(list);
-        exec(`${path.join(__dirname, './release.sh')} ${list}`);
+        exec(`${path.join(__dirname, './release.sh')} ${list}`, (error, stdout, stderr) => {
+            if (error) {
+                console.log(error);
+            }
+        });
     })
 }
 onSelectVersion()
