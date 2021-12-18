@@ -1,5 +1,6 @@
 import { eq, getType } from "../../main";
 import diff from "../../src/Date/diff";
+
 const day = 1000 * 60 * 60 * 24
 const hour = 1000 * 60 * 60
 const minute = 1000 * 60
