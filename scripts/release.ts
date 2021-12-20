@@ -2,9 +2,7 @@
 import pkg from "../package.json";
 import inquirer from "inquirer";
 import fs from "fs";
-import { $ } from 'zx'
-// import { exec,execSync } from "child_process";
-// import path from "path";
+import { $ } from 'zx';
 const version = pkg.version;
 const reg = /([1-9])\.([0-9])\.([0-9])(?:(\-\w*)\.([1-9]+))?/g
 const execs = reg.exec(version) as Array<any>;

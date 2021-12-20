@@ -8,11 +8,12 @@ medash.specialChar(value: string, reg: RegExp = regChar):result
 2. `reg`:(RegExp): 正则,默认为/[`~!@#$%^&*()_\-+=<>?:"{}|,.\/;'\\[\]·~！@#￥%……&*（）——\-+={}|《》？：“”【】、；‘’，。、]/
   
 **返回**  
-`result`:返回一个包含`isSpecialChar,value`属性的对象
+`result`:返回一个包含`isSpecialChar,value,regExp`属性的对象
 ```js
 type result = {
     isSpecialChar: boolean,//是否包含特殊字符
     value: string//去除所有特殊字符后的值
+    regExp: RegExp//正则
 }
 ```
 **例子**  
