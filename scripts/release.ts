@@ -2,7 +2,7 @@
 import pkg from "../package.json";
 import inquirer from "inquirer";
 import fs from "fs";
-import { $, sleep } from 'zx'
+import { $ } from 'zx'
 // import { exec,execSync } from "child_process";
 // import path from "path";
 const version = pkg.version;
