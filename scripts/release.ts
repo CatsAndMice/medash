@@ -1,8 +1,10 @@
+#!/usr/bin/env zx
 import pkg from "../package.json";
 import inquirer from "inquirer";
-import { exec } from "child_process";
-import path from "path";
-
+import fs from "fs";
+import { $, sleep } from 'zx'
+// import { exec,execSync } from "child_process";
+// import path from "path";
 const version = pkg.version;
 const reg = /([1-9])\.([0-9])\.([0-9])(?:(\-\w*)\.([1-9]+))?/g
 const execs = reg.exec(version) as Array<any>;
@@ -29,11 +31,11 @@ const onSelectVersion = async () => {
         choices: lists,
         default: [lists[0]]
     }]).then(({ list }) => {
-        console.log(list);
-        exec(`${path.join(__dirname, './release.sh')} ${list}`, (error, stdout, stderr) => {
-            if (error) {
-                console.log(error);
-            }
+        pkg.version = list
+        fs.writeFile('../package.json', JSON.stringify(pkg), async () => {
+            await $`git add .`;
+            await $`git commit -m ${list}`;
+            await $`git push origin dev`;
         });
     })
 }
