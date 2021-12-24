@@ -32,7 +32,7 @@ medash.eq('medash','medash');//true
 > 按需导入只会加载需要代码，减少文件体格
 
 ```js
-const eq = require('medash/eq');
+const eq = require('medash/lib/eq');
 eq('medash','medash');//true
 ```
 
