@@ -1,8 +1,13 @@
 type result = {
     isSpecialChar: boolean,
-    value: string
+    value: string,
+    regExp: RegExp
 }
-export const regChar = /[`~!@#$%^&*()_\-+=<>?:"{}|,.\/;'\\[\]·~！@#￥%……&*（）——\-+={}|《》？：“”【】、；‘’，。、]/;
+const regChar = /[`~!@#$%^&*()_\-+=<>?:"{}|,.\/;'\\[\]·~！@#￥%……&*（）——\-+={}|《》？：“”【】、；‘’，。、]/;
 export default (value: string, reg: RegExp = regChar): result => {
-    return { isSpecialChar: reg.test(value), value: value.replace(new RegExp(regChar, 'g'), '') };
+    return {
+        isSpecialChar: reg.test(value),
+        value: value.replace(new RegExp(regChar, 'g'), ''),
+        regExp: regChar
+    };
 }
