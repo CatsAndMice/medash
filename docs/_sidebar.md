@@ -18,6 +18,7 @@
     * [getType](v3/function/getType.md)
     * [getGtTenStr](v3/function/getGtTenStr)
     * [getThousandsChar](v3/function/getThousandsChar)
+    * [valueLen](v3/function/valueLen)
 * 数组  
     * [customKey](v3/Array/customKey.md)
     * [getMin](v3/Array/getMin.md) 

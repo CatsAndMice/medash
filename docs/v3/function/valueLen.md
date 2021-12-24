@@ -5,14 +5,14 @@ medash.valueLen(value:string):number
 
 **参数**  
 1. `value`(string): 字符串
-  
+
 **返回**  
-`number`: 字数        
-  
+`number`: 字数  
+
+     
 **例子**  
 
 ```js
 medash.valueLen('😃我12');//4
 medash.valueLen(',.)😅5$  %😇([]')//13
-
 ```
