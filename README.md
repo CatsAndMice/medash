@@ -2,6 +2,7 @@
 
 ![npm](https://img.shields.io/npm/v/medash)
 ![npm](https://img.shields.io/npm/dt/medash)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/medash)
 [![LICENSE MIT](https://img.shields.io/npm/l/medash.svg)](https://www.npmjs.com/package/medash)
 
  
