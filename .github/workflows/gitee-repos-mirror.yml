@@ -11,5 +11,5 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.GITEE_PRIVATE_KEY }}
         with:
           source-repo: "git@github.com:CatsAndMice/medash.git"
-          destination-repo: "git@gitee.com:CatsAndMice/tool.git"
+          destination-repo: "git@gitee.com:JsHai/tool.git"
  
