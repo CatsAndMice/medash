@@ -8,7 +8,7 @@ jobs:
         uses: mizuka-wu/gitee-pages-action@v1.0.0
         with:
           repository: CatsAndMice/medash
-          cookie: ${{ secrets.GITEE_COOKIE }} 
+          cookie: ${{ secrets.COOKIE }} 
           directory: docs
           https: false
       - uses: wearerequired/git-mirror-action@master
