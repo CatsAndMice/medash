@@ -4,12 +4,6 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: wearerequired/git-mirror-action@master
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.GITEE_PRIVATE_KEY }}
-        with:
-          source-repo: "git@github.com:CatsAndMice/medash.git"
-          destination-repo: "git@gitee.com:JsHai/tool.git"
       - name: reload
         uses: mizuka-wu/gitee-pages-action@v1.0.0
         with:
@@ -17,3 +11,10 @@ jobs:
           cookie: ${{ secrets.GITEE_COOKIE }} 
           directory: docs
           https: false
+      - uses: wearerequired/git-mirror-action@master
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.GITEE_PRIVATE_KEY }}
+        with:
+          source-repo: "git@github.com:CatsAndMice/medash.git"
+          destination-repo: "git@gitee.com:JsHai/tool.git"
+     
