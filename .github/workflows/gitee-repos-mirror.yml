@@ -1,7 +1,5 @@
 name: Sync To Gitee  
-on:
-  push:
-    branches: [dev, master]
+on: page_build
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -12,4 +10,10 @@ jobs:
         with:
           source-repo: "git@github.com:CatsAndMice/medash.git"
           destination-repo: "git@gitee.com:JsHai/tool.git"
- 
+      - name: reload
+            uses: mizuka-wu/gitee-pages-action@v1.0.0
+            with:
+                repository: CatsAndMice/medash
+                cookie: ${{ secrets.GITEE_COOKIE }} 
+                directory: docs
+                https: false
