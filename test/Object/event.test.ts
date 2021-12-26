@@ -1,6 +1,10 @@
-import medash from "../../main"
+import medash, { isEmptyObj } from "../../main"
 
 describe('event', () => {
+    it('event', () => {
+        expect(isEmptyObj(medash.event)).toBeFalsy();
+    })
+
     it('once', () => {
         let fn = function () { }
         medash.once('one', function () {
@@ -49,11 +53,11 @@ describe('event', () => {
         let fn2 = () => { };
         let fn3 = () => console.log(11);
         let fn4 = () => false;
-        medash.on('someFunc',fn1);
-        medash.once('someFunc',fn2);
+        medash.on('someFunc', fn1);
+        medash.once('someFunc', fn2);
         expect(medash.watchCache().get('someFunc').length).toBe(1)
-        medash.on('someFunc',fn3)
-        medash.once('someFunc',fn4)
+        medash.on('someFunc', fn3)
+        medash.once('someFunc', fn4)
         expect(medash.watchCache().get('someFunc').length).toBe(3);
         medash.trigger('someFunc');
         expect(medash.watchCache().get('someFunc').length).toBe(2);

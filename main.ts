@@ -22,7 +22,7 @@ import isSafePaddWord from "./src/Function/isSafePaddWord";
 import isFunc from "./src/Function/isFunc";
 import debounce from "./src/Function/debounce";
 import throttle from "./src/Function/throttle";
-import { on, once, remove, setMaxCache, watchCache, trigger, getMaxCache } from './src/Object/event';
+import event, { on, once, remove, setMaxCache, watchCache, trigger, getMaxCache } from './src/Object/event';
 import diff from "./src/Date/diff";
 import formatDate from "./src/Date/formatDate";
 import getCalender from "./src/Date/getCalender";
@@ -41,8 +41,9 @@ import { default as db, setLocalDb, setSionDb, getLocalDb, getSionDb, removeLoca
 import valueLen from "./src/Function/valueLen";
 import specialChar from "./src/Function/specialChar";
 export {
-specialChar,
-valueLen,
+    event,
+    specialChar,
+    valueLen,
     db,
     setLocalDb,
     setSionDb,
@@ -100,8 +101,9 @@ valueLen,
 }
 
 export default {
-specialChar,
-valueLen,
+    event,
+    specialChar,
+    valueLen,
     db,
     setLocalDb,
     setSionDb,

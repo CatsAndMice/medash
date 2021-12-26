@@ -31,6 +31,7 @@
     * [getClone](v3/Object/getClone.md)
     * [getDeepClone](v3/Object/getDeepClone.md)
     * [db](v3/Object/db.md)
+    * [event](v3/Object/event.md)
 * 日期
     * [getYmdHms](v3/Date/getYmdHms.md)
     * [formatDate](v3/Date/formatDate.md)

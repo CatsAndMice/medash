@@ -83,3 +83,13 @@ export function watchCache() {
     console.info('缓存事件:', events);
     return events
 }
+
+export default {
+    on,
+    once,
+    trigger,
+    remove,
+    setMaxCache,
+    getMaxCache,
+    watchCache
+}
