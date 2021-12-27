@@ -30,11 +30,16 @@ const onSelectVersion = async () => {
         default: [lists[0]]
     }]).then(({ list }) => {
         pkg.version = list
-        fs.writeFile('../package.json', JSON.stringify(pkg), async () => {
+        fs.writeFile('../package.json', JSON.stringify(pkg), async (error) => {
+            if(error){
+                console.log(error);
+                
+                return;
+            }
             await $`git add .`;
             await $`git commit -m ${list}`;
-            await $`git push origin master`;
-            await $`npm run build&&npm publish`;
+            // await $`git push origin master`;
+            // await $`npm run build&&npm publish`;
         });
     })
 }
