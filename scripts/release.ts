@@ -33,8 +33,8 @@ const onSelectVersion = async () => {
         fs.writeFile('../package.json', JSON.stringify(pkg), async () => {
             await $`git add .`;
             await $`git commit -m ${list}`;
-            await $`git push origin dev`;
-            await $`npm run release`;
+            await $`git push origin master`;
+            await $`npm run build&&npm publish`;
         });
     })
 }
