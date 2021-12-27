@@ -1,6 +1,7 @@
 #!/usr/bin/env zx
 import pkg from "../package.json";
 import inquirer from "inquirer";
+import path from "path"
 import fs from "fs";
 import { $ } from 'zx';
 const version = pkg.version;
@@ -30,16 +31,14 @@ const onSelectVersion = async () => {
         default: [lists[0]]
     }]).then(({ list }) => {
         pkg.version = list
-        fs.writeFile('../package.json', JSON.stringify(pkg), async (error) => {
-            if(error){
-                console.log(error);
-                
+        fs.writeFile(path.join(__dirname, '../package.json'), String(JSON.stringify(pkg)), 'utf8', async (error) => {
+            if (error) {
                 return;
             }
             await $`git add .`;
             await $`git commit -m ${list}`;
-            // await $`git push origin master`;
-            // await $`npm run build&&npm publish`;
+            await $`git push origin master`;
+            await $`npm run build&&npm publish`;
         });
     })
 }
