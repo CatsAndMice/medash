@@ -38,7 +38,7 @@ eq('medash','medash');//true
 
 ## :package:  API文档
 
-[查看文档](http://jshai.gitee.io/tool) 
+[查看文档](http://jshai.gitee.io/tool/docs) 
 
 
 ## 协议
