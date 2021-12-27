@@ -1,4 +1,4 @@
-name: Sync To Gitee 
+name: Sync To Gitee  
 on: page_build
 jobs:
   sync:
