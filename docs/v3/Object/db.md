@@ -6,7 +6,7 @@ db.setLocalDb(key,value)
 
 
 //或直接调用
-medash.setLocalDb(key,value); //对应setItem, 已进行序列化处理
+medash.setLocalDb(key,value); //对应setItem, 已进行序列化处理,其中value不能为空值。空值为:`0,null,'',undefined,{},[] ,NaN`
 medash.getLocalDb(key); //对应getItem
 medash.removeLocalDb();//对应removeItem
 medash.clearLocalDb();//对应clear
