@@ -40,7 +40,9 @@ import getMonthRange from "./src/Date/getMonthRange";
 import { default as db, setLocalDb, setSionDb, getLocalDb, getSionDb, removeLocalDb, removeSionDb, clearLocalDb, clearSionDb } from "./src/Object/db";
 import valueLen from "./src/Function/valueLen";
 import specialChar from "./src/Function/specialChar";
+import getValue from "./src/Array/getValue";
 export {
+getValue,
     event,
     specialChar,
     valueLen,
@@ -101,6 +103,7 @@ export {
 }
 
 export default {
+getValue,
     event,
     specialChar,
     valueLen,

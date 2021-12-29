@@ -25,6 +25,7 @@
     * [getMax](v3/Array/getMax.md)
     * [isZeroLen](v3/Array/isZeroLen.md)
     * [getUnique](v3/Array/getUnique.md)
+     * [getValue](v3/Array/getValue.md)
 * 对象
     * [each](v3/Object/each.md)
     * [isEmptyObj](v3/Object/isEmptyObj.md)
