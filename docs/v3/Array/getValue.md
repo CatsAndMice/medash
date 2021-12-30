@@ -1,7 +1,8 @@
 ```js
 medash.getValue(args: any[], callBack: (value?: any, index?: number, self?: Object) => boolean): any
 ```
-遍历数组,当`callBack`函数返回`true`时，遍历结束并返回当前值。当遍历结束时,如果`callBack`一直没有返回`true`时,`getValue`方法执行结束返回`undefined`。
+遍历数组,当`callBack`函数返回`true`时，遍历立即结束并返回当前值(原生`filter`依然会进行遍历)
+当遍历结束时,如果`callBack`一直没有返回`true`时,`getValue`方法执行结束返回`undefined`。
 
 **参数**  
 1. `args`(any[]): 任意类型的数组  
