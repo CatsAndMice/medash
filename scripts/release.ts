@@ -29,8 +29,12 @@ const onSelectVersion = async () => {
         message: '请选择发布的版本:',
         choices: lists,
         default: [lists[0]]
-    }]).then(({ list }) => {
+    }]).then(async ({ list }) => {
         pkg.version = list
+        let branch = await $`git branch`;
+        const { stdout } = branch;
+        const reg = /^\*\D(.+)\D/g;
+        branch = (reg.exec(stdout) as any[])[1];
         fs.writeFile(path.join(__dirname, '../package.json'), String(JSON.stringify(pkg)), 'utf8', async (error) => {
             if (error) {
                 return;
@@ -39,7 +43,7 @@ const onSelectVersion = async () => {
             await $`git commit -m ${list}`;
             await $`git tag ${list}`;
             await $`git push origin ${list}`;
-            await $`git push origin dev`;
+            await $`git push origin ${branch}`;
 
             // await $`npm run build&&npm publish`;
         });
