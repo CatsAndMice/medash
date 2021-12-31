@@ -44,8 +44,7 @@ const onSelectVersion = async () => {
             await $`git tag ${list}`;
             await $`git push origin ${list}`;
             await $`git push origin ${branch}`;
-
-            // await $`npm run build&&npm publish`;
+            await $`npm run build&&npm publish`;
         });
     })
 }
