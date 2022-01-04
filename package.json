@@ -1,1 +1,77 @@
-{"name":"medash","version":"v3.1.1","description":"📦medash个人常用代码片段汇总💡,减少不必要重复coding,开箱即用🚀 🚀","bugs":{"url":"https://github.com/CatsAndMice/medash/issues"},"homepage":"https://catsandmice.github.io/medash/#/","repository":{"type":"git","url":"https://github.com/CatsAndMice/medash.git"},"files":["lib"],"keywords":["nodeJs","medash","typeScirpt","工具方法","开箱即用"],"main":"lib/main.js","types":"lib/main.d.ts","scripts":{"create":"ts-node ./build/create.ts","serve":"docsify serve docs","build":"rollup -c","test":"jest ./test","test-coverage":"jest --coverage","patch":"npm version patch&&npm run release","minor":"npm version minor&&npm run release","major":"npm version major&&npm run release","release":"ts-node scripts/release.ts"},"author":"hai","license":"MIT","dependencies":{"@babel/runtime":"^7.16.0","@babel/runtime-corejs3":"^7.16.0"},"devDependencies":{"@babel/core":"^7.16.0","@babel/plugin-external-helpers":"^7.16.0","@babel/plugin-transform-runtime":"^7.16.0","@babel/preset-env":"^7.16.0","@commitlint/cli":"^13.1.0","@commitlint/config-conventional":"^13.1.0","@rollup/plugin-babel":"^5.3.0","@rollup/plugin-commonjs":"^21.0.1","@types/inquirer":"^8.1.3","@types/jest":"^26.0.24","chalk":"^4.1.2","docsify-cli":"^4.4.3","husky":"^4.3.8","inquirer":"^8.2.0","jest":"^27.0.6","rollup":"^2.59.0","rollup-plugin-babel":"^4.4.0","rollup-plugin-json":"^4.0.0","rollup-plugin-node-resolve":"^5.2.0","rollup-plugin-terser":"^7.0.2","rollup-plugin-typescript2":"^0.30.0","standard":"^16.0.3","ts-jest":"^27.0.7","ts-node":"^10.4.0","typedoc":"^0.22.9","typescript":"^4.4.4"},"browserslist":"> 0.25%, not dead","husky":{"hooks":{"pre-commit":"npm run test","commit-msg":"commitlint -E HUSKY_GIT_PARAMS"}}}
+{
+    "name": "medash",
+    "version": "v3.1.1",
+    "description": "📦medash个人常用代码片段汇总💡,减少不必要重复coding,开箱即用🚀 🚀",
+    "bugs": {
+        "url": "https://github.com/CatsAndMice/medash/issues"
+    },
+    "homepage": "https://catsandmice.github.io/medash/#/",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/CatsAndMice/medash.git"
+    },
+    "files": [
+        "lib"
+    ],
+    "keywords": [
+        "nodeJs",
+        "medash",
+        "typeScirpt",
+        "工具方法",
+        "开箱即用"
+    ],
+    "main": "lib/main.js",
+    "types": "lib/main.d.ts",
+    "scripts": {
+        "create": "ts-node ./build/create.ts",
+        "serve": "docsify serve docs",
+        "build": "rollup -c",
+        "test": "jest ./test",
+        "test-coverage": "jest --coverage",
+        "patch": "npm version patch&&npm run release",
+        "minor": "npm version minor&&npm run release",
+        "major": "npm version major&&npm run release",
+        "release": "ts-node scripts/release.ts"
+    },
+    "author": "hai",
+    "license": "MIT",
+    "dependencies": {
+        "@babel/runtime": "^7.16.0",
+        "@babel/runtime-corejs3": "^7.16.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.16.0",
+        "@babel/plugin-external-helpers": "^7.16.0",
+        "@babel/plugin-transform-runtime": "^7.16.0",
+        "@babel/preset-env": "^7.16.0",
+        "@commitlint/cli": "^13.1.0",
+        "@commitlint/config-conventional": "^13.1.0",
+        "@rollup/plugin-babel": "^5.3.0",
+        "@rollup/plugin-commonjs": "^21.0.1",
+        "@types/inquirer": "^8.1.3",
+        "@types/jest": "^26.0.24",
+        "chalk": "^4.1.2",
+        "docsify-cli": "^4.4.3",
+        "husky": "^4.3.8",
+        "inquirer": "^8.2.0",
+        "jest": "^27.0.6",
+        "rollup": "^2.59.0",
+        "rollup-plugin-babel": "^4.4.0",
+        "rollup-plugin-json": "^4.0.0",
+        "rollup-plugin-node-resolve": "^5.2.0",
+        "rollup-plugin-terser": "^7.0.2",
+        "rollup-plugin-typescript2": "^0.30.0",
+        "standard": "^16.0.3",
+        "ts-jest": "^27.0.7",
+        "ts-node": "^10.4.0",
+        "typedoc": "^0.22.9",
+        "typescript": "^4.4.4"
+    },
+    "browserslist": "> 0.25%, not dead",
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run test",
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    }
+}
