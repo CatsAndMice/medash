@@ -1,5 +1,3 @@
-import lt from "../Function/lt"
-
 const formatTimeReg = /^(\d{4})(?:\D(\d{1,2})\D?)?(?:\D(\d{1,2})\D?)?(?:\s+(?:(\d{1,2})\D?)(?:\D(\d{1,2})\D?)?(?:\D(\d{1,2}))?\D?)?$/
 // // 校验日历值是否与实际情况一致
 // function _test({ months, days, hours, minutes, seconds }) {
