@@ -1,0 +1,1 @@
+import { fullScreen } from "../../main";
