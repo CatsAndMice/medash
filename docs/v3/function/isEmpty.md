@@ -12,8 +12,12 @@ medash.isEmpty(value: any):boolean
 
 **例子**
 ```js
-medash.lt(1, 2)//true
-medash.lt('1', 2)//true
-medash.lt('2',0)//false
-medash.lt(2,-2)//false
+medash.isEmpty('');//true
+medash.isEmpty(0);//true
+medash.isEmpty({});//true
+medash.isEmpty([]);//true
+medash.isEmpty(NaN);//true
+medash.isEmpty(undefined);//true
+medash.isEmpty(null);//true
+medash.isEmpty(1);//false
 ```
