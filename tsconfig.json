@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "module": "ESNext",
     /* 基础配置 */
     "target": "esnext",
     "lib": [
@@ -16,12 +17,12 @@
 
     /* 模块分析配置 */
     "baseUrl": ".",
-    "outDir": "./lib",
+    "outDir": "./dist",
     "esModuleInterop": true,
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
     "resolveJsonModule": true
   },
   "include": [
-    "./main.ts"
+    "./src/Object/fullScreen.ts"
   ]
 }

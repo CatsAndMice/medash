@@ -41,8 +41,10 @@ import { default as db, setLocalDb, setSionDb, getLocalDb, getSionDb, removeLoca
 import valueLen from "./src/Function/valueLen";
 import specialChar from "./src/Function/specialChar";
 import getValue from "./src/Array/getValue";
+import fullScreen from "./src/Object/fullScreen";
 export {
-getValue,
+    fullScreen,
+    getValue,
     event,
     specialChar,
     valueLen,
@@ -103,7 +105,8 @@ getValue,
 }
 
 export default {
-getValue,
+    fullScreen,
+    getValue,
     event,
     specialChar,
     valueLen,
