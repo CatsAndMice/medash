@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="full">搜查发电机</div>
+    <button id="btn">全屏</button>
+    <script type="module">
+        import fullScreen from "../../dist/Object/fullScreen.js"; //导入fullScreen对象
+        const btn = document.getElementById('btn')
+        btn.onclick = () => {
+            fullScreen.addEventListener(() => {
+                console.log('成功');
+            }, () => {
+                console.log('失败');
+            })
+            console.log(fullScreen);
+            fullScreen.isFullScreen() ? fullScreen.exitFullscreen() : fullScreen.requestFullscreen(btn);
+            console.log(fullScreen.getFullscreenElement());
+        }
+
+    </script>
+</body>
+
+</html>

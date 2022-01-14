@@ -33,7 +33,7 @@ const onSelectVersion = async () => {
         pkg.version = list
         let branch = await $`git branch`;
         const { stdout } = branch;
-        const reg = /^\*\D(.+)\D/g;
+        const reg = /\*\D(.+)\D/g;
         branch = (reg.exec(stdout) as any[])[1];
         fs.writeFile(path.join(__dirname, '../package.json'), String(JSON.stringify(pkg)), 'utf8', async (error) => {
             if (error) {

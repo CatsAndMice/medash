@@ -43,8 +43,8 @@ import specialChar from "./src/Function/specialChar";
 import getValue from "./src/Array/getValue";
 import fullScreen from "./src/Object/fullScreen";
 export {
-fullScreen,
-getValue,
+    fullScreen,
+    getValue,
     event,
     specialChar,
     valueLen,
@@ -105,8 +105,8 @@ getValue,
 }
 
 export default {
-fullScreen,
-getValue,
+    fullScreen,
+    getValue,
     event,
     specialChar,
     valueLen,
