@@ -11,7 +11,8 @@
         "url": "https://github.com/CatsAndMice/medash.git"
     },
     "files": [
-        "lib"
+        "lib",
+        "dist"
     ],
     "keywords": [
         "nodeJs",
