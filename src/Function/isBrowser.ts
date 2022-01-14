@@ -1,4 +1,5 @@
 export default (): boolean => {
-    let type = typeof window;
-    return type !== 'undefined';
+    const isWindow = typeof Window !== 'undefined';
+    const isDocument = typeof document !== 'undefined';
+    return isWindow && isDocument;
 }
