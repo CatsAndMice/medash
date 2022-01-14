@@ -13,7 +13,7 @@ function _dealWith(arg) {
     let [year, months = 1, days = 1, hours = 0, minutes = 0, seconds = 0] = arg;
     const curDate = new Date()
     curDate.setFullYear(year)
-    curDate.setMonth(Number(months - 1))
+    curDate.setMonth(Number(months))
     curDate.setDate(days)
     curDate.setHours(hours)
     curDate.setMinutes(minutes)
