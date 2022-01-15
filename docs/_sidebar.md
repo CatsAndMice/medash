@@ -28,6 +28,7 @@
      * [getValue](v3/Array/getValue.md)
 * 对象
     * [each](v3/Object/each.md)
+    * [isObject](v3/Object/isObject.md)
     * [isEmptyObj](v3/Object/isEmptyObj.md)
     * [getClone](v3/Object/getClone.md)
     * [getDeepClone](v3/Object/getDeepClone.md)

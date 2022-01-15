@@ -1,5 +1,6 @@
-export default (origin: { [key: string]: any }):boolean => {
-    let isTypeObj = toString.call(origin) === '[object Object]';
+import isObject from "./isObject";
+export default (origin: { [key: string]: any }): boolean => {
+    let isTypeObj = isObject(origin);
     if (!isTypeObj) {
         return false;
     }

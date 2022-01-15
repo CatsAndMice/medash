@@ -42,7 +42,9 @@ import valueLen from "./src/Function/valueLen";
 import specialChar from "./src/Function/specialChar";
 import getValue from "./src/Array/getValue";
 import fullScreen from "./src/Object/fullScreen";
+import isObject from "./src/Object/isObject";
 export {
+isObject,
     fullScreen,
     getValue,
     event,
@@ -105,6 +107,7 @@ export {
 }
 
 export default {
+isObject,
     fullScreen,
     getValue,
     event,
