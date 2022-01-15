@@ -3,6 +3,7 @@
 ![npm](https://img.shields.io/npm/v/medash)
 ![npm](https://img.shields.io/npm/dt/medash)
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/medash)
+[![](https://data.jsdelivr.com/v1/package/npm/medash/badge)](https://www.jsdelivr.com/package/npm/medash)
 [![LICENSE MIT](https://img.shields.io/npm/l/medash.svg)](https://www.npmjs.com/package/medash)
 
  
@@ -13,7 +14,16 @@
 
 业务开发过程中，经常用到`日期格式化`、`url参数转对象`、`浏览器类型判断`、`节流函数`等常用函数，为避免不同项目多次复制粘贴的麻烦，这里统一封装，并发布到npm，以提高开发效率。如果你也有常用的代码，欢迎为本项目提交pr。
 
-## :building_construction:  安装使用
+## :building_construction:  安装
+
+### CDN
+```html
+<script src="https://cdn.jsdelivr.net/npm/medash@3.1.3/dist/medash.min.js"></script>
+```
+
+### npm
+
+推荐使用 npm 安装[[1\]](https://v3.cn.vuejs.org/guide/installation.html#footnote-1) 
 
 ```shell
 npm install medash
@@ -33,6 +43,11 @@ medash.eq('medash','medash');//true
 
 ```js
 const eq = require('medash/lib/eq');
+eq('medash','medash');//true
+```
+ [webpack](https://webpack.js.org/) 或 [Rollup](https://rollupjs.org/) 模块打包器配合使用，可使用ES6模块化导入
+```js
+import eq from 'medash/lib/eq';
 eq('medash','medash');//true
 ```
 
