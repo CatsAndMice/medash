@@ -18,7 +18,7 @@
 
 ### CDN
 ```html
-<script src="https://cdn.jsdelivr.net/npm/medash@3.1.3/dist/medash.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/medash@3.1.4/dist/medash.min.js"></script>
 ```
 
 ### npm
