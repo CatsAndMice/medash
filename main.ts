@@ -43,8 +43,12 @@ import specialChar from "./src/Function/specialChar";
 import getValue from "./src/Array/getValue";
 import fullScreen from "./src/Object/fullScreen";
 import isObject from "./src/Object/isObject";
+import when from "./src/Function/when";
+import and from "./src/Function/and";
 export {
-isObject,
+and,
+    when,
+    isObject,
     fullScreen,
     getValue,
     event,
@@ -107,7 +111,9 @@ isObject,
 }
 
 export default {
-isObject,
+and,
+    when,
+    isObject,
     fullScreen,
     getValue,
     event,
