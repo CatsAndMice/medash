@@ -56,8 +56,13 @@ fullScreen.addEventListener(success,fail);
 <body>
     <div id="full">搜查发电机</div>
     <button id="btn">全屏</button>
-    <script type="module">
-        import fullScreen from "../../dist/Object/fullScreen.js";
+    <!-- medash  CDN加速 -->
+    <script src="https://cdn.jsdelivr.net/npm/medash@3.1.4/dist/medash.min.js"></script>
+    <script>
+        const { fullScreen } = medash; //导入fullScreen对象
+        const btn = document.getElementById('btn')
+        btn.onclick = () => {
+            fullScreen.addEventListener(() => {
         const btn = document.getElementById('btn');
         btn.onclick = () => {
             fullScreen.addEventListener(() => {
