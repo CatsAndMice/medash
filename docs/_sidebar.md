@@ -1,10 +1,10 @@
-* 函数
+* Function
     * [eq](v3/function/eq.md)
     * [gt](v3/function/gt.md)
     * [lt](v3/function/lt.md)
     * [isEmpty](v3/function/isEmpty.md)
     * [isEmail](v3/function/isEmail.md)
-    * [isIos](v3/Function/isIos.md)
+    * [isIos](v3/function/isIos.md)
     * [isBrowser](v3/function/isBrowser.md)
     * [isTel](v3/function/isTel.md)
     * [isNull](v3/function/isNull.md)
@@ -19,23 +19,26 @@
     * [getGtTenStr](v3/function/getGtTenStr)
     * [getThousandsChar](v3/function/getThousandsChar)
     * [valueLen](v3/function/valueLen)
-* 数组  
+    * [and](v3/function/and.md)
+    * [when](v3/function/when.md)
+* Array
     * [customKey](v3/Array/customKey.md)
     * [getMin](v3/Array/getMin.md) 
     * [getMax](v3/Array/getMax.md)
     * [isZeroLen](v3/Array/isZeroLen.md)
     * [getUnique](v3/Array/getUnique.md)
      * [getValue](v3/Array/getValue.md)
-* 对象
+* Object
     * [each](v3/Object/each.md)
     * [isObject](v3/Object/isObject.md)
     * [isEmptyObj](v3/Object/isEmptyObj.md)
+    * [some](v3/Object/some.md)
     * [getClone](v3/Object/getClone.md)
     * [getDeepClone](v3/Object/getDeepClone.md)
     * [db](v3/Object/db.md)
     * [event](v3/Object/event.md)
     * [fullScreen](v3/Object/fullScreen.md)
-* 日期
+* Data
     * [getYmdHms](v3/Date/getYmdHms.md)
     * [formatDate](v3/Date/formatDate.md)
     * [diff](v3/Date/diff.md)
