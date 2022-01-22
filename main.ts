@@ -45,7 +45,9 @@ import fullScreen from "./src/Object/fullScreen";
 import isObject from "./src/Object/isObject";
 import when from "./src/Function/when";
 import and from "./src/Function/and";
+import some from "./src/Object/some";
 export {
+some,
 and,
     when,
     isObject,
@@ -111,6 +113,7 @@ and,
 }
 
 export default {
+some,
 and,
     when,
     isObject,
