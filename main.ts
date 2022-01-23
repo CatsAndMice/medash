@@ -46,7 +46,11 @@ import isObject from "./src/Object/isObject";
 import when from "./src/Function/when";
 import and from "./src/Function/and";
 import some from "./src/Object/some";
+import compose from "./src/Function/compose";
+import composePromise from "./src/Function/composePromise";
 export {
+composePromise,
+compose,
 some,
 and,
     when,
@@ -113,6 +117,8 @@ and,
 }
 
 export default {
+composePromise,
+compose,
 some,
 and,
     when,
