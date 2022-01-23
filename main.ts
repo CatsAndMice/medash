@@ -48,7 +48,9 @@ import and from "./src/Function/and";
 import some from "./src/Object/some";
 import compose from "./src/Function/compose";
 import composePromise from "./src/Function/composePromise";
+import chain from "./src/Object/chain";
 export {
+chain,
 composePromise,
 compose,
 some,
@@ -117,6 +119,7 @@ and,
 }
 
 export default {
+chain,
 composePromise,
 compose,
 some,
