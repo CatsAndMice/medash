@@ -21,7 +21,6 @@ class Chain implements ChainInterFace {
 
     passRequest(...params) {
         if (isObject(this.nextChain)) {
-            //
             this.fn.apply(this, [...params, (this.nextChain as Chain).passRequest.bind(this.nextChain, ...params)]);
             return;
         }
