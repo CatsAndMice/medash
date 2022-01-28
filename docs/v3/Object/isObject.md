@@ -19,4 +19,17 @@ medash.isObject(1)//false
 medash.isObject('1')//false
 medash.isObject(null)//false
 medash.isObject(undefined)//false
-```
+```    
+
+<!-- anywhere else on your page -->
+<div id="my-element">
+const medash = require("medash");
+console.log(medash.isObject({}));//true
+console.log(medash.isObject([]));//false
+console.log(medash.isObject(/^122$/));////false
+console.log(medash.isObject(1));//false
+console.log(medash.isObject('1'));//false
+console.log(medash.isObject(null));//false
+console.log(medash.isObject(undefined));//false
+</div>
+
