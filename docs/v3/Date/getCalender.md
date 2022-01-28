@@ -20,8 +20,9 @@ medash.getCalender(args: Date | number, format: string = 'YYYY.MM.DD hh:mm:ss')
   
 **例子**  
 
-```js
-medash.getCalender(Date.now(), 'YYYY.MM.DD');//2021.12.04
-medash.getCalender(Date.now(), 'YYYY.MM.DD hh时mm分ss秒');//2021.12.04 20时07分30秒
-medash.getCalender(Date.now(), 'hh时mm分ss秒');//20时07分30秒
-```
+<me-embed>
+const {getCalender} = require("medash");
+console.log(getCalender(Date.now(), 'YYYY.MM.DD'));
+console.log(getCalender(Date.now(), 'YYYY.MM.DD hh时mm分ss秒'));
+console.log(getCalender(Date.now(), 'hh时mm分ss秒'));
+</me-embed>

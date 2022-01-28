@@ -11,10 +11,11 @@ medash.getDeepClone(origin: { [key: string]: any } | any[])
 
 **例子**  
 
-```js
+<me-embed>
+const medash = require("medash");
 let arr = [{ name: 20 }, 1, [2]]
 let clone = medash.getDeepClone(arr)
 console.log(arr[1] === clone[1]);//true
 console.log(arr[0] === clone[0]);//false
-```
+</me-embed>
 

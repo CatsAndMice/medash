@@ -9,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="shortcut icon" href="./single.ico" type="image/x-icon">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <script src="https://embed.runkit.com"></script>
 </head>
 
 <body>
@@ -21,8 +22,31 @@
     }
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  <script src="https://embed.runkit.com" data-element-id="my-element" async></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+  <script>
+      class RunKitEmbed extends HTMLElement {
+        constructor() {
+          super();
+          const wrapper = document.createElement('div')
+          wrapper.style = "margin: 20pt"
+
+          const source = this.textContent
+          this.textContent = ""
+          const tempCodePlaceholder = document.createElement('pre')
+          tempCodePlaceholder.textContent = source
+
+          window.RunKit.createNotebook({
+            element: wrapper,
+            source,
+            onLoad: () => tempCodePlaceholder.remove()
+          })
+          this.appendChild(wrapper)
+          this.appendChild(tempCodePlaceholder)
+        }
+      }
+    customElements.define('me-embed', RunKitEmbed);
+  </script>
+
 </body>
 
 </html>

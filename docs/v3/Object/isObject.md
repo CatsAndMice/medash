@@ -11,25 +11,16 @@ medash.isObject(origin:any }):boolean
 
 **例子**  
 
-```js
-medash.isObject({})//true
-medash.isObject([])//false
-medash.isObject(/^122$/)//false
-medash.isObject(1)//false
-medash.isObject('1')//false
-medash.isObject(null)//false
-medash.isObject(undefined)//false
-```    
 
-<!-- anywhere else on your page -->
-<div id="my-element">
+<me-embed>
 const medash = require("medash");
 console.log(medash.isObject({}));//true
 console.log(medash.isObject([]));//false
 console.log(medash.isObject(/^122$/));////false
 console.log(medash.isObject(1));//false
+console.log(medash.isObject({age:20}));//true
 console.log(medash.isObject('1'));//false
 console.log(medash.isObject(null));//false
 console.log(medash.isObject(undefined));//false
-</div>
+</me-embed>
 

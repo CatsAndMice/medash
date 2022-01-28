@@ -11,8 +11,9 @@ medash.isEmptyObj (origin: { [key: string]: any }):boolean
 
 **例子**  
 
-```js
-medash.isEmptyObj({});//true
-medash.isEmptyObj({age:20});//false
-medash.isEmptyObj(1 as Object);//false
-```
+<me-embed> 
+const medash = require("medash");
+console.log(medash.isEmptyObj({}));//true
+console.log(medash.isEmptyObj({age:20}));//false
+console.log(medash.isEmptyObj(1));//false
+</me-embed>

@@ -14,9 +14,12 @@ medash.some(origin: { [key: string]: any }, callBack: (key?, value?, self?) => b
 **返回**  
  `boolean`: 被提供的函数返回`true`，则`some`方法结束并返回`true`;遍历完成对象后被提供的函数一直没有返回`true`,则`some`方法返回`false`。  
   
-**例子**  
-```js
+**例子**    
+
+<me-embed> 
+const medash = require("medash");
 const data = { name: 'some', age: 20, sex: '男' };
-medash.some(data, (key, value) => value === 20);//true
-medash.some(data, key => key==="key");//false
-```
+console.log(medash.some(data, (key, value) => value === 20));//true
+console.log(medash.some(data, key => key==="key"));//false
+</-embed> 
+

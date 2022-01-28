@@ -23,8 +23,9 @@ type Format = {
 
 **例子**  
 
-```js
-medash.diff(2000, 1000,{second:'秒'});//1秒
-medash.diff(new Date('2021'), new Date('2020')，{day: '天'});//366天
-diff(new Date('2021'), new Date('2020'),{day:'天',hour:'时',minute:'分',concat:''})//366天0时0分
-```
+<me-embed>
+const {diff} = require("medash");
+console.log(diff(2000, 1000,{second:'秒'}));//1秒
+console.log(diff(new Date('2021'), new Date('2020'),{day: '天'}));//366天
+console.log(diff(new Date('2021'), new Date('2020'),{day:'天',hour:'时',minute:'分',concat:''}))//366天0时0分
+</me-embed>
