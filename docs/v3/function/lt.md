@@ -12,9 +12,10 @@ medash.lt(value: number | string, target: number | string): boolean
 `boolean:`前者值小于后者值返回`true`,否则返回`false` 
 
 **例子**
-```js
-medash.lt(1, 2)//true
-medash.lt('1', 2)//true
-medash.lt('2',0)//false
-medash.lt(2,-2)//false
-```
+<me-embed>
+const {lt} = require('medash');
+console.log(lt(1, 2))//true
+console.log(lt('1', 2))//true
+console.log(lt('2',0))//false
+console.log(lt(2,-2))//false
+</me-embed>

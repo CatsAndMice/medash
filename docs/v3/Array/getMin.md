@@ -10,8 +10,11 @@ medash.getMin(ages: number[]): number
 `number`: 返回一个数字  
 
 **例子**  
-
-```js
+<me-embed>
+const medash = require("medash");
 let arrs = [-1, 3, -2]
-medash.getMin(arrs);//-2
+console.log(medash.getMin(arrs));//-2
+</me-embed>
+```js
+
 ```

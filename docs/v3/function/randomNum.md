@@ -11,8 +11,7 @@ medash.randomNum(min: number, max: number): number
 `number:`返回一个大于`min`小于`max`范围的随机值  
 
 **例子**
-```js
-medash.randomNum(1,9);
-medash.randomNum(5,9);
-medash.randomNum(-10,0);
-```
+<me-embed>const {randomNum} = require("medash");
+console.log(randomNum(5,9));
+console.log(randomNum(-10,0));
+console.log(randomNum(1,9));</me-embed>

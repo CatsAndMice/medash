@@ -54,5 +54,26 @@ medash.watchCache()
 ```
 查看所有的订阅的事件  
 
-**参数**  
-无  
+**例子**  
+<me-embed>
+const {event} = require("medash");
+event.on("onEvent",()=>{
+    console.log('订阅永久事件');
+});
+event.once("onceEvent",()=>{
+    console.log("订阅一次性事件");
+})
+//重复订阅相同事件,只能保留上次一次订阅的
+event.once("onceEvent",()=>{
+    console.log("订阅一次性事件");
+})
+event.once("onceEvent",()=>{
+    console.log("相同onceEvent,多次订阅事件");
+})
+// 查看所有的订阅事件
+event.watchCache();
+// 触发事件
+event.trigger('onceEvent');
+event.trigger('onEvent');
+
+</me-embed>

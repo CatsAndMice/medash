@@ -10,10 +10,11 @@ medash.isFunc(value: any):boolean
 `boolean:`值为函数类型返回`true`,否则返回`false`  
 
 **例子**
-```js
-medash.isFunc(() => { });//true
-medash.isFunc(1);//false
-medash.isFunc('111');//false
-medash.isFunc(function () { })//true
-medash.isFunc({});//false
-```
+<me-embed>
+const {isFunc} = require("medash");
+console.log(isFunc(() => { }));//true
+console.log(isFunc(1));//false
+console.log(isFunc('111'));//false
+console.log(isFunc(function () { }))//true
+console.log(isFunc({}));//false
+</me-embed>

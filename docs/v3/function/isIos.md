@@ -10,8 +10,6 @@ medash.isIos();
 `boolean`:当前设备是否为ios,是返回`true`,否返回`false`     
   
 **例子**  
-
-```js
+<me-embed>const {isIos} = require("medash");
 //nodeJs环境中运行
-medash.isIos();//false
-```
+console.log(isIos());//false</me-embed>

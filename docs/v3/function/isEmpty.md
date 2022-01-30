@@ -11,13 +11,14 @@ medash.isEmpty(value: any):boolean
 `boolean:`值等于`0,null,'',undefined,{},[] ,NaN`其中之一返回`true`,否则返回`false`
 
 **例子**
-```js
-medash.isEmpty('');//true
-medash.isEmpty(0);//true
-medash.isEmpty({});//true
-medash.isEmpty([]);//true
-medash.isEmpty(NaN);//true
-medash.isEmpty(undefined);//true
-medash.isEmpty(null);//true
-medash.isEmpty(1);//false
-```
+<me-embed>
+const {isEmpty} = require("medash");
+console.log(isEmpty(''));//true
+console.log(isEmpty(0));//true
+console.log(isEmpty({}));//true
+console.log(isEmpty([]));//true
+console.log(isEmpty(NaN));//true
+console.log(isEmpty(undefined));//true
+console.log(isEmpty(null));//true
+console.log(isEmpty(1));//false
+</me-embed>

@@ -8,6 +8,10 @@ medash.isBrowser(): boolean
 
 **例子**
 ```js
-//运行node环境中
-medash.isBrowser();//false
+
 ```
+<me-embed>
+const {isBrowser} = require("medash");
+//运行node环境中
+console.log(isBrowser());//false
+</me-embed>

@@ -15,15 +15,15 @@ medash.getValue(args: any[], callBack: (value?: any, index?: number, self?: Obje
  `any`: 数组的某个子元素或`undefined`
 
 **例子**  
-
-```js
+<me-embed>
+const {getValue} = require("medash");
 const value = [{ name: 'lihai', age: 20 }, { name: 'java', age: 21 }];
 const callBack = (val) => {
     const { name } = val;
     return name === 'lihai'
 }
-medash.getValue(value, callBack);//{ name: 'lihai', age: 20 }
-medash.getValue(value, (val)=>{ //undefined
+console.log(getValue(value, callBack));//{ name: 'lihai', age: 20 }
+console.log(getValue(value, (val)=>{ //undefined
     return val.age===30
-});
-```
+}));
+</me-embed>

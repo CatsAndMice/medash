@@ -11,10 +11,9 @@ medash.isUndefined(value:any): boolean
 `boolean:` 值为`undefined`返回`true`,否则返回`false`
 
 **例子**
-```js
-medash.isUndefined(0);//false
-medash.isUndefined(undefined);//true
-medash.isUndefined({});//false
-medash.isUndefined([]);//false
-medash.isUndefined('');//false
-```
+<me-embed>const {isUndefined} = require("medash");
+console.log(isUndefined(0));//false
+console.log(isUndefined(undefined));//true
+console.log(isUndefined({}));//false
+console.log(isUndefined([]));//false
+console.log(isUndefined(''));//false</me-embed>

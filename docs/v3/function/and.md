@@ -12,9 +12,7 @@ medash.and(param1,param2);
 `boolean`: `param1,param2`传入的参数均为真时，返回`true`;否则返回`false`。        
   
 **例子**  
-
-```js
-medash.and(true, true)//true
-medash.and(false,true)//false
-medash.and({}, {})//true
-```
+<me-embed>const {and} = require("medash");
+console.log(and(true, true))//true
+console.log(and(false,true))//false
+console.log(and({}, {}))//true</me-embed>
