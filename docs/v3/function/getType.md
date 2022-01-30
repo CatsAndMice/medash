@@ -10,8 +10,7 @@ medash.getType(value:any):string
 `string`: 返回传入参数的类型, 类型各类请看举例
 
 **例子**  
-
-```js
+<me-embed>const medash = require('medash');
 medash.getType(null) === 'null';//true
 medash.getType(undefined) === 'undefined';//true
 medash.getType(Symbol(1)) === 'symbol';//true
@@ -24,5 +23,5 @@ medash.getType(new Boolean()) === 'Boolean';//true
 medash.getType({}) === 'Object';//true
 medash.getType([]) === 'Array';//true
 medash.getType(/1/g) === 'RegExp';//true
-medash.getType(new Date()) === 'Date';//true
-```
+medash.getType(new Date()) === 'Date';//true</me-emb>
+

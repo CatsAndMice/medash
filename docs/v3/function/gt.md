@@ -11,10 +11,8 @@ medash.gt(value: number | string, target: number |string):boolean
 `boolean:`前者值大于后者值返回`true`,否则返回`false` 
 
 **例子**
-<me-embed>
-const {gt} = require("medash");
+<me-embed>const {gt} = require("medash");
 console.log(gt(1, 2))//false
 console.log(gt('1', 2))//false
 console.log(gt('2',0))//true
-console.log(gt(2,-2))//true
-</me-embed>
+console.log(gt(2,-2))//true</me-embed>

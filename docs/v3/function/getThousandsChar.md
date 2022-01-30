@@ -11,10 +11,9 @@ medash.getThousandsChar(num: number, char: string = ','): string
 `string:` 返回一个千位符
 
 **例子**
-```js
-medash.getThousandsChar(1000000);//1,000,000
-medash.getThousandsChar(10000)//10,000
-medash.getThousandsChar(1000);//1,000
-medash.getThousandsChar(100);//100
-medash.getThousandsChar(10000,'-');//10-000
-```
+<me-embed>const {getThousandsChar} = require("medash");
+console.log(getThousandsChar(1000000));//1,000,000
+console.log(getThousandsChar(10000))//10,000
+console.log(getThousandsChar(1000));//1,000
+console.log(getThousandsChar(100));//100
+console.log(getThousandsChar(10000,'-'));//10-000</me-embed>

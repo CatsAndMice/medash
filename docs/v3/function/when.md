@@ -11,9 +11,7 @@ const when = (pred, whenTrue) => x => (pred(x) ? whenTrue(x) : x);
 ```
         
 **例子**  
-
-```js
+<me-embed>const {when} = require("medash")
 const doubleEvenNumbers = when(x => x % 2 === 0, x => x * 2);
-doubleEvenNumbers(2); // 4
-doubleEvenNumbers(1); // 1
-```
+console.log(doubleEvenNumbers(2)); // 4
+console.log(doubleEvenNumbers(1)); // 1</me-embed>

@@ -11,14 +11,12 @@ medash.eq(value: any, target: any):boolean
 `boolean:` 值相等返回`true`,否则返回`false` 
 
 **例子**
-<me-embed>
-const {eq} = require("medash");
+<me-embed>const {eq} = require("medash");
 console.log(eq('eq','str'))//false
 console.log(eq({},{}))//true
 console.log(eq({},{name:'medash'}))//false
 console.log(eq({name:'medash'},{name:'medash'}))//true
 console.log(eq(()=>{},()=>{}));//true
-console.log(eq(()=>console.log(1),()=>{}));//false
-</me-embed>
+console.log(eq(()=>console.log(1),()=>{}));//false</me-embed>
 
 
