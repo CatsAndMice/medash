@@ -27,6 +27,5 @@ let origin = [{ name: "a", age: 1, params: { name: 'params1' } }];
 console.log(customKey(origin, { key: 'name', customKey: 'sex' }));//[ { sex: 'a' } ]
 console.log(customKey(origin, { key: 'params', customKey: 'sex' }));//=>[ { sex: { name: 'params1' } } ]
 console.log(customKey(origin, [{ key: "name", customKey: "key" }, { key: "params", customKey: "value" }]));//=>[ { key: 'a', value: { name: 'params1' } } ]
-
 //跳过值为'a'
 console.log(customKey(origin, [{ key: "name", customKey: "key", skip: 'a' }, { key: "params", customKey: "value" }]));//=>[ { value: { name: 'params1' } } ]</me-embed>
