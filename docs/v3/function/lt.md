@@ -1,4 +1,4 @@
-```js
+```ts
 medash.lt(value: number | string, target: number | string): boolean
 ```
 

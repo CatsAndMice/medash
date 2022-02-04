@@ -1,4 +1,4 @@
-```js
+```ts
 medash.when(pred: (param?: any) => boolean, whenTrue: (param?: any) => any | void)
 ```
 返回一个接受一个参数的函数，如果它是真实的就运行一个回调函数，如果是假的就返回它。

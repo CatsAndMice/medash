@@ -1,4 +1,4 @@
-```js
+```ts
 medash.isEmail(value: string): boolean 
 ```
 判断邮箱是否符合邮箱规则  

@@ -1,4 +1,4 @@
-```js
+```ts
 medash.isEmpty(value: any):boolean
 ```
 判断值是否为空  

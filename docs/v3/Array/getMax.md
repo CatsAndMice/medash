@@ -1,4 +1,4 @@
-```js
+```ts
 medash.getMax(ages: number[]): number 
 ```
 获取数组中的最大值
@@ -10,8 +10,6 @@ medash.getMax(ages: number[]): number
 `number`:返回一个数字 
 
 **例子**  
-<me-embed>
-const medash = require("medash");
+<me-embed>const medash = require("medash");
 let arrs = [-1, 3, -2]
-console.log(medash.getMax(arrs))//3
-</me-embed>
+console.log(medash.getMax(arrs))//3</me-embed>

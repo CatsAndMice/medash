@@ -1,4 +1,4 @@
-```js
+```ts
 medash.valueLen(value:string):number
 ```
 统计字数,包括emoji表情

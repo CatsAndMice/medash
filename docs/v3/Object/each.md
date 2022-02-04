@@ -1,4 +1,4 @@
-```js
+```ts
 medash.each(origin: { [key: string]: any }, callBack: (key?, value?, self?) => void):void
 ```
 遍历对象

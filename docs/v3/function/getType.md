@@ -1,4 +1,4 @@
-```js
+```ts
 medash.getType(value:any):string
 ```
 获取参数的类型

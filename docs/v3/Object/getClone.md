@@ -1,4 +1,4 @@
-```js
+```ts
 medash.getClone(origin: { [key: string]: any } | any[])
 ```
 㳀克隆对象或数组 
@@ -11,10 +11,8 @@ medash.getClone(origin: { [key: string]: any } | any[])
 
 **例子**  
 
-<me-embed>
-const {getClone} = require("medash");
+<me-embed>const {getClone} = require("medash");
 let arr = [{ name: 20 }, 1, [2]]
 let clone = getClone(arr)
 console.log(arr[1] === clone[1]);//true
-console.log(arr[0] === clone[0]);//true
-</me-embed>
+console.log(arr[0] === clone[0]);//true</me-embed>

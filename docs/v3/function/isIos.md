@@ -1,4 +1,4 @@
-```js
+```ts
 medash.isIos();
 ```
 判断当前设备是否为`ios`

@@ -1,4 +1,4 @@
-```js
+```ts
 medash.diff(origin: Date | number, target: Date | number,format:Format):string
 ```
 比较两者时间差
@@ -23,9 +23,7 @@ type Format = {
 
 **例子**  
 
-<me-embed>
-const {diff} = require("medash");
+<me-embed>const {diff} = require("medash");
 console.log(diff(2000, 1000,{second:'秒'}));//1秒
 console.log(diff(new Date('2021'), new Date('2020'),{day: '天'}));//366天
-console.log(diff(new Date('2021'), new Date('2020'),{day:'天',hour:'时',minute:'分',concat:''}))//366天0时0分
-</me-embed>
+console.log(diff(new Date('2021'), new Date('2020'),{day:'天',hour:'时',minute:'分',concat:''}))//366天0时0分</me-embed>

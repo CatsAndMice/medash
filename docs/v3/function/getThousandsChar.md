@@ -1,4 +1,4 @@
-```js
+```ts
 medash.getThousandsChar(num: number, char: string = ','): string
 ```  
 数字添加千位符

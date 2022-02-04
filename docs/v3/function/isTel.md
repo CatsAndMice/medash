@@ -1,4 +1,4 @@
-```js
+```ts
 medash.isTel(value: string): boolean 
 ```
 判断电话号码是否符合规则  

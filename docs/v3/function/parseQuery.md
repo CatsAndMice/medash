@@ -1,4 +1,4 @@
-```js
+```ts
 medash.parseQuery(url: string): Object 
 ```  
 获取路径链接中的参数

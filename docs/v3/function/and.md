@@ -1,4 +1,4 @@
-```js
+```ts
 medash.and(param1,param2);
 ```
 并且,与`&&`相同

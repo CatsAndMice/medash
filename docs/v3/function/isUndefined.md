@@ -1,4 +1,4 @@
-```js
+```ts
 medash.isUndefined(value:any): boolean 
 ```
 传入的值是否为`undefined`

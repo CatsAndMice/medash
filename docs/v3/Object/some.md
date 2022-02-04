@@ -1,4 +1,4 @@
-```js
+```ts
 medash.some(origin: { [key: string]: any }, callBack: (key?, value?, self?) => boolean):boolean
 ```
 `some()`方法测试对象中是不是至少有1个值通过了被提供的函数测试。它返回的是一个Boolean类型的值。  
@@ -16,10 +16,8 @@ medash.some(origin: { [key: string]: any }, callBack: (key?, value?, self?) => b
   
 **例子**    
 
-<me-embed> 
-const medash = require("medash");
+<me-embed>const medash = require("medash");
 const data = { name: 'some', age: 20, sex: '男' };
 console.log(medash.some(data, (key, value) => value === 20));//true
-console.log(medash.some(data, key => key==="key"));//false
-</-embed> 
+console.log(medash.some(data, key => key==="key"));//false</me-embed> 
 

@@ -27,7 +27,7 @@ export const exampleContext = (name: string) => {
 }
 
 export const createDocs = () => {
-    let js = '```js\n\n```\n';
+    let js = '```ts\n\n```\n';
     let value = '`value`'
     return js + `
 

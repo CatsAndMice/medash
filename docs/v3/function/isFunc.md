@@ -1,4 +1,4 @@
-```js
+```ts
 medash.isFunc(value: any):boolean
 ```
 判断值是否为函数类型

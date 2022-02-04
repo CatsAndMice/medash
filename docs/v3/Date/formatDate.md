@@ -1,4 +1,4 @@
-```js
+```ts
 medash.formatDate(ms: Date | number,format:Format):string;
 ```
 
@@ -25,11 +25,9 @@ type Format = {
   
 **例子**  
 
-<me-embed>
-const {formatDate} = require("medash");
+<me-embed>const {formatDate} = require("medash");
 console.log(formatDate(10000,{second:'秒'}));//10秒
 console.log(formatDate(1000,{second:'秒'}));//1秒
 console.log(formatDate(1000 * 2 + 5,{second:'秒',millisecond:'毫秒'}));//2秒, 5毫秒
 console.log(formatDate(302544543));//3天, 12小时, 2分钟, 24秒, 543毫秒
-console.log(formatDate(302544543,{hour:'时',minute:'分',concat:''}));//12时2分
-</me-embed>
+console.log(formatDate(302544543,{hour:'时',minute:'分',concat:''}));//12时2分</me-embed>

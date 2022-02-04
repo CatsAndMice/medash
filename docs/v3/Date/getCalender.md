@@ -1,4 +1,4 @@
-```js
+```ts
 medash.getCalender(args: Date | number, format: string = 'YYYY.MM.DD hh:mm:ss')
 ```
 
@@ -20,9 +20,7 @@ medash.getCalender(args: Date | number, format: string = 'YYYY.MM.DD hh:mm:ss')
   
 **例子**  
 
-<me-embed>
-const {getCalender} = require("medash");
+<me-embed>const {getCalender} = require("medash");
 console.log(getCalender(Date.now(), 'YYYY.MM.DD'));
 console.log(getCalender(Date.now(), 'YYYY.MM.DD hh时mm分ss秒'));
-console.log(getCalender(Date.now(), 'hh时mm分ss秒'));
-</me-embed>
+console.log(getCalender(Date.now(), 'hh时mm分ss秒'));</me-embed>

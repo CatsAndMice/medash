@@ -1,4 +1,4 @@
-```js
+```ts
 medash.isNull(value:any): boolean 
 ```
 传入的值是否为`null`

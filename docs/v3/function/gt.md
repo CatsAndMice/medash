@@ -1,4 +1,4 @@
-```js
+```ts
 medash.gt(value: number | string, target: number |string):boolean
 ```  
 比较大小，前者值是否大于后者

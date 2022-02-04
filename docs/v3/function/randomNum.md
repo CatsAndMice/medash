@@ -1,4 +1,4 @@
-```js
+```ts
 medash.randomNum(min: number, max: number): number 
 ```  
 随机获取一个大于min，小于max的值

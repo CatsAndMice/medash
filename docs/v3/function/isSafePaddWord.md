@@ -1,4 +1,4 @@
-```js
+```ts
 medash.isSafePaddWord(paddWord:string):boolean;
 ```
 校验密码是否满足安全等级

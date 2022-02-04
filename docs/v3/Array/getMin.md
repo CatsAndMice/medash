@@ -1,4 +1,4 @@
-```js
+```ts
 medash.getMin(ages: number[]): number 
 ```
 获取数组中的最小值
@@ -15,6 +15,3 @@ const medash = require("medash");
 let arrs = [-1, 3, -2]
 console.log(medash.getMin(arrs));//-2
 </me-embed>
-```js
-
-```

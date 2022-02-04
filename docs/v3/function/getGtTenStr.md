@@ -1,4 +1,4 @@
-```js
+```ts
 medash.getGtTenStr(num: number): string
 ```  
 数字转换成字符串,返回的字符串至少两位数以上
