@@ -1,4 +1,4 @@
-```js
+```ts
 medash.valueLen(value:string):number
 ```
 统计字数,包括emoji表情
@@ -11,8 +11,6 @@ medash.valueLen(value:string):number
 
      
 **例子**  
-
-```js
-medash.valueLen('😃我12');//4
-medash.valueLen(',.)😅5$  %😇([]')//13
-```
+<me-embed>const {valueLen} = require("medash");
+console.log(valueLen('😃我12'));//4
+console.log(valueLen(',.)😅5$  %😇([]'))//13</me-embed>

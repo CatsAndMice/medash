@@ -49,12 +49,16 @@ import some from "./src/Object/some";
 import compose from "./src/Function/compose";
 import composePromise from "./src/Function/composePromise";
 import chain from "./src/Object/chain";
+import gte from "./src/Function/gte";
+import lte from "./src/Function/lte";
 export {
-chain,
-composePromise,
-compose,
-some,
-and,
+    chain,
+    composePromise,
+    compose,
+    lte,
+    gte,
+    some,
+    and,
     when,
     isObject,
     fullScreen,
@@ -119,11 +123,13 @@ and,
 }
 
 export default {
-chain,
-composePromise,
-compose,
-some,
-and,
+    chain,
+    composePromise,
+    compose,
+    lte,
+    gte,
+    some,
+    and,
     when,
     isObject,
     fullScreen,

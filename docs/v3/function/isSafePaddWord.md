@@ -1,4 +1,4 @@
-```js
+```ts
 medash.isSafePaddWord(paddWord:string):boolean;
 ```
 校验密码是否满足安全等级
@@ -15,9 +15,8 @@ medash.isSafePaddWord(paddWord:string):boolean;
 `boolean:` 密码满足安全要求返回`true`,否则返回`false`
 
 **例子**
-```js
-medash.isSafePaddWord('11w111')//false
-medash.isSafePaddWord('2324wW')//false
-medash.isSafePaddWord('2324w')//false
-medash.isSafePaddWord('W2wwW$')//true
-```
+<me-embed>const {isSafePaddWord} = require("medash");
+console.log(isSafePaddWord('11w111'))//false
+console.log(isSafePaddWord('2324wW'))//false
+console.log(isSafePaddWord('2324w'))//false
+console.log(isSafePaddWord('W2wwW$'))//true</me-embed>

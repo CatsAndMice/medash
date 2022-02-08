@@ -1,4 +1,4 @@
-```js
+```ts
 medash.customKey(args: { [key: string]: any }[], option: Option | Option[], isClone: boolean = false): any[]
 ```
 自定义修改数组元素的`key`,并返回一个新的数组
@@ -22,15 +22,10 @@ type Option = {
 
 **例子**  
 
-```js
+<me-embed>const {customKey} = require("medash");
 let origin = [{ name: "a", age: 1, params: { name: 'params1' } }];
-customKey(origin, { key: 'name', customKey: 'sex' })//[ { sex: 'a' } ]
-customKey(origin, { key: 'params', customKey: 'sex' })
-//=>[ { sex: { name: 'params1' } } ]
-customKey(origin, [{ key: "name", customKey: "key" }, { key: "params", customKey: "value" }])
-//=>[ { key: 'a', value: { name: 'params1' } } ]
-
+console.log(customKey(origin, { key: 'name', customKey: 'sex' }));//[ { sex: 'a' } ]
+console.log(customKey(origin, { key: 'params', customKey: 'sex' }));//=>[ { sex: { name: 'params1' } } ]
+console.log(customKey(origin, [{ key: "name", customKey: "key" }, { key: "params", customKey: "value" }]));//=>[ { key: 'a', value: { name: 'params1' } } ]
 //跳过值为'a'
-customKey(origin, [{ key: "name", customKey: "key", skip: 'a' }, { key: "params", customKey: "value" }])
-//=>[ { value: { name: 'params1' } } ]
-```
+console.log(customKey(origin, [{ key: "name", customKey: "key", skip: 'a' }, { key: "params", customKey: "value" }]));//=>[ { value: { name: 'params1' } } ]</me-embed>

@@ -1,4 +1,4 @@
-```js
+```ts
 medash.isNull(value:any): boolean 
 ```
 传入的值是否为`null`
@@ -11,9 +11,8 @@ medash.isNull(value:any): boolean
 `boolean:` 值为`null`返回`true`,否则返回`false`
 
 **例子**
-```js
-medash.isNull(null);//true
-medash.isNull(0);//false
-medash.isNull({});//false
-medash.isNull([]);//false
-```
+<me-embed>const {isNull} = require("medash");
+console.log(isNull(null));//true
+console.log(isNull(0));//false
+console.log(isNull({}));//false
+console.log(isNull([]));//false</me-embed>

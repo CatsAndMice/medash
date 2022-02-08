@@ -1,4 +1,4 @@
-```js
+```ts
 medash.each(origin: { [key: string]: any }, callBack: (key?, value?, self?) => void):void
 ```
 遍历对象
@@ -15,16 +15,20 @@ medash.each(origin: { [key: string]: any }, callBack: (key?, value?, self?) => v
   
 **例子**  
 
-```js
+<me-embed>
+const medash = require("medash");
 const obj = { name: 'lihai', age: 20 };
-const keys: any[] = [];
-const values: any[] = [];
+const keys = [];
+const values = [];
 medash.each(obj, (key, value) => {
-    keys.push(key as string);
-    values.push(value as any)
+    keys.push(key);
+    values.push(value)
 })
-
+console.log(keys,values);
+</me-embed>
+<me-embed>
+const medash = require("medash");
 medash.each({ name: 'lihai', age: 20 }, (key, value,self) => {
     console.log(key, value,self);
 })
-```
+</me-embed>

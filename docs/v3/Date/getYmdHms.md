@@ -1,4 +1,4 @@
-```js
+```ts
 medash.getYmdHms(ms: Date | number = Date.now());
 ```
 获取`year, month, date, day, hours, minutes, seconds`值
@@ -11,7 +11,6 @@ medash.getYmdHms(ms: Date | number = Date.now());
 
 **例子**  
 
-```js
+<me-embed>const medash = require("medash");
 let { year, month, date, day, hours, minutes, seconds } = medash.getYmdHms();
-console.log(year, month, date, day, hours, minutes, seconds);
-```
+console.log(year, month, date, day, hours, minutes, seconds);</me-embed>

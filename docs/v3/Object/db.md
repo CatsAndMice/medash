@@ -1,4 +1,4 @@
-```js
+```ts
 //导出db对象，然后再调用方法
 import {db} from "medash"
 db.setLocalDb(key,value)

@@ -1,4 +1,4 @@
-```js
+```ts
 medash.isTel(value: string): boolean 
 ```
 判断电话号码是否符合规则  
@@ -12,8 +12,7 @@ medash.isTel(value: string): boolean
 `boolean:` 电话号码是否符合规则,符合规则返回`true`,否则返回`false`
 
 **例子**
-```js
-medash.isTel('12344556');//false
-medash.isTel(13034833806);//true
-medash.isTel(1304546);//false
-```
+<me-embed>const {isTel} = require("medash");
+console.log(isTel('12344556'));//false
+console.log(isTel(13034833806));//true
+console.log(isTel(1304546));//false</me-embed>

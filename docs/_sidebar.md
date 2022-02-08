@@ -38,7 +38,7 @@
     * [db](v3/Object/db.md)
     * [event](v3/Object/event.md)
     * [fullScreen](v3/Object/fullScreen.md)
-* Data
+* Date
     * [getYmdHms](v3/Date/getYmdHms.md)
     * [formatDate](v3/Date/formatDate.md)
     * [diff](v3/Date/diff.md)

@@ -1,4 +1,4 @@
-```js
+```ts
 medash.specialChar(value: string, reg: RegExp = regChar):result
 ```
 判断是否包含`~!@#$%^&*()_-+=<>?:"{}|,.\/;'[]·~！@#￥%……&*（）——-+={}|《》？：“”【】、；‘’，。、特殊字符

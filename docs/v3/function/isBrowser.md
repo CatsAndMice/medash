@@ -1,4 +1,4 @@
-```js
+```ts
 medash.isBrowser(): boolean 
 ```
 判断当前环境是否为浏览器  
@@ -7,7 +7,7 @@ medash.isBrowser(): boolean
 `boolean:` 判断当前环境是否为浏览器, 浏览器环境返回`true`,否则返回`false`
 
 **例子**
-```js
+
+<me-embed>const {isBrowser} = require("medash");
 //运行node环境中
-medash.isBrowser();//false
-```
+console.log(isBrowser());//false</me-embed>

@@ -27,7 +27,7 @@ export const exampleContext = (name: string) => {
 }
 
 export const createDocs = () => {
-    let js = '```js\n\n```\n';
+    let js = '```ts\n\n```\n';
     let value = '`value`'
     return js + `
 
@@ -39,5 +39,5 @@ export const createDocs = () => {
   
 **例子**  
 
-`+ js
+`+ `<me-embed>const {} = require("medash");</me-embed>`
 }

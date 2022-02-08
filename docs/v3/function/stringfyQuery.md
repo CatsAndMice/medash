@@ -1,4 +1,4 @@
-```js
+```ts
 medash.stringfyQuery(params: { [key: string]: any } = {}):string 
 ```  
 将传递的对象拼接成一个链接参数形式
