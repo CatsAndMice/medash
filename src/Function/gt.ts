@@ -1,3 +1,3 @@
-export default (value: number | string, target: number | string): boolean => {
+export default (value: number, target: number): boolean => {
     return Number(value) > Number(target);
 }

@@ -46,7 +46,11 @@ import isObject from "./src/Object/isObject";
 import when from "./src/Function/when";
 import and from "./src/Function/and";
 import some from "./src/Object/some";
+import gte from "./src/Function/gte";
+import lte from "./src/Function/lte";
 export {
+lte,
+gte,
 some,
 and,
     when,
@@ -113,6 +117,8 @@ and,
 }
 
 export default {
+lte,
+gte,
 some,
 and,
     when,
