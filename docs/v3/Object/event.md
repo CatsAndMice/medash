@@ -21,11 +21,12 @@ medash.once(key: string, value: () => void)
   
 
 ```ts
-medash.trigger(key: string)
+medash.trigger(key: string,...rest:any[])
 ```
 触发订阅的事件  
 **参数**  
 `key`(string): 订阅事件名  
+`rest`:参数会传递到每一个执行的函数中
 
 ```ts
 medash.remove(key: string)

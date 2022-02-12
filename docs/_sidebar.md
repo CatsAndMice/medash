@@ -2,6 +2,8 @@
     * [eq](v3/function/eq.md)
     * [gt](v3/function/gt.md)
     * [lt](v3/function/lt.md)
+    * [gte](v3/function/gte.md)
+    * [lte](v3/function/lte.md)
     * [isEmpty](v3/function/isEmpty.md)
     * [isEmail](v3/function/isEmail.md)
     * [isIos](v3/function/isIos.md)

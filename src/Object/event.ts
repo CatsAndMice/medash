@@ -44,25 +44,25 @@ function _deleteKey(key: string) {
 }
 
 
-export function on(key: string, value: () => void) {
+export function on(key: string, value: (rest?:any) => void) {
     _addEvent(key, value)
 }
 
-export function once(key: string, value: () => void) {
+export function once(key: string, value: (rest?:any) => void) {
     _addEvent(key, value, true)
 }
 
-export function trigger(key: string) {
+export function trigger(key: string,...rest:any[]) {
     if (isEmpty(key)) return;
     const values = events.get(key);
     if (isEmpty(values)) return;
 
     for (let i = 0; i < values.length; i++) {
         let value = values[i]
-        isFunc(value) && value()
+        isFunc(value) && value(...rest);
         //删除原数组元素,会造成原数组索引变化 
-        value.once && values.splice(i, 1) && trigger(key)
-        _deleteKey(key)
+        value.once && values.splice(i, 1) && trigger(key);
+        _deleteKey(key);
     }
 
 }

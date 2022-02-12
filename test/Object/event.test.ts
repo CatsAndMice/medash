@@ -62,4 +62,13 @@ describe('event', () => {
         medash.trigger('someFunc');
         expect(medash.watchCache().get('someFunc').length).toBe(2);
     })
+
+    it('rest', () => {
+        let rest = '';
+        medash.on('rest', (param) => {
+            rest = param;
+        });
+        medash.trigger('rest', 'rest');
+        expect(rest).toBe('rest');
+    })
 })
