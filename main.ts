@@ -51,7 +51,9 @@ import composePromise from "./src/Function/composePromise";
 import chain from "./src/Object/chain";
 import gte from "./src/Function/gte";
 import lte from "./src/Function/lte";
+import or from "./src/Function/or";
 export {
+or,
     chain,
     composePromise,
     compose,
@@ -123,6 +125,7 @@ export {
 }
 
 export default {
+or,
     chain,
     composePromise,
     compose,
