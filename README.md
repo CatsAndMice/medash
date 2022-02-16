@@ -18,7 +18,7 @@
 
 ### CDN
 ```html
-<script src="https://cdn.jsdelivr.net/npm/medash@3.1.5/dist/medash.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/medash@3/dist/medash.min.js"></script>
 ```
 
 ### npm
@@ -50,6 +50,7 @@ eq('medash','medash');//true
 import eq from 'medash/lib/eq';
 eq('medash','medash');//true
 ```
+> 注意点: 使用某个API时,如果报错请检查`medash`版本，确保为最新的版本
 
 ## :package:  API文档
 
