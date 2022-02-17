@@ -2,7 +2,6 @@ import { write, create } from "./createAndWrite";
 import { createDocs } from "./const";
 import path from "path";
 import fsPromises from "fs/promises";
-import fs from "fs";
 import { docsPath } from './const';
 
 const getContent = (dir, files) => {
@@ -15,28 +14,34 @@ const getContent = (dir, files) => {
 }
 
 const writeContent = (content) => {
-
-    console.log(content);
-
     const writeFilePath = path.join(__dirname, '../docs/_sidebar.md');
-    fs.writeFile(writeFilePath, content, (err) => {
-        console.log(err);
-    });
+    fsPromises.writeFile(writeFilePath, content);
+}
+
+//全部的Promise状态完成后才进行文件写入
+const allPromisesFinish = (promises, content) => {
+    Promise.all(promises).then(() => {
+        writeContent(content());
+    })
 }
 
 //创建目录
 const readDir = async () => {
     let content = '';
     const dirs = await fsPromises.readdir(docsPath);
+    const promises: any[] = [];
     dirs.forEach((dir) => {
-        const filePath = path.join(docsPath, dir);
-        fs.readdir(filePath, (err, files) => {
-            if (err) return;
-            content += getContent(dir, files);
-            writeContent(content);
-        });
+        const promise = new Promise(async (resolve) => {
+            const filePath = path.join(docsPath, dir);
+            fsPromises.readdir(filePath).then(files => {
+                content += getContent(dir, files);
+                resolve(content);
+            })
+        })
+        promises.push(promise);
     })
-
+    //闭包,方便获取content的值
+    allPromisesFinish(promises, () => content);
 }
 
 export default (createPath: string, name: string) => {
