@@ -1,3 +1,4 @@
+* [快速开始](readme.md)
 * Array
   * [customKey](v3/Array/customKey.md)
   * [getMax](v3/Array/getMax.md)

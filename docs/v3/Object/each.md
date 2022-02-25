@@ -15,8 +15,7 @@ medash.each(origin: { [key: string]: any }, callBack: (key?, value?, self?) => v
   
 **例子**  
 
-<me-embed>
-const medash = require("medash");
+<me-embed>const medash = require("medash");
 const obj = { name: 'lihai', age: 20 };
 const keys = [];
 const values = [];
@@ -24,11 +23,8 @@ medash.each(obj, (key, value) => {
     keys.push(key);
     values.push(value)
 })
-console.log(keys,values);
-</me-embed>
-<me-embed>
-const medash = require("medash");
+console.log(keys,values);</me-embed>
+<me-embed>const medash = require("medash");
 medash.each({ name: 'lihai', age: 20 }, (key, value,self) => {
     console.log(key, value,self);
-})
-</me-embed>
+})</me-embed>
