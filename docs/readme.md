@@ -1,14 +1,4 @@
-<img src="./docs/medash.png" style="width:100%;">    
-
-![npm](https://img.shields.io/npm/v/medash)
-![npm](https://img.shields.io/npm/dt/medash)
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/medash)
-[![](https://data.jsdelivr.com/v1/package/npm/medash/badge)](https://www.jsdelivr.com/package/npm/medash)
-[![LICENSE MIT](https://img.shields.io/npm/l/medash.svg)](https://www.npmjs.com/package/medash)
-
- 
-
-前端`JavaScipt`业务代码工具库
+## 前端`JavaScipt`业务代码工具库
 
 > 业务常用代码片段汇总，高效率完成Task
 
@@ -52,17 +42,7 @@ eq('medash','medash');//true
 ```
 > 注意点: 使用某个API时,如果报错请检查`medash`版本，确保为最新的版本
 
-## :package:  API文档
-
-[查看文档](http://jshai.gitee.io/tool/docs) 
-
-
-## 协议
-
-[MIT](http://opensource.org/licenses/MIT) 
-
 
 ## 联系我
 
 <img alt="微信公众号搜索CatsAndMice" src = 'https://i.bmp.ovh/imgs/2021/10/cd69e46c3bdc6ee3.png' width="500"/>
-

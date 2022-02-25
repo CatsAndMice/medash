@@ -7,7 +7,7 @@ export function create(createPath: string, suffixName: string) {
     return path.join(createPath, suffixName)
 }
 
-export function write(createPath: string, context: string) {
+export function write(createPath: string, context: string, callBack = () => { }) {
     if (fs.existsSync(createPath)) {
         err(createPath + '文件已存在!')
         return;
@@ -15,6 +15,8 @@ export function write(createPath: string, context: string) {
     fs.writeFile(createPath, context, (error) => {
         if (error) {
             err(createPath + '文件创建失败!')
+            return;
         }
+        callBack();
     })
 }
