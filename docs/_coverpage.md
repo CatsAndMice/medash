@@ -10,4 +10,4 @@
 
 
 [GitHub](https://github.com/CatsAndMice/medash)
-[Get Started](/v3/function/eq.md)
+[Get Started](readme.md)

@@ -1,10 +1,12 @@
 import { compose } from "../../main";
-const f1 = (p) => {
-    return p + 1;
+const add5 = x => x + 5;
+const multiply = (x, y) => x * y;
+const m1 = (x) => {
+    return x + 2
 }
-const f2 = (p) => {
-    return p * 1;
-}
-
-
-console.log(compose(f1, f2, f2, f2)(1));
+const multiplyAndAdd5 = compose(
+    m1,
+    add5,
+    multiply
+);
+console.log(multiplyAndAdd5(5, 2));// 15
