@@ -28,7 +28,7 @@ const allPromisesFinish = (promises, content) => {
 //创建目录
 const readDir = async () => {
     //TODO: 添加readme.md文件路径
-    let content = '';
+    let content = '* [快速开始](readme.md)\n';
     const dirs = await fsPromises.readdir(docsPath);
     const promises: any[] = [];
     dirs.forEach((dir) => {

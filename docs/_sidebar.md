@@ -1,3 +1,4 @@
+* [快速开始](readme.md)
 * Function
   * [and](v3/Function/and.md)
   * [eq](v3/Function/eq.md)
@@ -24,6 +25,14 @@
   * [stringfyQuery](v3/Function/stringfyQuery.md)
   * [valueLen](v3/Function/valueLen.md)
   * [when](v3/Function/when.md)
+* Array
+  * [customKey](v3/Array/customKey.md)
+  * [getMax](v3/Array/getMax.md)
+  * [getMin](v3/Array/getMin.md)
+  * [getUnique](v3/Array/getUnique.md)
+  * [getValue](v3/Array/getValue.md)
+  * [isZeroLen](v3/Array/isZeroLen.md)
+  * [toArray](v3/Array/toArray.md)
 * Date
   * [diff](v3/Date/diff.md)
   * [formatDate](v3/Date/formatDate.md)
@@ -43,11 +52,3 @@
   * [isEmptyObj](v3/Object/isEmptyObj.md)
   * [isObject](v3/Object/isObject.md)
   * [some](v3/Object/some.md)
-* Array
-  * [customKey](v3/Array/customKey.md)
-  * [getMax](v3/Array/getMax.md)
-  * [getMin](v3/Array/getMin.md)
-  * [getUnique](v3/Array/getUnique.md)
-  * [getValue](v3/Array/getValue.md)
-  * [isZeroLen](v3/Array/isZeroLen.md)
-  * [toArray](v3/Array/toArray.md)
