@@ -52,7 +52,9 @@ import chain from "./src/Object/chain";
 import gte from "./src/Function/gte";
 import lte from "./src/Function/lte";
 import or from "./src/Function/or";
+import toArray from "./src/Array/toArray";
 export {
+toArray,
 or,
     chain,
     composePromise,
@@ -125,6 +127,7 @@ or,
 }
 
 export default {
+toArray,
 or,
     chain,
     composePromise,
