@@ -7,7 +7,7 @@ import addMainContext from './addMainContext';
 import createTestFile from './createTest'
 import createFile from './createFile';
 import createExample from "./createExample"
-import { isEmpty, specialChar } from "../main";
+import { isEmpty, specialChar, ch } from "../main";
 
 async function getName(fileName: string) {
     const createPath = path.join(srcPath, fileName);
@@ -26,11 +26,16 @@ async function getName(fileName: string) {
         return
     }
     const { isSpecialChar } = specialChar(input);
+    const { isCh } = ch(input);
     if (isSpecialChar) {
         err('error:文件名含有特殊字符!');
         return
     }
 
+    if (isCh) {
+        err('error:文件名含有中文!');
+        return
+    }
     createTestFile(createTestPathPath, input)
     createFile(createPath, input);
     createDocs(createDocsPath, input);

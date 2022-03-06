@@ -53,7 +53,9 @@ import gte from "./src/Function/gte";
 import lte from "./src/Function/lte";
 import or from "./src/Function/or";
 import toArray from "./src/Array/toArray";
+import ch from "./src/RegExp/ch";
 export {
+ch,
 toArray,
 or,
     chain,
@@ -127,6 +129,7 @@ or,
 }
 
 export default {
+ch,
 toArray,
 or,
     chain,

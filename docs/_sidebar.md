@@ -7,6 +7,15 @@
   * [getValue](v3/Array/getValue.md)
   * [isZeroLen](v3/Array/isZeroLen.md)
   * [toArray](v3/Array/toArray.md)
+* Date
+  * [aa](v3/Date/aa.md)
+  * [diff](v3/Date/diff.md)
+  * [formatDate](v3/Date/formatDate.md)
+  * [getCalender](v3/Date/getCalender.md)
+  * [getMonthRange](v3/Date/getMonthRange.md)
+  * [getTodayRange](v3/Date/getTodayRange.md)
+  * [getWeekRange](v3/Date/getWeekRange.md)
+  * [getYmdHms](v3/Date/getYmdHms.md)
 * Functions
   * [and](v3/Functions/and.md)
   * [eq](v3/Functions/eq.md)
@@ -33,14 +42,6 @@
   * [stringfyQuery](v3/Functions/stringfyQuery.md)
   * [valueLen](v3/Functions/valueLen.md)
   * [when](v3/Functions/when.md)
-* Date
-  * [diff](v3/Date/diff.md)
-  * [formatDate](v3/Date/formatDate.md)
-  * [getCalender](v3/Date/getCalender.md)
-  * [getMonthRange](v3/Date/getMonthRange.md)
-  * [getTodayRange](v3/Date/getTodayRange.md)
-  * [getWeekRange](v3/Date/getWeekRange.md)
-  * [getYmdHms](v3/Date/getYmdHms.md)
 * Object
   * [chain](v3/Object/chain.md)
   * [db](v3/Object/db.md)
@@ -52,3 +53,5 @@
   * [isEmptyObj](v3/Object/isEmptyObj.md)
   * [isObject](v3/Object/isObject.md)
   * [some](v3/Object/some.md)
+* RegExp
+  * [isCh](v3/RegExp/isCh.md)
