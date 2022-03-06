@@ -1,12 +1,13 @@
 import path from "path";
-import { lists, testPath, srcPath, docsPath, examplePath, err } from './const'
+import { testPath, srcPath, docsPath, examplePath, err } from './const';
+import getSrcLists from "./getSrcLists";
 import inquirer from 'inquirer';
 import createDocs from "./createDocs";
 import addMainContext from './addMainContext';
 import createTestFile from './createTest'
 import createFile from './createFile';
 import createExample from "./createExample"
-import { isEmpty } from "../main";
+import { isEmpty, specialChar } from "../main";
 
 async function getName(fileName: string) {
     const createPath = path.join(srcPath, fileName);
@@ -24,6 +25,11 @@ async function getName(fileName: string) {
         err('error:创建文件未命名');
         return
     }
+    const { isSpecialChar } = specialChar(input);
+    if (isSpecialChar) {
+        err('error:文件名含有特殊字符!');
+        return
+    }
 
     createTestFile(createTestPathPath, input)
     createFile(createPath, input);
@@ -34,6 +40,7 @@ async function getName(fileName: string) {
 
 
 async function typesCheck() {
+    const lists = await getSrcLists();
     inquirer.prompt([
         {
             name: 'list',
