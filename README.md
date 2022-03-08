@@ -64,5 +64,5 @@ eq('medash','medash');//true
 
 ## 联系我
 
-<img alt="微信公众号搜索CatsAndMice" src = 'https://i.bmp.ovh/imgs/2021/10/cd69e46c3bdc6ee3.png' width="500"/>
+<img alt="微信号" src = 'https://s3.bmp.ovh/imgs/2022/03/b55e71f2dc3e16c3.png' width="150"/>
 
