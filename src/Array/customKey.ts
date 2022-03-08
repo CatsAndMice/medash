@@ -1,5 +1,5 @@
-import eq from "../Function/eq";
-import isEmpty from "../Function/isEmpty";
+import eq from "../Functions/eq";
+import isEmpty from "../Functions/isEmpty";
 import getDeelClone from "../Object/getDeepClone";
 import isZeroLen from "./isZeroLen";
 type skipTypes = number | string | any[]

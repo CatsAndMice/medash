@@ -1,6 +1,5 @@
-import isNull from "../Function/isNull";
-import isBrowser from '../Function/isBrowser';
-import { isFunc } from "main";
+import isNull from "../Functions/isNull";
+import isBrowser from '../Functions/isBrowser';
 export default function getDeelClone(origin: { [key: string]: any }, target: { [key: string]: any } = {}): object {
     let keys = Object.keys(origin);
     for (let index = 0; index < keys.length; index++) {

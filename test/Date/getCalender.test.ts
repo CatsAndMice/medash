@@ -1,5 +1,5 @@
 import getCalender from "../../src/Date/getCalender";
-import getGtTenStr from "../../src/Function/getGtTenStr";
+import getGtTenStr from "../../src/Functions/getGtTenStr";
 const curDate = new Date()
 let ymd = `${curDate.getFullYear()}-${getGtTenStr(curDate.getMonth() + 1)}-${getGtTenStr(curDate.getDate())}`
 let ymdAndHm = ''

@@ -1,11 +1,9 @@
-import { default as Params, params } from "./type";
-import eq from '../Function/eq';
-import isNull from "../Function/isNull";
-import getClone from "../Object/getClone";
+import eq from '../Functions/eq';
+import isNull from "../Functions/isNull"
+import getClone from '../Object/getClone';
+import { default as Params, params } from './type';
 
-/*
-* 节流
-*/
+
 export default (callBack: () => void, option: Params | number = 1000, immediate: boolean = false) => {
     let isObject = eq(typeof option, 'object') && !isNull(option);
     let timer: any = null;
@@ -20,10 +18,7 @@ export default (callBack: () => void, option: Params | number = 1000, immediate:
 
     immediate ? callBack() : null;
     return () => {
-        if (timer) return
-        timer = setTimeout(() => {
-            callBack();
-            timer = null;
-        }, wait)
+        timer && clearTimeout(timer);
+        timer = setTimeout(callBack, wait);
     }
 }

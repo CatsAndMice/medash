@@ -1,6 +1,6 @@
 // @ts-nocheck
-import isFunc from "../Function/isFunc";
-import isBrowser from "../Function/isBrowser";
+import isFunc from "../Functions/isFunc";
+import isBrowser from "../Functions/isBrowser";
 
 let isReEvent = false;//防止重复监听事件
 

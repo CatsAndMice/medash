@@ -1,5 +1,5 @@
-import isEmpty from "../Function/isEmpty"
-import getGtTenStr from "../Function/getGtTenStr"
+import isEmpty from "../Functions/isEmpty"
+import getGtTenStr from "../Functions/getGtTenStr"
 import getYmdHms from "./getYmdHms"
 
 const ymdReg = /^(YYYY).(MM).(DD).?$/

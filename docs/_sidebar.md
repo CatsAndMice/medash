@@ -8,7 +8,6 @@
   * [isZeroLen](v3/Array/isZeroLen.md)
   * [toArray](v3/Array/toArray.md)
 * Date
-  * [aa](v3/Date/aa.md)
   * [diff](v3/Date/diff.md)
   * [formatDate](v3/Date/formatDate.md)
   * [getCalender](v3/Date/getCalender.md)
@@ -54,4 +53,4 @@
   * [isObject](v3/Object/isObject.md)
   * [some](v3/Object/some.md)
 * RegExp
-  * [isCh](v3/RegExp/isCh.md)
+  * [ch](v3/RegExp/ch.md)

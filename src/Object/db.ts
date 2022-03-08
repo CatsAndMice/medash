@@ -1,5 +1,5 @@
-import isBrowser from "../Function/isBrowser"
-import isEmpty from "../Function/isEmpty";
+import isBrowser from "../Functions/isBrowser"
+import isEmpty from "../Functions/isEmpty";
 const localDb = isBrowser() ? window.localStorage : null;
 const sionDb = isBrowser() ? window.sessionStorage : null;
 

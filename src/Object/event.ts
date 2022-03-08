@@ -1,8 +1,8 @@
-import isEmpty from "../Function/isEmpty";
-import isFunc from "../Function/isFunc";
-import gt from "../Function/gt";
+import isEmpty from "../Functions/isEmpty";
+import isFunc from "../Functions/isFunc";
+import gt from "../Functions/gt";
 import isLenZero from "../Array/isZeroLen";
-import eq from "../Function/eq";
+import eq from "../Functions/eq";
 
 let maxCache: number = 15;
 const events = new Map();

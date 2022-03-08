@@ -1,4 +1,4 @@
-import eq from "../Function/eq";
+import eq from "../Functions/eq";
 import isZeroLen from "./isZeroLen";
 function isHaveSame(arrs: any[], arg: any): boolean {
     for (const arr of arrs) {

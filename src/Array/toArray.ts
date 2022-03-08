@@ -1,7 +1,7 @@
-import and from "../Function/and";
-import eq from "../Function/eq";
-import isFunc from "../Function/isFunc";
-import isNull from "../Function/isNull";
+import and from "../Functions/and";
+import eq from "../Functions/eq";
+import isFunc from "../Functions/isFunc";
+import isNull from "../Functions/isNull";
 const isTypeObject = (value) => {
     const type = typeof value;
     return and(!isNull(value), eq(type, 'object'));
