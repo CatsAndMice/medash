@@ -17,9 +17,8 @@ type result = {
 }
 ```
 **例子**  
+<me-embed>const {specialChar} = require("medash");
+console.log(specialChar('1'));//{isSpecialChar: false,value: "1",...}
+console.log(specialChar('&'));//{isSpecialChar: true,value: "",...}
+console.log(specialChar('，'));//{isSpecialChar: true,value: "",...}</me-embed>
 
-```js
-medash.specialChar('1');//false
-medash.specialChar('&');//true
-medash.specialChar('，');//true
-```

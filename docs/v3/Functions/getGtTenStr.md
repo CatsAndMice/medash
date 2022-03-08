@@ -10,9 +10,8 @@ medash.getGtTenStr(num: number): string
 `string:`返回一个至少两位数的字符串
 
 **例子**
-```js
-medash.getGtTenStr(1);//'01'
-medash.getGtTenStr(0);//'00'
-medash.getGtTenStr(-1);//'01'
-medash.getGtTenStr(-11);//'11'
-```
+<me-embed>const {getGtTenStr} = require("medash");
+console.log(getGtTenStr(1));//'01'
+console.log(getGtTenStr(0));//'00'
+console.log(getGtTenStr(-1));//'01'
+console.log(getGtTenStr(-11));//'11'</me-embed>
