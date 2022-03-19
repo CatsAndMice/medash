@@ -64,5 +64,5 @@ eq('medash','medash');//true
 
 ## 联系我
 
-<img alt="微信号" src = 'https://s3.bmp.ovh/imgs/2022/03/b55e71f2dc3e16c3.png' width="150"/>
+<img alt="微信号" src = 'https://i.bmp.ovh/imgs/2022/03/505687cc33a7b2c4.jpg' width="150"/>
 
