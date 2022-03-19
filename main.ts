@@ -54,8 +54,9 @@ import lte from "./src/Functions/lte";
 import or from "./src/Functions/or";
 import toArray from "./src/Array/toArray";
 import ch from "./src/RegExp/ch";
-
+import objToMap from "./src/Object/objToMap";
 export {
+objToMap,
 ch,
 toArray,
 or,
@@ -130,6 +131,7 @@ or,
 }
 
 export default {
+objToMap,
 ch,
 toArray,
 or,

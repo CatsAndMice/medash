@@ -1,12 +1,4 @@
 * [快速开始](readme.md)
-* Array
-  * [customKey](v3/Array/customKey.md)
-  * [getMax](v3/Array/getMax.md)
-  * [getMin](v3/Array/getMin.md)
-  * [getUnique](v3/Array/getUnique.md)
-  * [getValue](v3/Array/getValue.md)
-  * [isZeroLen](v3/Array/isZeroLen.md)
-  * [toArray](v3/Array/toArray.md)
 * Date
   * [diff](v3/Date/diff.md)
   * [formatDate](v3/Date/formatDate.md)
@@ -51,6 +43,15 @@
   * [getDeepClone](v3/Object/getDeepClone.md)
   * [isEmptyObj](v3/Object/isEmptyObj.md)
   * [isObject](v3/Object/isObject.md)
+  * [objToMap](v3/Object/objToMap.md)
   * [some](v3/Object/some.md)
 * RegExp
   * [ch](v3/RegExp/ch.md)
+* Array
+  * [customKey](v3/Array/customKey.md)
+  * [getMax](v3/Array/getMax.md)
+  * [getMin](v3/Array/getMin.md)
+  * [getUnique](v3/Array/getUnique.md)
+  * [getValue](v3/Array/getValue.md)
+  * [isZeroLen](v3/Array/isZeroLen.md)
+  * [toArray](v3/Array/toArray.md)
