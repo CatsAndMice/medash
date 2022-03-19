@@ -5,7 +5,7 @@ import path from "path"
 import fs from "fs";
 import { $ } from 'zx';
 const version = pkg.version;
-const reg = /([1-9])\.([0-9])\.([0-9])(?:(\-\w*)\.([1-9]+))?/g
+const reg = /([1-9]+)\.([0-9]+)\.([0-9]+)(?:(\-\w*)\.([1-9]+))?/g
 const execs = reg.exec(version) as Array<any>;
 const addOne = (num) => Number(num) + 1;
 const getVersion = ([major, minor, patch]) => `v${major}.${minor}.${patch}`
