@@ -1,6 +1,13 @@
-import { default as resetDate, range } from "./resetDate"
+import { range } from "./resetDate";
+const getToday = () => {
+    const today = new Date();
+    today.setHours(0);
+    today.setSeconds(0);
+    today.setMinutes(0);
+    return today;
+}
 export default (): range => {
-    const today = resetDate()
+    const today = getToday()
     const start = today.getTime();
     return {
         start,
