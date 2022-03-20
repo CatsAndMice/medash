@@ -1,8 +1,6 @@
 ```ts
 medash.formatDate(ms: Date | number,format:Format):string;
 ```
-
-
 将时间戳格式化成字符串
 
 **参数**  
@@ -19,7 +17,6 @@ type Format = {
 }
 ```
 **返回**  
-
 `string`:返回时间戳详细的时长字符串
 
   
