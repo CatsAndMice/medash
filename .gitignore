@@ -2,7 +2,8 @@
 node_modules
 coverage
 /dist
-/lib 
+/lib
+/es
 .id
 dist.zip
 .git
