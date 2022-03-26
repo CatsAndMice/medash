@@ -35,16 +35,16 @@ const onSelectVersion = async () => {
         const { stdout } = branch;
         const reg = /\*\D(.+)\D/g;
         branch = (reg.exec(stdout) as any[])[1];
-        fs.writeFile(path.join(__dirname, '../package.json'), String(JSON.stringify(pkg)), 'utf8', async (error) => {
+        fs.writeFile(path.join(__dirname, '../package.json'), String(JSON.stringify(pkg,null,2)), 'utf8', async (error) => {
             if (error) {
                 return;
             }
-            await $`git add .`;
-            await $`git commit -m ${list}`;
-            await $`git tag ${list}`;
-            await $`git push origin ${list}`;
-            await $`git push origin ${branch}`;
-            await $`npm run build&&npm publish`;
+            // await $`git add .`;
+            // await $`git commit -m ${list}`;
+            // await $`git tag ${list}`;
+            // await $`git push origin ${list}`;
+            // await $`git push origin ${branch}`;
+            // await $`npm run build&&npm publish`;
         });
     })
 }
