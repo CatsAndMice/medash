@@ -9,11 +9,14 @@ const reg = /([1-9]+)\.([0-9]+)\.([0-9]+)(?:(\-\w*)\.([1-9]+))?/g
 const execs = reg.exec(version) as Array<any>;
 const addOne = (num) => Number(num) + 1;
 const getVersion = ([major, minor, patch]) => `v${major}.${minor}.${patch}`
-const getVersionlists = () => ([
-    getVersion([addOne(execs[1]), execs[2], execs[3]]),
-    getVersion([execs[1], addOne(execs[2]), execs[3]]),
-    getVersion([execs[1], execs[2], addOne(execs[3])])
-])
+const getVersionlists = () => {
+    const ZERO = 0
+    return [
+        getVersion([addOne(execs[1]), execs[2], ZERO]),
+        getVersion([execs[1], addOne(execs[2]), ZERO]),
+        getVersion([execs[1], execs[2], addOne(execs[3])])
+    ]
+}
 
 const getBetaVersionLists = (beta) => ([
     getVersion([execs[1], execs[2], execs[3]]),
@@ -35,16 +38,16 @@ const onSelectVersion = async () => {
         const { stdout } = branch;
         const reg = /\*\D(.+)\D/g;
         branch = (reg.exec(stdout) as any[])[1];
-        fs.writeFile(path.join(__dirname, '../package.json'), String(JSON.stringify(pkg,null,2)), 'utf8', async (error) => {
+        fs.writeFile(path.join(__dirname, '../package.json'), String(JSON.stringify(pkg, null, 2)), 'utf8', async (error) => {
             if (error) {
                 return;
             }
-            // await $`git add .`;
-            // await $`git commit -m ${list}`;
-            // await $`git tag ${list}`;
-            // await $`git push origin ${list}`;
-            // await $`git push origin ${branch}`;
-            // await $`npm run build&&npm publish`;
+            await $`git add .`;
+            await $`git commit -m ${list}`;
+            await $`git tag ${list}`;
+            await $`git push origin ${list}`;
+            await $`git push origin ${branch}`;
+            await $`npm run build&&npm publish`;
         });
     })
 }
