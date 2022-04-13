@@ -55,7 +55,11 @@ import or from "./src/Functions/or";
 import toArray from "./src/Array/toArray";
 import ch from "./src/RegExp/ch";
 import objToMap from "./src/Object/objToMap";
+import toNumber from "./src/Functions/toNumber";
+import isStr from "./src/Functions/isStr";
 export {
+isStr,
+toNumber,
 objToMap,
 ch,
 toArray,
@@ -131,6 +135,8 @@ or,
 }
 
 export default {
+isStr,
+toNumber,
 objToMap,
 ch,
 toArray,
