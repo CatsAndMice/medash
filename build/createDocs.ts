@@ -47,5 +47,5 @@ const readDir = async () => {
 export default (createPath: string, name: string) => {
     const suffixName = name + '.md';
     createPath = create(createPath, suffixName);
-    write(createPath, createDocs(), readDir);
+    write(createPath, createDocs(name), readDir);
 }

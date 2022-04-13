@@ -1,6 +1,10 @@
 import isFunc from "../Functions/isFunc"
 import each from "./each"
-export default (value: Object): Map<string, any> => {
+import isObject from "./isObject";
+export default (value: Object): Map<string, any> | undefined => {
+    if (!isObject(value)) {
+        return
+    }
     if (isFunc(Object.entries)) {
         return new Map(Object.entries(value));
     }

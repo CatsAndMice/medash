@@ -25,8 +25,8 @@ export const exampleContext = (name: string) => {
     return `import { ${name} } from "../../main";`
 }
 
-export const createDocs = () => {
-    let js = '```ts\n\n```\n';
+export const createDocs = (name) => {
+    let js = '```ts' + '\n' + `medash.${name}()` + '\n' + '```' + '\n';
     let value = '`value`'
     return js + `
 
@@ -38,5 +38,5 @@ export const createDocs = () => {
   
 **例子**  
 
-`+ `<me-embed>const {} = require("medash");</me-embed>`
+`+ `<me-embed>const {${name}} = require("medash");</me-embed>`
 }
