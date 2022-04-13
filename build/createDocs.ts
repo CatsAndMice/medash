@@ -25,24 +25,37 @@ const allPromisesFinish = (promises, content) => {
     })
 }
 
+const sortContents = (contents: string[]) => {
+    //数组内容字符串排序
+    return contents.sort((content1, content2) => {
+        const a = content1[2]
+        const b = content2[2]
+        return a.charCodeAt(0) - b.charCodeAt(0);
+    }).join('')
+}
+
 //创建目录
 const readDir = async () => {
-    let content = '* [快速开始](readme.md)\n';
+    let startHeader = '* [快速开始](readme.md)\n';
+    const contents: string[] = []
     const dirs = await fsPromises.readdir(docsPath);
     const promises: any[] = [];
     dirs.forEach((dir) => {
         const promise = new Promise(async (resolve) => {
             const filePath = path.join(docsPath, dir);
             fsPromises.readdir(filePath).then(files => {
-                content += getContent(dir, files);
-                resolve(content);
+                contents.push(getContent(dir, files))
+                resolve(contents);
             })
         })
         promises.push(promise);
     })
+    debugger
     //闭包,方便获取content的值
-    allPromisesFinish(promises, () => content);
+    allPromisesFinish(promises, () => startHeader + sortContents(contents));
 }
+
+
 
 export default (createPath: string, name: string) => {
     const suffixName = name + '.md';
