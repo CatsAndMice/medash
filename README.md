@@ -14,13 +14,14 @@
 
 业务开发过程中，经常用到`日期格式化`、`url参数转对象`、`浏览器类型判断`、`节流函数`等常用函数，为避免不同项目多次复制粘贴的麻烦，这里统一封装，并发布到npm，以提高开发效率。如果你也有常用的代码，欢迎为本项目提交pr。
 
-## :building_construction:  安装
+## :building_construction:  安装  
 
 ### CDN
+<!--cdn-links-start-->
 ```html
-<script src="https://cdn.jsdelivr.net/npm/medash@3/dist/medash.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/medash@3.2.0/dist/medash.min.js"></script>
 ```
-
+<!--cdn-links-end-->
 ### npm
 
 推荐使用 npm 安装[[1\]](https://v3.cn.vuejs.org/guide/installation.html#footnote-1) 

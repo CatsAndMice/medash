@@ -4,6 +4,7 @@ import inquirer from "inquirer";
 import path from "path"
 import fs from "fs";
 import { $ } from 'zx';
+import updateReadMe from "./updateReadMe";
 const version = pkg.version;
 const reg = /([1-9]+)\.([0-9]+)\.([0-9]+)(?:(\-\w*)\.([1-9]+))?/g
 const execs = reg.exec(version) as Array<any>;
@@ -42,6 +43,7 @@ const onSelectVersion = async () => {
             if (error) {
                 return;
             }
+            await updateReadMe()
             await $`git add .`;
             await $`git commit -m ${list}`;
             await $`git tag ${list}`;
