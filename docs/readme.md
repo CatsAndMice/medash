@@ -7,9 +7,11 @@
 ## :building_construction:  安装
 
 ### CDN
+<!--cdn-links-start-->
 ```html
-<script src="https://cdn.jsdelivr.net/npm/medash@3/dist/medash.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/medash@3.2.0/dist/medash.min.js"></script>
 ```
+<!--cdn-links-end-->
 
 ### npm
 

@@ -1,6 +1,9 @@
 import fs from "fs/promises"
 import path from "path"
-const readMePath = path.join(__dirname, '../README.md')
+const getFilePath = (filePath: string) => path.join(__dirname, filePath)
+
+const readMePaths = [getFilePath('../README.md'), getFilePath('../docs/readme.md')]
+
 const getReadPkgContent = async () => {
     let pkg: any = await fs.readFile(path.join(__dirname, '../package.json'), 'utf8')
     pkg = JSON.parse(pkg)
@@ -17,7 +20,7 @@ const replaceContent = async () => {
 <!--cdn-links-end-->`
 }
 
-const getReadMeContent = async () => {
+const getReadMeContent = async (readMePath: string) => {
     const cdnLinksContent = await replaceContent()
     let content = await fs.readFile(readMePath, 'utf8')
     //正则匹配,替换新的CDN链接
@@ -25,7 +28,9 @@ const getReadMeContent = async () => {
     return content
 }
 
-export default async () => {
-    const fileContent = await getReadMeContent()
-    await fs.writeFile(readMePath, fileContent)
+export default () => {
+    readMePaths.forEach(async (readMePath) => {
+        const fileContent = await getReadMeContent(readMePath)
+        fs.writeFile(readMePath, fileContent)
+    })
 }

@@ -57,7 +57,9 @@ import ch from "./src/RegExp/ch";
 import objToMap from "./src/Object/objToMap";
 import toNumber from "./src/Functions/toNumber";
 import isStr from "./src/Functions/isStr";
+import isNumber from "./src/Functions/isNumber";
 export {
+isNumber,
 isStr,
 toNumber,
 objToMap,
@@ -135,6 +137,7 @@ or,
 }
 
 export default {
+isNumber,
 isStr,
 toNumber,
 objToMap,

@@ -44,15 +44,15 @@ function _deleteKey(key: string) {
 }
 
 
-export function on(key: string, value: (rest?:any) => void) {
+export function on(key: string, value: (rest?: any) => void) {
     _addEvent(key, value)
 }
 
-export function once(key: string, value: (rest?:any) => void) {
+export function once(key: string, value: (rest?: any) => void) {
     _addEvent(key, value, true)
 }
 
-export function trigger(key: string,...rest:any[]) {
+export function trigger(key: string, ...rest: any[]) {
     if (isEmpty(key)) return;
     const values = events.get(key);
     if (isEmpty(values)) return;
