@@ -58,7 +58,9 @@ import objToMap from "./src/Object/objToMap";
 import toNumber from "./src/Functions/toNumber";
 import isStr from "./src/Functions/isStr";
 import isNumber from "./src/Functions/isNumber";
+import mapToObj from "./src/Object/mapToObj";
 export {
+mapToObj,
 isNumber,
 isStr,
 toNumber,
@@ -137,6 +139,7 @@ or,
 }
 
 export default {
+mapToObj,
 isNumber,
 isStr,
 toNumber,

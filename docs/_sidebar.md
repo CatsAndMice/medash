@@ -54,6 +54,7 @@
   * [getDeepClone](v3/Object/getDeepClone.md)
   * [isEmptyObj](v3/Object/isEmptyObj.md)
   * [isObject](v3/Object/isObject.md)
+  * [mapToObj](v3/Object/mapToObj.md)
   * [objToMap](v3/Object/objToMap.md)
   * [some](v3/Object/some.md)
 * RegExp

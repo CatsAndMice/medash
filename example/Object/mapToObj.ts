@@ -1,0 +1,1 @@
+import { mapToObj } from "../../main";
