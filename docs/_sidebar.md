@@ -5,6 +5,7 @@
   * [getMin](v3/Array/getMin.md)
   * [getUnique](v3/Array/getUnique.md)
   * [getValue](v3/Array/getValue.md)
+  * [isArray](v3/Array/isArray.md)
   * [isZeroLen](v3/Array/isZeroLen.md)
   * [toArray](v3/Array/toArray.md)
 * Date

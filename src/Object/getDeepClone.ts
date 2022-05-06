@@ -1,9 +1,23 @@
 import isNull from "../Functions/isNull";
 import isBrowser from '../Functions/isBrowser';
-export default function getDeelClone(origin: { [key: string]: any }, target: { [key: string]: any } = {}): object {
-    let keys = Object.keys(origin);
+import isObject from "../Object/isObject"
+import isArray from "../Array/isArray";
+
+export default function getDeepClone(origin: { [key: string]: any }, target: { [key: string]: any } | [any] = {}): object | any[] {
+    let keys
+    if (isObject(origin)) {
+        target = {}
+        keys = Object.keys(origin)
+    } else if (isArray(origin)) {
+        target = []
+        keys = origin
+    } else {
+        //原始值直接返回
+        return origin
+    }
+
     for (let index = 0; index < keys.length; index++) {
-        let key = keys[index];
+        let key = isArray(origin) ? index : keys[index];
         let value = origin[key]
         let type = typeof value;
         if (type === "object") {
@@ -32,7 +46,7 @@ export default function getDeelClone(origin: { [key: string]: any }, target: { [
                 }
             }
 
-            target[key] = Array.isArray(value) ? getDeelClone(value, []) : getDeelClone(value);
+            target[key] = Array.isArray(value) ? getDeepClone(value, []) : getDeepClone(value);
             continue
         }
         target[key] = value;

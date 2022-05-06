@@ -3,10 +3,9 @@ import getMin from "./src/Array/getMin";
 import getUnique from "./src/Array/getUnique";
 import customKey from "./src/Array/customKey";
 import getClone from "./src/Object/getClone";
-import getDeelClone from "./src/Object/getDeepClone";
 import eq from "./src/Functions/eq";
 import parseQuery from "./src/Functions/parseQuery";
-import stringfyQuery from "./src/Functions/stringfyQuery";
+import stringifyQuery from "./src/Functions/stringifyQuery";
 import getThousandsChar from "./src/Functions/getThousandsChar";
 import randomNum from "./src/Functions/randomNum";
 import getGtTenStr from "./src/Functions/getGtTenStr";
@@ -59,7 +58,9 @@ import toNumber from "./src/Functions/toNumber";
 import isStr from "./src/Functions/isStr";
 import isNumber from "./src/Functions/isNumber";
 import mapToObj from "./src/Object/mapToObj";
+import isArray from "./src/Array/isArray";
 export {
+isArray,
 mapToObj,
 isNumber,
 isStr,
@@ -105,11 +106,10 @@ or,
     getUnique,
     isZeroLen,
     getClone,
-    getDeelClone,
     eq,
     lt,
     gt,
-    stringfyQuery,
+    stringifyQuery,
     isBrowser,
     isEmail,
     isEmpty,
@@ -139,6 +139,7 @@ or,
 }
 
 export default {
+isArray,
 mapToObj,
 isNumber,
 isStr,
@@ -186,11 +187,10 @@ or,
     getMin,
     getUnique,
     getClone,
-    getDeelClone,
     eq,
     lt,
     gt,
-    stringfyQuery,
+    stringifyQuery,
     isBrowser,
     isEmail,
     isEmpty,
