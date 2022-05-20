@@ -59,7 +59,9 @@ import isStr from "./src/Functions/isStr";
 import isNumber from "./src/Functions/isNumber";
 import mapToObj from "./src/Object/mapToObj";
 import isArray from "./src/Array/isArray";
+import createAvatar from "./src/Functions/createAvatar";
 export {
+createAvatar,
 isArray,
 mapToObj,
 isNumber,
@@ -139,6 +141,7 @@ or,
 }
 
 export default {
+createAvatar,
 isArray,
 mapToObj,
 isNumber,

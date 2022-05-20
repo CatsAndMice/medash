@@ -18,6 +18,7 @@
   * [getYmdHms](v3/Date/getYmdHms.md)
 * Functions
   * [and](v3/Functions/and.md)
+  * [createAvatar](v3/Functions/createAvatar.md)
   * [eq](v3/Functions/eq.md)
   * [getGtTenStr](v3/Functions/getGtTenStr.md)
   * [getThousandsChar](v3/Functions/getThousandsChar.md)

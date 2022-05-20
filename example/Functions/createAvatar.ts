@@ -1,0 +1,1 @@
+import { createAvatar } from "../../main";
