@@ -1,6 +1,14 @@
 import isBrowser from "./isBrowser"
 import isEmpty from "./isEmpty"
-export default (name: string) => {
+type configType = {
+    bg?:string,
+    w?:number,
+    h?:number,
+    fillStyle?:string,
+    textAlign?:string,
+    
+}
+export default (name: string,config?:configType) => {
     if (!isBrowser()) return
     if (isEmpty(name)) return
     const bg = 'RGB(51, 150, 251)'
