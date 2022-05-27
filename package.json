@@ -33,7 +33,8 @@
     "patch": "npm version patch&&npm run release",
     "minor": "npm version minor&&npm run release",
     "major": "npm version major&&npm run release",
-    "release": "ts-node scripts/release.ts"
+    "release": "ts-node scripts/release.ts",
+    "generate": "ts-node ./build/generateExample.ts"
   },
   "author": "hai",
   "license": "MIT",

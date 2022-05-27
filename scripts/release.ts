@@ -10,7 +10,7 @@ const reg = /([1-9]+)\.([0-9]+)\.([0-9]+)(?:(\-\w*)\.([1-9]+))?/g
 const execs = reg.exec(version) as Array<any>;
 const addOne = (num) => Number(num) + 1;
 const getVersion = ([major, minor, patch]) => `v${major}.${minor}.${patch}`
-const getVersionlists = () => {
+const getVersionlist = () => {
     const ZERO = 0
     return [
         getVersion([addOne(execs[1]), execs[2], ZERO]),
@@ -26,7 +26,7 @@ const getBetaVersionLists = (beta) => ([
 
 const onSelectVersion = async () => {
     const beta = execs[4];
-    const lists = beta ? getBetaVersionLists(beta) : getVersionlists();
+    const lists = beta ? getBetaVersionLists(beta) : getVersionlist();
     inquirer.prompt([{
         name: 'list',
         type: 'list',
@@ -43,12 +43,18 @@ const onSelectVersion = async () => {
             if (error) {
                 return;
             }
-            await $`git add .`;
-            await $`git commit -m ${list}`;
-            await $`git push origin ${branch}`;
-            await $`npm run build&&npm publish`;
-            await $`git tag ${list}`;
-            await $`git push origin ${list}`;
+            try {
+                await $`git add .`;
+                await $`git commit -m ${list}`;
+                await $`git push origin ${branch}`;
+                await $`npm run build&&npm publish`;
+                await $`git tag ${list}`;
+                await $`git push origin ${list}`;
+                //发版失败，回退版本
+            } catch (error) {
+                await $`git tag -d ${list}`;
+                await $`git push origin :refs/tags/${list}`;
+            }
             await updateReadMe()
         });
     })

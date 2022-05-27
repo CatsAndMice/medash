@@ -23,7 +23,7 @@ const replaceContent = async () => {
 const getReadMeContent = async (readMePath: string) => {
     const cdnLinksContent = await replaceContent()
     let content = await fs.readFile(readMePath, 'utf8')
-    //正则匹配,替换新的CDN链接
+    //正则匹配,替换新的CDN链接  [\s\S]*、[\w\W]*匹配所有, "."并不会匹配换行
     content = content.replace(/<!--cdn-links-start-->([\s\S]*)<!--cdn-links-end-->/g, cdnLinksContent)
     return content
 }
