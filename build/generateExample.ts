@@ -1,5 +1,7 @@
 import path from "path"
 import fsPromises from "fs/promises"
+import fs from "fs"
+
 const EXAMPLE = 'example'
 async function getFolder(examplePath: string) {
     const dirs = await fsPromises.readdir(examplePath)
@@ -7,10 +9,15 @@ async function getFolder(examplePath: string) {
 }
 
 async function getFileContent(filePath: string) {
-    // const isFound = fsPromise
+    //文件不存在时，返回空内容
+    if (!fs.existsSync(filePath)) {
+        return ""
+    }
     const content = await fsPromises.readFile(filePath, 'utf-8')
     return content
 }
+
+
 
 function dealWithFils(filePath: string, files: string[]) {
     files.forEach(async (file) => {
@@ -20,11 +27,11 @@ function dealWithFils(filePath: string, files: string[]) {
         const docsFilePath = afterPath.replace(/\.\w+/g, '.md')
         const mdPath = path.join(docsPath, docsFilePath)
         Promise.all([getFileContent(getFileContentPath), getFileContent(mdPath)]).then((contents) => {
-            const [codeContent, mdContent] = contents
-            console.log(codeContent, mdContent);
-
+            let [codeContent, mdContent] = contents
+            mdContent = mdContent.replace(/<me-embed>([\s\S]*)<\/me-embed>/g, `<me-embed>${codeContent}</me-embed>`)
+            //TODO:es6模块化转化成commonJs模块化写入md文件
+            fsPromises.writeFile(mdPath, mdContent)
         })
-
     })
 }
 
