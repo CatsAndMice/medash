@@ -43,13 +43,13 @@ const onSelectVersion = async () => {
             if (error) {
                 return;
             }
-            await updateReadMe()
             await $`git add .`;
             await $`git commit -m ${list}`;
-            await $`git tag ${list}`;
-            await $`git push origin ${list}`;
             await $`git push origin ${branch}`;
             await $`npm run build&&npm publish`;
+            await $`git tag ${list}`;
+            await $`git push origin ${list}`;
+            await updateReadMe()
         });
     })
 }
