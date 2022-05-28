@@ -9,7 +9,7 @@
 ### CDN
 <!--cdn-links-start-->
 ```html
-<script src="https://cdn.jsdelivr.net/npm/medash@3.2.2/dist/medash.min.js"></script>
+<script src="https://unpkg.com/medash@3.2.2/dist/medash.min.js"></script>
 ```
 <!--cdn-links-end-->
 

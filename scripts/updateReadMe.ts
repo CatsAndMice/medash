@@ -15,7 +15,7 @@ const replaceContent = async () => {
     const version = await getReadPkgContent()
     return `<!--cdn-links-start-->
 \`\`\`html
-<script src="https://cdn.jsdelivr.net/npm/medash@${version}/dist/medash.min.js"></script>
+<script src="https://unpkg.com/medash@${version}/dist/medash.min.js"></script>
 \`\`\`
 <!--cdn-links-end-->`
 }
