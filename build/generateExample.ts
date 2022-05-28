@@ -1,6 +1,11 @@
 import path from "path"
 import fsPromises from "fs/promises"
 import fs from "fs"
+import { parse } from "@babel/core"
+import generator from "@babel/generator"
+import traverse from "@babel/traverse"
+import { isNull, or, gte, isArray } from "../main"
+
 
 const EXAMPLE = 'example'
 async function getFolder(examplePath: string) {
@@ -17,6 +22,16 @@ async function getFileContent(filePath: string) {
     return content
 }
 
+//es6模块化替换成commonJs模块化
+function esToRequire(codeContent: string) {
+    const reg = /import(.+)from.+/g
+    const values: any[] = reg.exec(codeContent) as any[]
+    if (isArray(values)) {
+        const local = values[1]
+        codeContent = codeContent.replace(reg, `const ${local} = require("medash")`)
+    }
+    return codeContent
+}
 
 
 function dealWithFils(filePath: string, files: string[]) {
@@ -28,8 +43,12 @@ function dealWithFils(filePath: string, files: string[]) {
         const mdPath = path.join(docsPath, docsFilePath)
         Promise.all([getFileContent(getFileContentPath), getFileContent(mdPath)]).then((contents) => {
             let [codeContent, mdContent] = contents
-            mdContent = mdContent.replace(/<me-embed>([\s\S]*)<\/me-embed>/g, `<me-embed>${codeContent}</me-embed>`)
-            //TODO:es6模块化转化成commonJs模块化写入md文件
+            const reg = /<me-embed>([\s\S]*)<\/me-embed>/g
+            const values: any[] = reg.exec(mdContent) as any[]
+            //排除已存在示例代码的md文件
+            if (isNull(values)) return
+            if (gte((values[1] as string).length, 10)) return
+            mdContent = mdContent.replace(reg, `<me-embed>${esToRequire(codeContent)}</me-embed>`)
             fsPromises.writeFile(mdPath, mdContent)
         })
     })

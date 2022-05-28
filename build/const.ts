@@ -38,5 +38,5 @@ export const createDocs = (name) => {
   
 **例子**  
 
-`+ `<me-embed>const {${name}} = require("medash");</me-embed>`
+`+ `<me-embed></me-embed>`
 }

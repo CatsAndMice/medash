@@ -44,6 +44,7 @@ const onSelectVersion = async () => {
                 return;
             }
             try {
+                await $`npm run generate`;
                 await $`git add .`;
                 await $`git commit -m ${list}`;
                 await $`git push origin ${branch}`;
