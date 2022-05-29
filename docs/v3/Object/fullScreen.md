@@ -41,39 +41,5 @@ fullScreen.addEventListener(success,fail);
 
 
 **例子**  
+<iframe src="https://code.juejin.cn/pen/7103024048703012878" height="300"></iframe>
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <div id="full">搜查发电机</div>
-    <button id="btn">全屏</button>
-    <!-- medash  CDN加速 -->
-    <script src="https://cdn.jsdelivr.net/npm/medash@3.1.4/dist/medash.min.js"></script>
-    <script>
-        const { fullScreen } = medash; //导入fullScreen对象
-        const btn = document.getElementById('btn')
-        btn.onclick = () => {
-            fullScreen.addEventListener(() => {
-        const btn = document.getElementById('btn');
-        btn.onclick = () => {
-            fullScreen.addEventListener(() => {
-                console.log('成功');
-            }, () => {
-                console.log('失败');
-            })
-            fullScreen.isFullScreen() ? fullScreen.exitFullscreen() : fullScreen.requestFullscreen(btn);
-        }
-    </script>
-</body>
-
-</html>
-```
