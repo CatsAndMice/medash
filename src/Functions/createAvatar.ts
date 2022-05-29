@@ -33,5 +33,5 @@ export default (name: string, config: configType = options) => {
     ctx.textAlign = 'center'
     ctx.textBaseline = 'middle'
     ctx.fillText(name.slice(-2), w / 2, h / 2)
-    return canvas.toDataURL() as string
+    return canvas.toDataURL()
 }
