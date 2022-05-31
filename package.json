@@ -12,7 +12,8 @@
   },
   "files": [
     "lib",
-    "dist"
+    "dist",
+    "es"
   ],
   "keywords": [
     "nodeJs",
