@@ -10,4 +10,9 @@ describe("toNumber test", () => {
         expect(toNumber([1])).toBe(1)
         expect(toNumber(['p'])).toBeNaN()
     })
+
+    it('Date',()=>{
+        const date = new Date()
+        expect(toNumber(date)).toBe(date.getTime())
+    })
 })

@@ -9,6 +9,7 @@
   * [isZeroLen](v3/Array/isZeroLen.md)
   * [toArray](v3/Array/toArray.md)
 * Date
+  * [daysOfMonth](v3/Date/daysOfMonth.md)
   * [diff](v3/Date/diff.md)
   * [formatDate](v3/Date/formatDate.md)
   * [getCalender](v3/Date/getCalender.md)
@@ -16,6 +17,7 @@
   * [getTodayRange](v3/Date/getTodayRange.md)
   * [getWeekRange](v3/Date/getWeekRange.md)
   * [getYmdHms](v3/Date/getYmdHms.md)
+  * [isDate](v3/Date/isDate.md)
 * Functions
   * [and](v3/Functions/and.md)
   * [createAvatar](v3/Functions/createAvatar.md)

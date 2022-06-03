@@ -60,7 +60,11 @@ import isNumber from "./src/Functions/isNumber";
 import mapToObj from "./src/Object/mapToObj";
 import isArray from "./src/Array/isArray";
 import createAvatar from "./src/Functions/createAvatar";
+import daysOfMonth from "./src/Date/daysOfMonth";
+import isDate from "./src/Date/isDate";
 export {
+isDate,
+daysOfMonth,
 createAvatar,
 isArray,
 mapToObj,
@@ -141,6 +145,8 @@ or,
 }
 
 export default {
+isDate,
+daysOfMonth,
 createAvatar,
 isArray,
 mapToObj,
