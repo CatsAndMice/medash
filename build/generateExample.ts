@@ -1,8 +1,7 @@
 import path from "path"
 import fsPromises from "fs/promises"
 import fs from "fs"
-import { isNull, or, gte, isArray } from "../main"
-
+import { isNull, gte, isArray } from "../main"
 
 const EXAMPLE = 'example'
 async function getFolder(examplePath: string) {
@@ -26,9 +25,7 @@ function esToRequire(codeContent: string) {
     if (isArray(values)) {
         const local = values[1]
         codeContent = codeContent.replace(reg, `const ${local} = require("medash")`)
-    }
-    console.log(codeContent);
-    
+    }    
     return codeContent
 }
 

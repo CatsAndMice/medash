@@ -17,8 +17,8 @@ const addContext = (args: string[], name: string) => {
     let imports = args[0] + importsHeader;
     let contexts = args[1].split('{');
     let ctx = contexts[0] + `{\r\n${name},` + contexts[1];
-    let dafaultContexts = args[2].split('{')
-    let ctxs = dafaultContexts[0] + `{\r\n${name},` + dafaultContexts[1];
+    let defaultContexts = args[2].split('{')
+    let ctxs = defaultContexts[0] + `{\r\n${name},` + defaultContexts[1];
     return [imports, ctx, ctxs].join('export');
 }
 
