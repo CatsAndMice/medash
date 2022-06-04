@@ -1,13 +1,13 @@
 ```ts
 medash.isDate()
 ```
-
+判断是否`Date`对象类型
 
 **参数**  
-1. `value`(any): 
+1. `date`(any):任意参数值
   
 **返回**  
-        
+`boolean`        
   
 **例子**  
 

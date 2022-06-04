@@ -1,9 +1,6 @@
 import path from "path"
 import fsPromises from "fs/promises"
 import fs from "fs"
-import { parse } from "@babel/core"
-import generator from "@babel/generator"
-import traverse from "@babel/traverse"
 import { isNull, or, gte, isArray } from "../main"
 
 
@@ -30,6 +27,8 @@ function esToRequire(codeContent: string) {
         const local = values[1]
         codeContent = codeContent.replace(reg, `const ${local} = require("medash")`)
     }
+    console.log(codeContent);
+    
     return codeContent
 }
 
