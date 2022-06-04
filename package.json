@@ -1,6 +1,6 @@
 {
   "name": "medash",
-  "version": "v3.2.3",
+  "version": "v3.2.4",
   "description": "📦medash个人常用代码片段汇总💡,减少不必要重复coding,开箱即用🚀 🚀",
   "bugs": {
     "url": "https://github.com/CatsAndMice/medash/issues"
@@ -30,7 +30,7 @@
     "serve": "docsify serve docs",
     "build": "rollup -c",
     "test": "jest ./test",
-    "publish":"npm publish",
+    "publish": "npm publish",
     "test-coverage": "jest --coverage",
     "patch": "npm version patch&&npm run release",
     "minor": "npm version minor&&npm run release",
