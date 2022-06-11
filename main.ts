@@ -62,7 +62,9 @@ import isArray from "./src/Array/isArray";
 import createAvatar from "./src/Functions/createAvatar";
 import daysOfMonth from "./src/Date/daysOfMonth";
 import isDate from "./src/Date/isDate";
+import deepFreeze from "./src/Object/deepFreeze";
 export {
+deepFreeze,
 isDate,
 daysOfMonth,
 createAvatar,
@@ -145,6 +147,7 @@ or,
 }
 
 export default {
+deepFreeze,
 isDate,
 daysOfMonth,
 createAvatar,

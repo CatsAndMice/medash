@@ -51,6 +51,7 @@
 * Object
   * [chain](v3/Object/chain.md)
   * [db](v3/Object/db.md)
+  * [deepFreeze](v3/Object/deepFreeze.md)
   * [each](v3/Object/each.md)
   * [event](v3/Object/event.md)
   * [fullScreen](v3/Object/fullScreen.md)
