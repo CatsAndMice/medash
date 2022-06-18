@@ -7,6 +7,7 @@ console.log(array[1]);//[2]
 console.log(obj.name);//'medash'
 console.log(set.has(1));//true
 console.log(map.get(1));//{ a: 1 }
+array.push(2)
 array[0] = 1//报错
 obj.name = 'deepFreeze'//报错
 set.add(9)//报错：只读，不允许修改!

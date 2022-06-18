@@ -15,7 +15,7 @@ const isSet = (obj) => eq(getType(obj), 'Set')
 const isMap = (obj) => eq(getType(obj), 'Map')
 const keys = ['add', 'delete', 'set']
 
-export default function deepFreeze(obj: Set<any> | Map<any,any> | Object) {
+export default function deepFreeze(obj) {
     const type = getType(obj)
     if (!types.includes(type)) return obj
     if (or(isObject(obj), isArray(obj))) {

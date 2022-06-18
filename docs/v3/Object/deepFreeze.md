@@ -1,10 +1,10 @@
 ```ts
-medash.deepFreeze(obj: Set<any> | Map<any,any> | Object)
+medash.deepFreeze(obj)
 ```
 深度冻结`Object、Set、Map`实例对象,冻结的对象仅允许读取
 
 **参数**  
-1. `obj`(Set<any>| Map<any,any> | Object): `Object、Set、Map`对象
+1. `obj`(any): `Object、Set、Map`对象
   
 **返回**  
 已冻结的`Object、Set、Map`对象        
