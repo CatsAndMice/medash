@@ -6,6 +6,11 @@ import { isNull, gte, isArray } from "../main"
 const EXAMPLE = 'example'
 async function getFolder(examplePath: string) {
     const dirs = await fsPromises.readdir(examplePath)
+    const isIncludes = (dir: any[] | string) => dir.includes('.DS_Store')
+    if (isIncludes(dirs)) {
+        const index = dirs.findIndex((dir) => isIncludes(dir))
+        dirs.splice(index,1)
+    }
     return dirs
 }
 
@@ -25,7 +30,7 @@ function esToRequire(codeContent: string) {
     if (isArray(values)) {
         const local = values[1]
         codeContent = codeContent.replace(reg, `const ${local} = require("medash")`)
-    }    
+    }
     return codeContent
 }
 

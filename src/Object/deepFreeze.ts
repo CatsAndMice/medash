@@ -7,14 +7,15 @@ import eq from "../Functions/eq"
 import toArray from "../Array/toArray"
 import isFunc from "../Functions/isFunc"
 /**
- * 深度冻结Object、Set、Map实例对象
+ * @desc:深度冻结Object、Set、Map实例对象,冻结的对象仅允许读取
+ * 
  */
 const types = [getType([]), getType({}), getType(new Map), getType(new Set)]
 const isSet = (obj) => eq(getType(obj), 'Set')
 const isMap = (obj) => eq(getType(obj), 'Map')
 const keys = ['add', 'delete', 'set']
 
-export default function deepFreeze(obj) {
+export default function deepFreeze(obj: Set<any> | Map<any,any> | Object) {
     const type = getType(obj)
     if (!types.includes(type)) return obj
     if (or(isObject(obj), isArray(obj))) {
