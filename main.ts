@@ -63,7 +63,9 @@ import createAvatar from "./src/Functions/createAvatar";
 import daysOfMonth from "./src/Date/daysOfMonth";
 import isDate from "./src/Date/isDate";
 import deepFreeze from "./src/Object/deepFreeze";
+import isPromise from "./src/Object/isPromise";
 export {
+isPromise,
 deepFreeze,
 isDate,
 daysOfMonth,
@@ -147,6 +149,7 @@ or,
 }
 
 export default {
+isPromise,
 deepFreeze,
 isDate,
 daysOfMonth,
