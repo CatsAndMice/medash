@@ -45,7 +45,7 @@ async function getName(fileName: string) {
 
 
 async function typesCheck() {
-    const lists = await getSrcLists();
+    const lists = await getSrcLists(srcPath);
     inquirer.prompt([
         {
             name: 'list',

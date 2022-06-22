@@ -30,7 +30,7 @@
     "serve": "docsify serve docs",
     "build": "rollup -c",
     "test": "jest ./test",
-    "publish": "npm publish",
+    "publish-local": "npm publish",
     "test-coverage": "jest --coverage",
     "patch": "npm version patch&&npm run release",
     "minor": "npm version minor&&npm run release",

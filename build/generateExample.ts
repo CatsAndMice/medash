@@ -2,17 +2,9 @@ import path from "path"
 import fsPromises from "fs/promises"
 import fs from "fs"
 import { isNull, gte, isArray } from "../main"
+import getSrcLists from "./getSrcLists"
 
 const EXAMPLE = 'example'
-async function getFolder(examplePath: string) {
-    const dirs = await fsPromises.readdir(examplePath)
-    const isIncludes = (dir: any[] | string) => dir.includes('.DS_Store')
-    if (isIncludes(dirs)) {
-        const index = dirs.findIndex((dir) => isIncludes(dir))
-        dirs.splice(index,1)
-    }
-    return dirs
-}
 
 async function getFileContent(filePath: string) {
     //文件不存在时，返回空内容
@@ -59,10 +51,10 @@ function dealWithFils(filePath: string, files: string[]) {
 async function main() {
     const beforePath = path.resolve()
     const examplePath = path.join(beforePath, EXAMPLE)
-    const dirs = await getFolder(examplePath)
+    const dirs = await getSrcLists(examplePath)
     dirs.forEach(async (dir) => {
         const filePath = path.join(examplePath, dir)
-        const files = await getFolder(filePath)
+        const files = await getSrcLists(filePath)
         dealWithFils(filePath, files)
     })
 }

@@ -3,6 +3,7 @@ import { createDocs } from "./const";
 import path from "path";
 import fsPromises from "fs/promises";
 import { docsPath } from './const';
+import getSrcLists from './getSrcLists'
 
 const getContent = (dir, files) => {
     let text = `* ${dir}\n`;
@@ -38,12 +39,12 @@ const sortContents = (contents: string[]) => {
 const readDir = async () => {
     let startHeader = '* [快速开始](readme.md)\n';
     const contents: string[] = []
-    const dirs = await fsPromises.readdir(docsPath);
+    const dirs = await getSrcLists(docsPath);
     const promises: any[] = [];
     dirs.forEach((dir) => {
         const promise = new Promise(async (resolve) => {
             const filePath = path.join(docsPath, dir);
-            fsPromises.readdir(filePath).then(files => {
+            getSrcLists(filePath).then(files => {
                 contents.push(getContent(dir, files))
                 resolve(contents);
             })
