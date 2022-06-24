@@ -20,4 +20,12 @@ describe("each test", () => {
         expect(keys).toEqual(Object.keys(obj))
         expect(values).toEqual(Object.values(obj))
     })
+
+    it('array', () => {
+      const arr = [1,2,'1',{name:"lihai"}]
+      each(arr, (key, value) => {
+        expect(value).toBe(arr[key])
+      })
+    })
+
 })

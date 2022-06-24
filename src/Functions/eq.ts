@@ -1,11 +1,17 @@
+import and from "./and";
 import isFunc from "./isFunc";
-
+import isNaN from "./isNaN";
 /**
  * 比较值是否相等
  */
 export default function eq(value: any, target: any): boolean {
     if (value === target) {
         return true;
+    }
+
+    // 处理NaN
+    if (and(isNaN(value), isNaN(target))) {
+        return true
     }
 
     //比较类型为Date对象时，比较时间戳格式值

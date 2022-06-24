@@ -1,6 +1,10 @@
 import { eq } from "../../main";
 
 describe('equals then', () => {
+    it('NaN',()=>{
+        expect(eq(NaN, NaN)).toBeTruthy();
+    })
+
     it('base', () => {
         expect(eq(0, 0.0000001)).toBeFalsy();
         expect(eq(-1, 0)).toBeFalsy();

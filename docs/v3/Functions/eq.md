@@ -17,6 +17,7 @@ console.log(eq({},{}))//true
 console.log(eq({},{name:'medash'}))//false
 console.log(eq({name:'medash'},{name:'medash'}))//true
 console.log(eq(()=>{},()=>{}));//true
-console.log(eq(()=>console.log(1),()=>{}));//false</me-embed>
+console.log(eq(()=>console.log(1),()=>{}));//false
+console.log(eq(NaN,NaN))//true</me-embed>
 
 
