@@ -10,4 +10,11 @@ export default (value) => {
         return value !== value
     }
     return Number.isNaN(value)
-}
+}  
+
+/**
+ * @desc sss
+ * whnt
+ * @desc 修改 
+ */
+function text (){}
