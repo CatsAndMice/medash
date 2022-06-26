@@ -31,8 +31,8 @@ function getQuery(comment: string) {
     comment = comment.replace(/\*\/$/, '')
     let splitComment = comment.split(CHAR)
     splitComment = splitComment.slice(1, splitComment.length).map(val => (CHAR + val.replace(/((\* $)|(\* ))/gm, '')).trim())
-   console.log(splitComment);
-   
+    console.log(splitComment);
+
     return cacheMap(splitComment)
 }
 
@@ -43,31 +43,35 @@ function getAnnotation(content: string) {
     return getQuery(comment)
 }
 
-async function createFile(docsContent: string) {
-    fsPromises.writeFile('./isNaN.md', docsContent)
+async function createFile(file: string, docsContent: string) {
+    file = file.replace(/\.[a-z]*$/g, '.md')
+    fsPromises.writeFile('./' + file, docsContent)
 }
-
+// TODO:排除已存在的md文件，删除执行npm run create 创建md文件的逻辑
+// TODO:示例代码生成时机调整
 (async () => {
     const lists = await getSrcLists(srcPath)
-    const index = lists.findIndex((list) => eq(list, 'Functions'))
-    const functionPath = path.resolve(srcPath, `${lists[index]}/isNaN.ts`)
-    const content = await fsPromises.readFile(functionPath, 'utf-8')
-    const exportsArray = content.split('export')
-    const promises: any[] = []
-    exportsArray.forEach(exportsContent => {
-        if (isEmpty(exportsContent)) return
-        promises.push(Promise.resolve().then(() => getAnnotation(exportsContent)))
-    })
-    let docsContent = ''
-    Promise.all(promises).then((result) => {
-        result.forEach((res) => {
-            if (isEmpty(res)) return
-            docsContent += `${createDocs((mapToObj(res as Map<string, Set<string>>)) as Object)}  \n`
+    lists.forEach(async list => {
+        const filePath = path.resolve(srcPath, list)
+        const files = await getSrcLists(filePath)
+        files.forEach(async file => {
+            const content = await fsPromises.readFile(path.resolve(filePath, file), 'utf-8')
+            const exportsArray = content.split('export')
+            const promises: any[] = []
+            exportsArray.forEach(exportsContent => {
+                if (isEmpty(exportsContent)) return
+                promises.push(Promise.resolve().then(() => getAnnotation(exportsContent)))
+            })
+            let docsContent = ''
+            Promise.all(promises).then((result) => {
+                result.forEach((res) => {
+                    if (isEmpty(res)) return
+                    const docs = createDocs((mapToObj(res as Map<string, Set<string>>)) as Object)
+                    if (isEmpty(docs)) return
+                    docsContent += `${docs}  \n`
+                })
+                isEmpty(docsContent) ? null : createFile(file, docsContent)
+            })
         })
-        // console.log(docsContent);
-        
-        createFile(docsContent)
     })
-
-
 })()

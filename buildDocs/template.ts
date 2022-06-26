@@ -1,3 +1,5 @@
+import { isEmptyObj } from "../main"
+
 type docs = {
     desc?: any,
     param?: any,
@@ -14,6 +16,7 @@ function getSetValue(set: Set<string>) {
 }
 
 export const createDocs = (doc: docs) => {
+   if(isEmptyObj(doc))return ''
     return `${doc.desc ? getSetValue(doc.desc) : ''}  
 **参数**   
 ${doc.param ? getSetValue(doc.param) : ''}
