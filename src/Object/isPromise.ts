@@ -5,6 +5,7 @@ import isFunc from "../Functions/isFunc"
 import isEmpty from "../Functions/isEmpty"
 /**
  * @desc 判断是否为`Promise`
+ * @version v3.3.5
  * @param promise(any):任意类型参数
  * @return `Boolean`:true为参数类型是一个`Promise`类型对象；否则不是。
  */

@@ -1,9 +1,9 @@
-import { srcPath } from "../build/const"
+import { srcPath, docsPath } from "../build/const"
 import getSrcLists from "../build/getSrcLists"
-import { eq, isEmpty, mapToObj } from "../main"
+import { isEmpty, mapToObj, or, eq, getType } from "../main"
 import path from "path"
 import fsPromises from "fs/promises"
-import { createDocs } from "./template"
+import { createDocs, docs } from "./template"
 import { ANNOTATION, CHAR } from "./const"
 
 function cacheMap(comments: string[]) {
@@ -31,8 +31,6 @@ function getQuery(comment: string) {
     comment = comment.replace(/\*\/$/, '')
     let splitComment = comment.split(CHAR)
     splitComment = splitComment.slice(1, splitComment.length).map(val => (CHAR + val.replace(/((\* $)|(\* ))/gm, '')).trim())
-    console.log(splitComment);
-
     return cacheMap(splitComment)
 }
 
@@ -43,19 +41,33 @@ function getAnnotation(content: string) {
     return getQuery(comment)
 }
 
+function getLastPath(file: string) {
+    const splitFilePath = file.split('/src/')
+    return splitFilePath[splitFilePath.length - 1]
+}
+
 async function createFile(file: string, docsContent: string) {
     file = file.replace(/\.[a-z]*$/g, '.md')
-    fsPromises.writeFile('./' + file, docsContent)
+    let filePath = getLastPath(file)
+    filePath = path.join(docsPath, filePath)
+    fsPromises.writeFile(filePath, docsContent)
 }
-// TODO:排除已存在的md文件，删除执行npm run create 创建md文件的逻辑
-// TODO:示例代码生成时机调整
+
+const isMap = (map) => eq(getType(map), 'Map');
+
+/**
+ * TODO:
+ * 1. 删除创建方法时，自动添加文档模板
+ * 2. 方法文件路径添加至_sidebar.md文件时,排除对应md文件为空的路径
+ */
 (async () => {
     const lists = await getSrcLists(srcPath)
     lists.forEach(async list => {
         const filePath = path.resolve(srcPath, list)
         const files = await getSrcLists(filePath)
         files.forEach(async file => {
-            const content = await fsPromises.readFile(path.resolve(filePath, file), 'utf-8')
+            const srcFilePath = path.resolve(filePath, file)
+            const content = await fsPromises.readFile(srcFilePath, 'utf-8')
             const exportsArray = content.split('export')
             const promises: any[] = []
             exportsArray.forEach(exportsContent => {
@@ -63,14 +75,27 @@ async function createFile(file: string, docsContent: string) {
                 promises.push(Promise.resolve().then(() => getAnnotation(exportsContent)))
             })
             let docsContent = ''
-            Promise.all(promises).then((result) => {
+            Promise.all(promises).then(async (result) => {
+                const docsPromises: any[] = []
                 result.forEach((res) => {
-                    if (isEmpty(res)) return
-                    const docs = createDocs((mapToObj(res as Map<string, Set<string>>)) as Object)
-                    if (isEmpty(docs)) return
-                    docsContent += `${docs}  \n`
+                    //拼接字符串
+                    const promiseFn = async () => {
+                        const isMapNoSize = isMap(res) && isEmpty(res.size)
+                        if (or(isEmpty(res), isMapNoSize)) return
+                        const docs = await createDocs((mapToObj(res as Map<string, Set<string>>)) as docs, () => getLastPath(srcFilePath))
+                        if (isEmpty(docs)) return
+                        docsContent += `${docs}  \n`
+                        return docsContent
+                    }
+
+                    //Promise类型统一添加至数组中
+                    docsPromises.push(promiseFn())
                 })
-                isEmpty(docsContent) ? null : createFile(file, docsContent)
+
+                //所有的Promise完成后，docsContent已拼接完成
+                Promise.all(docsPromises).then(() => {
+                    isEmpty(docsContent) ? null : createFile(srcFilePath, docsContent)
+                })
             })
         })
     })

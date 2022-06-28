@@ -29,12 +29,6 @@ function _createArray(format, captures) {
     })
 }
 
-/**
-   * 获取返回时间格式对应的时间字符串
-   * @param {*} format 时间格式
-   * @param {*} reg 正则
-   * @returns String
-   */
 function _getReplaceFormat(format: string, reg) {
     if (!reg) {
         console.warn(`${format}格式不正确`)

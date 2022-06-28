@@ -20,11 +20,7 @@ export type Format = {
     concat?: string
 }
 
-/**
-* 格式化时间戳，返回 *day *hour *minute *second
-* @param {Number} ms 时间戳
-* @returns
-*/
+
 export default (ms: Date | number, format: Format = option) => {
     if (ms instanceof Date) {
         ms = ms.getTime();
