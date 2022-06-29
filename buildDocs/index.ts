@@ -3,8 +3,9 @@ import getSrcLists from "../build/getSrcLists"
 import { isEmpty, mapToObj, or, eq, getType } from "../main"
 import path from "path"
 import fsPromises from "fs/promises"
-import { createDocs, docs } from "./template"
+import { generateDocs, docs } from "./template"
 import { ANNOTATION, CHAR } from "./const"
+import createDocs from "../build/createDocs"
 
 function cacheMap(comments: string[]) {
     const map = new Map<string, Set<string>>()
@@ -46,20 +47,10 @@ function getLastPath(file: string) {
     return splitFilePath[splitFilePath.length - 1]
 }
 
-async function createFile(file: string, docsContent: string) {
-    file = file.replace(/\.[a-z]*$/g, '.md')
-    let filePath = getLastPath(file)
-    filePath = path.join(docsPath, filePath)
-    fsPromises.writeFile(filePath, docsContent)
-}
-
 const isMap = (map) => eq(getType(map), 'Map');
 
-/**
- * TODO:
- * 1. 删除创建方法时，自动添加文档模板
- * 2. 方法文件路径添加至_sidebar.md文件时,排除对应md文件为空的路径
- */
+
+
 (async () => {
     const lists = await getSrcLists(srcPath)
     lists.forEach(async list => {
@@ -82,7 +73,7 @@ const isMap = (map) => eq(getType(map), 'Map');
                     const promiseFn = async () => {
                         const isMapNoSize = isMap(res) && isEmpty(res.size)
                         if (or(isEmpty(res), isMapNoSize)) return
-                        const docs = await createDocs((mapToObj(res as Map<string, Set<string>>)) as docs, () => getLastPath(srcFilePath))
+                        const docs = await generateDocs((mapToObj(res as Map<string, Set<string>>)) as docs, () => getLastPath(srcFilePath))
                         if (isEmpty(docs)) return
                         docsContent += `${docs}  \n`
                         return docsContent
@@ -94,7 +85,10 @@ const isMap = (map) => eq(getType(map), 'Map');
 
                 //所有的Promise完成后，docsContent已拼接完成
                 Promise.all(docsPromises).then(() => {
-                    isEmpty(docsContent) ? null : createFile(srcFilePath, docsContent)
+                    const splitFilePath = filePath.split(path.sep)
+                    const mdPath = path.join(docsPath, splitFilePath[splitFilePath.length - 1])
+                    
+                    isEmpty(docsContent) ? null : createDocs(mdPath, file.replace(/\.[a-z]*$/, ''), docsContent)
                 })
             })
         })

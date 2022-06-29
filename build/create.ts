@@ -2,7 +2,6 @@ import path from "path";
 import { testPath, srcPath, docsPath, examplePath, err } from './const';
 import getSrcLists from "./getSrcLists";
 import inquirer from 'inquirer';
-import createDocs from "./createDocs";
 import addMainContext from './addMainContext';
 import createTestFile from './createTest'
 import createFile from './createFile';
@@ -11,7 +10,6 @@ import { isEmpty, specialChar, ch } from "../main";
 
 async function getName(fileName: string) {
     const createPath = path.join(srcPath, fileName);
-    const createDocsPath = path.join(docsPath, fileName);
     const createTestPathPath = path.join(testPath, fileName);
     const createExamplePath = path.join(examplePath, fileName)
     let { input } = await inquirer.prompt([
@@ -38,7 +36,7 @@ async function getName(fileName: string) {
     }
     createTestFile(createTestPathPath, input)
     createFile(createPath, input);
-    createDocs(createDocsPath, input);
+    // createDocs(createDocsPath, input);
     createExample(createExamplePath, input);
     addMainContext(createPath, input);
 }

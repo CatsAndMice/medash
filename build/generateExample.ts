@@ -11,7 +11,7 @@ function esToRequire(codeContent: string) {
         const local = values[1]
         codeContent = codeContent.replace(reg, `const ${local} = require("medash")`)
     }
-    return codeContent
+    return codeContent.trim()
 }
 
 

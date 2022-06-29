@@ -1,4 +1,4 @@
-import { isEmptyObj, or, isEmpty, isFunc } from "../main"
+import { isEmptyObj, or, isEmpty } from "../main"
 import process from "process"
 import { err } from "../build/const";
 import generateExample from "../build/generateExample"
@@ -25,7 +25,7 @@ function getExample(content: string) {
     return '```js\n' + content + '```'
 }
 
-export const createDocs = async (doc: docs, callBack: () => string) => {
+export const generateDocs = async (doc: docs, callBack: () => string) => {
     const filePath = callBack()
     const splitFilePath = filePath.split(path.sep)
     const file = splitFilePath[splitFilePath.length - 1]
@@ -33,7 +33,6 @@ export const createDocs = async (doc: docs, callBack: () => string) => {
         err(`请完善${file}文档`)
         process.exit(1);
     }
-
     return `${doc.desc ? getSetValue(doc.desc) : ''}  
 **添加版本**  
 ${getSetValue(doc.version)}
