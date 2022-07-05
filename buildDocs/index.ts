@@ -49,8 +49,6 @@ function getLastPath(file: string) {
 
 const isMap = (map) => eq(getType(map), 'Map');
 
-
-
 (async () => {
     const lists = await getSrcLists(srcPath)
     lists.forEach(async list => {
