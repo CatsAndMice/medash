@@ -1,6 +1,6 @@
 import fsPromises from "fs/promises";
 
-export default  async function getFolder(examplePath: string) {
+export default async (examplePath: string) => {
     const dirs = await fsPromises.readdir(examplePath)
     const isIncludes = (dir: any[] | string) => dir.includes('.DS_Store')
     if (isIncludes(dirs)) {
