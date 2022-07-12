@@ -47,6 +47,7 @@
   * [specialChar](v3/Functions/specialChar.md)
   * [stringfyQuery](v3/Functions/stringfyQuery.md)
   * [toNumber](v3/Functions/toNumber.md)
+  * [trimString](v3/Functions/trimString.md)
   * [valueLen](v3/Functions/valueLen.md)
   * [when](v3/Functions/when.md)
 * Object
