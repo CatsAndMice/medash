@@ -2,9 +2,20 @@ const fs = require('fs');
 const Path = require('path');
 
 let buildInputs = [];
+
+const getNames = (examplePath) => {
+    const dirs = fs.readdirSync(examplePath)
+    const isIncludes = (dir) => dir.includes('.DS_Store')
+    if (isIncludes(dirs)) {
+        const index = dirs.findIndex((dir) => isIncludes(dir))
+        dirs.splice(index, 1)
+    }
+    return dirs
+}
+
 function getFileNames(befter, after) {
     let filesPath = Path.join(befter, after)
-    return { files: fs.readdirSync(filesPath), path: filesPath };
+    return { files:getNames(filesPath), path: filesPath };
 }
 
 function setBuildInputs(tsFile) {

@@ -28,7 +28,7 @@
   "scripts": {
     "create": "ts-node ./build/create.ts",
     "serve": "docsify serve docs",
-    "build": "rollup -c",
+    "build": "sudo rollup -c",
     "test": "jest ./test",
     "publish-local": "npm publish",
     "test-coverage": "jest --coverage",
