@@ -1,4 +1,6 @@
-
+```ts
+medash.isPromise(promise):boolean
+```
 
 判断是否为`Promise`
   
