@@ -4,6 +4,7 @@ import eq from "../Functions/eq"
 import isFunc from "../Functions/isFunc"
 import isEmpty from "../Functions/isEmpty"
 /**
+ * @use medash.isPromise(promise):boolean
  * @desc 判断是否为`Promise`
  * @version v3.3.5
  * @param promise(any):任意类型参数
