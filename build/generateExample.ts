@@ -1,5 +1,6 @@
 import path from "path"
 import fsPromises from "fs/promises"
+import fs from "fs"
 import { isArray, isEmpty } from "../main"
 import { examplePath } from "./const"
 
@@ -17,6 +18,8 @@ function esToRequire(codeContent: string) {
 
 export default async (filePath: string) => {
     filePath = path.join(examplePath, filePath)
+    //文件不存在
+    if(!fs.existsSync(filePath))return ''
     const codeContent = await fsPromises.readFile(filePath, 'utf-8')
     return isEmpty(codeContent) ? '' : `<me-embed>${esToRequire(codeContent)}</me-embed>`
 }

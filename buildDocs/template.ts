@@ -3,8 +3,10 @@ import process from "process"
 import { err } from "../build/const";
 import generateExample from "../build/generateExample"
 import path from "path"
+import { trim } from "../main"
 
 export type docs = {
+    use: Set<string>,
     version: Set<string>,
     desc?: Set<string>,
     param?: Set<string>,
@@ -18,11 +20,15 @@ function getSetValue(set: Set<string>) {
     set.forEach((s) => {
         setValue += `${s}  \n`
     })
-    return setValue
+    return trim(setValue)
 }
 
 function getExample(content: string) {
-    return '```js\n' + content + '```'
+    return '```js\n' + content + '\n```'
+}
+
+function getUseCode(use: string) {
+    return '```ts\n' + use + '\n```'
 }
 
 export const generateDocs = async (doc: docs, callBack: () => string) => {
@@ -33,13 +39,14 @@ export const generateDocs = async (doc: docs, callBack: () => string) => {
         err(`请完善${file}文档`)
         process.exit(1);
     }
-    return `${doc.desc ? getSetValue(doc.desc) : ''}  
+    return `${doc.use ? getUseCode(getSetValue(doc.use)) : ''}\n
+${doc.desc ? getSetValue(doc.desc) : ''}\n  
 **添加版本**  
-${getSetValue(doc.version)}
+${getSetValue(doc.version)}\n
 **参数**   
-${doc.param ? getSetValue(doc.param) : ''}
+${doc.param ? getSetValue(doc.param) : ''}\n
 **返回**  
-${doc.return ? getSetValue(doc.return) : ''}
+${doc.return ? getSetValue(doc.return) : ''}\n
 **例子**  
 ${doc.example ? getExample(getSetValue(doc.example)) : await generateExample(filePath)}`
 }
