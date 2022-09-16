@@ -19,7 +19,7 @@
 ### CDN
 <!--cdn-links-start-->
 ```html
-<script src="https://unpkg.com/medash@3.2.2/dist/medash.min.js"></script>
+<script src="https://unpkg.com/medash@3.4.0/dist/medash.min.js"></script>
 ```
 <!--cdn-links-end-->
 ### npm
