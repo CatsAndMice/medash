@@ -65,7 +65,9 @@ import isDate from "./src/Date/isDate";
 import deepFreeze from "./src/Object/deepFreeze";
 import isPromise from "./src/Object/isPromise";
 import { trim, trimStart, trimEnd } from "./src/Functions/trimString";
+import toBoolean from "./src/Functions/toBoolean";
 export {
+toBoolean,
     trim,
     trimStart,
     trimEnd,
@@ -153,6 +155,7 @@ export {
 }
 
 export default {
+toBoolean,
     trim,
     trimStart,
     trimEnd,

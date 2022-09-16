@@ -5,7 +5,7 @@ medash.trim(str:string):string
 修剪字符串两端的空字符
   
 **添加版本**  
-v3.3.6
+v3.3.0
 
 **参数**   
 str(any):任意类型值
@@ -24,7 +24,7 @@ medash.trimStart(str:string):string
 修剪字符串前端的空字符
   
 **添加版本**  
-v3.3.6
+v3.3.0
 
 **参数**   
 str(any):任意类型值
@@ -43,7 +43,7 @@ medash.trimEnd(str:string):string
 修剪字符串后端的空字符
   
 **添加版本**  
-v3.3.6
+v3.3.0
 
 **参数**   
 str(any):任意类型值

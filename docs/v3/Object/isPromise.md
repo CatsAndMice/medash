@@ -5,7 +5,7 @@ medash.isPromise(promise):boolean
 判断是否为`Promise`
   
 **添加版本**  
-v3.3.5
+v3.3.0
 
 **参数**   
 promise(any):任意类型参数

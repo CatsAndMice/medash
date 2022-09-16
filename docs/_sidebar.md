@@ -46,6 +46,7 @@
   * [randomNum](v3/Functions/randomNum.md)
   * [specialChar](v3/Functions/specialChar.md)
   * [stringfyQuery](v3/Functions/stringfyQuery.md)
+  * [toBoolean](v3/Functions/toBoolean.md)
   * [toNumber](v3/Functions/toNumber.md)
   * [trimString](v3/Functions/trimString.md)
   * [valueLen](v3/Functions/valueLen.md)
