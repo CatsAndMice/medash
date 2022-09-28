@@ -14,4 +14,12 @@ value(any):任意类型值
 (boolean): true/false
 
 **例子**  
-<me-embed>const  { toBoolean }  = require("medash")</me-embed>  
+<me-embed>const  { toBoolean }  = require("medash")
+toBoolean(0)//false
+toBoolean(true)//true
+toBoolean('true')//true
+toBoolean(false)//false
+toBoolean('false')//false
+toBoolean('FALSE')//false
+toBoolean(NaN)//false
+toBoolean(undefined)//false</me-embed>  

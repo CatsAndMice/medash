@@ -8,6 +8,7 @@ import or from "./or"
  * @param value(any):任意类型值
  * @return (boolean): true/false
  * @example
+ * 
  * toBoolean(0)//false
  * toBoolean(true)//true
  * toBoolean('true')//true

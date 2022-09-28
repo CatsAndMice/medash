@@ -2,7 +2,7 @@
 medash.isEmpty(value: any):boolean
 ```
 判断值是否为空  
-`0,null,'',undefined,{},[]`参数值为其中之一,则认为参数值为空值
+`0,null,'',undefined,{},[],false`参数值为其中之一,则认为参数值为空值
 
 **参数**  
 1. `value`(any): 需要判断的值
@@ -21,4 +21,5 @@ console.log(isEmpty(NaN));//true
 console.log(isEmpty(undefined));//true
 console.log(isEmpty(null));//true
 console.log(isEmpty(1));//false
+console.log(isEmpty(false));//false
 </me-embed>
