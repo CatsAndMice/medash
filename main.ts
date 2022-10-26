@@ -66,7 +66,9 @@ import deepFreeze from "./src/Object/deepFreeze";
 import isPromise from "./src/Object/isPromise";
 import { trim, trimStart, trimEnd } from "./src/Functions/trimString";
 import toBoolean from "./src/Functions/toBoolean";
+import download from "./src/Functions/download";
 export {
+download,
 toBoolean,
     trim,
     trimStart,
@@ -155,6 +157,7 @@ toBoolean,
 }
 
 export default {
+download,
 toBoolean,
     trim,
     trimStart,
